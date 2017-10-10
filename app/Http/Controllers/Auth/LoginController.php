@@ -56,7 +56,20 @@ class LoginController extends Controller
         ]);
 
         $result= json_decode($res->getBody());
-        var_dump($result);
+        $athlete = $result->athlete;
+
+        $user = User::all()->where('stravaId', $athlete->id)->first();
+        if ( $user === null)
+        {
+            $user = new User;
+            $user->stravaId = $athlete->id;
+            $user->firstname = $athlete->firstname;
+            $user->lastname = $athlete->lastname;
+            $user->city = "Mechelen";
+            $user->email = $athlete->email;
+            $user->password = TRUE ;
+            $user->save();
+        }
 
     }
 }
