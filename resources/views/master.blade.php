@@ -25,12 +25,11 @@
 </head>
 <body>
 
-@include('layouts.nav')
+@yield('navigation')
 
 @include('layouts.profile')
 
-
-@include('layouts.footer')
+@yield('footer')
 
 </body>
 </html>

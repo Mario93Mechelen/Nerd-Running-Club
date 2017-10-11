@@ -1,3 +1,5 @@
+@extends('master')
+
 <style>
 
     .footer {
@@ -22,9 +24,11 @@
 
 </style>
 
+@section('footer')
 <div class="footer">
 
     <a>Friends</a>
     <a>Medailles</a>
 
 </div>
+@endsection
