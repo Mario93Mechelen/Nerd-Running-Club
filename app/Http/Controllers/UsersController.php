@@ -13,7 +13,10 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('layouts.profile');
+        $user = auth()->user();
+        return view('layouts.profile',compact('user'));
+
+
     }
 
     /**

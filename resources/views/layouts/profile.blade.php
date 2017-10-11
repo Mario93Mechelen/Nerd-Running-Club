@@ -5,8 +5,8 @@
 
 <div class="profile">
 
-    <img src="" alt="Profile Pic">
-    <h3> </h3>
+    <img src="{{$user->avatar}}" alt="Profile Pic">
+    <h3>{{$user->firstname." ".$user->lastname}} </h3>
 
 </div>
 
