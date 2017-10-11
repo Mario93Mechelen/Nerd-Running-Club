@@ -78,7 +78,7 @@
 
             <img src="{{URL::asset('/img/logorunapp.png')}}" alt="Logo Nerd Running App">
 
-            <a><p>Login with</p><img src="{{URL::asset('/img/stravalogo.png')}}" alt="profile Pic" height="50" width="200"></a>
+            <a href="/login/strava"><p>Login with</p><img src="{{URL::asset('/img/stravalogo.png')}}" alt="profile Pic" height="50" width="200"></a>
 
 
         </div>

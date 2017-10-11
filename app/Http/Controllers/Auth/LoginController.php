@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -65,9 +66,10 @@ class LoginController extends Controller
             $user->stravaId = $athlete->id;
             $user->firstname = $athlete->firstname;
             $user->lastname = $athlete->lastname;
-            $user->city = "Mechelen";
             $user->email = $athlete->email;
-            $user->password = TRUE ;
+            $user->avatar = $athlete->profile;
+            $user->gender = $athlete->sex;
+            $user->token = $result->access_token;
             $user->save();
         }
 
