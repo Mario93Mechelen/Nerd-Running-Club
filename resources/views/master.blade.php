@@ -20,16 +20,66 @@
             font-weight: 300;
         }
 
+        .profile img {
+
+
+        }
+        .nav {
+
+            background-color: #8CBD9C ;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            height: 70px;
+        }
+
+        .nav img {
+
+            width: 100px;
+            height: 100px;
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        .nav a {
+
+            text-decoration: none;
+            margin-right: 150px;
+            color: white;
+            margin-top: 30px;
+        }
+        .footer {
+
+            width: 100%;
+            height: 70px;
+            background-color: #8CBD9C ;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
+
+
+        .footer a {
+
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            color: white;
+            margin-top: 30px;
+        }
+
+
     </style>
 
 </head>
 <body>
 
-@yield('navigation')
+@include('layouts.nav')
 
-@include('layouts.profile')
+@yield('content')
 
-@yield('footer')
+@include('layouts.footer')
 
 </body>
 </html>

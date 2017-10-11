@@ -1,12 +1,7 @@
-<style>
+@extends('master')
 
-    .profile img {
+@section('content')
 
-
-    }
-
-
-</style>
 
 <div class="profile">
 
@@ -14,3 +9,5 @@
     <h3> </h3>
 
 </div>
+
+    @endsection

@@ -38,6 +38,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function showHome()
+    {
+        return view('login');
+    }
+
     public function redirectToProvider()
     {
         return redirect('https://www.strava.com/oauth/authorize?client_id=20594&response_type=code&redirect_uri=http://homestead.app/oauth/code_callback&scope=write&state=mystate&approval_prompt=force');
@@ -74,5 +79,13 @@ class LoginController extends Controller
         }
         auth()->login($user);
 
+        return redirect('profile');
+
+    }
+
+    public function logout(){
+        auth()->logout();
+
+        return redirect('/');
     }
 }
