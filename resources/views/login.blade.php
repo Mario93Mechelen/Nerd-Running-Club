@@ -56,6 +56,7 @@
             .loginStrava a p {
 
                 text-decoration: none;
+
                 color: #90C8C8;
                 font-size: 1em;
                 text-transform: uppercase;
