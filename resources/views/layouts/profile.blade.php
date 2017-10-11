@@ -11,6 +11,6 @@
 <div class="profile">
 
     <img src="" alt="Profile Pic">
-    <h3>{{ $user -> firstname }} </h3>
+    <h3> </h3>
 
 </div>

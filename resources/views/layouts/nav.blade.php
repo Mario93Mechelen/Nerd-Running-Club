@@ -1,3 +1,5 @@
+@extends('master')
+
 <style>
 
     .nav {
@@ -28,6 +30,7 @@
 
 </style>
 
+@section('navigation')
 
 <div class="nav">
 
@@ -36,3 +39,5 @@
     <a>Settings</a>
 
 </div>
+
+@endsection
