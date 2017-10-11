@@ -13,7 +13,17 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        //
+        //https://www.strava.com/api/v3/athlete/activities?before=&after=&page=&per_page=" "Authorization: Bearer [[token]]
+        $client = new \GuzzleHttp\Client();
+        $token = auth()->user()->token;
+
+        $res = $client->request('GET', 'https://www.strava.com/api/v3/athlete/activities/', [
+            'headers' => [
+                'Authorization' => 'Bearer '.$token,
+            ]
+        ]);
+        $res = json_decode($res->getBody());
+        dd($res);
     }
 
     /**
