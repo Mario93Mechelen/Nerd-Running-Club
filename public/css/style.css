@@ -1,0 +1,172 @@
+html{
+    background-color: gainsboro;
+}
+
+body {
+    width: 350px;
+    margin: 0px auto;
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+}
+
+.container{
+    display: block;
+    width:350px;
+    min-height: 100vh;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.loginStrava {
+    background-color: #8CBD9C;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginStrava img {
+    width:200px;
+    height: auto;
+    margin-top: 200px;
+    align-self: center;
+}
+
+.loginStrava a {
+    background-color: white;
+    width: 300px;
+    align-self: center;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.loginStrava a p {
+    text-decoration: none;
+    color: #90C8C8;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.loginStrava a img {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+
+.nav {
+    background-color: #8CBD9C ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top:0;
+    width: 350px;
+    z-index: 10;
+}
+
+.nav img {
+    width: 100px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.nav a.settings {
+    display: block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 75px;
+}
+
+.nav a.settings img{
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+.footer a.friends, .footer a.ach {
+    display: block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    padding-top: 25px;
+}
+
+.footer a.friends img, .footer a.ach img{
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+.footer {
+    width: 100%;
+    height: 70px;
+    background-color: #8CBD9C ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    /*top: 88%;*/
+    bottom: 0;
+    width: 350px;
+    z-index: 10;
+}
+
+.profile{
+    display: block;
+    width: 350px;
+    text-align: center;
+    position: relative;
+}
+
+.profile img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 20px solid #FCF0BB;
+}
+
+.profile h3{
+    text-transform: uppercase;
+}
+
+.profile .menu {
+    display: block;
+    width: 90%;
+    margin: 2em auto;
+}
+
+.profile .menu ul {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile .menu ul li {
+    display: block;
+    width: 45%;
+    height: 5em;
+    background-color: #FCF0BB;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
