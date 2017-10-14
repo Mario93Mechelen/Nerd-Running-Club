@@ -1,11 +1,11 @@
-@extends('achievements')
+@extends('master')
 
 @section('badges')
 
     <div class="badges">
 
         <h2>Your earned badges</h2>
-        <p>For every  20 miles you've run, you earn a badge.</p>
+        <p>For every achievement, you earn a badge!</p>
 
         <div class="badges_filled">
 
