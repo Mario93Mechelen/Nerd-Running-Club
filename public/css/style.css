@@ -74,9 +74,9 @@ body {
 }
 
 .nav img {
-    width: 100px;
-    height: 100px;
-    margin-left: 50px;
+    width: 80px;
+    height: 80px;
+    margin-left: 30px;
     margin-top: 10px;
 }
 
@@ -132,15 +132,28 @@ body {
 
 .profile img {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin: 20px auto;
-    border: 20px solid #FCF0BB;
+    border: 15px solid #FCF0BB;
 }
 
 .profile h3{
     text-transform: uppercase;
+    letter-spacing: 3px;
+    color: darkgray;
+    margin-bottom: 20px;
+}
+
+.profile #logout {
+
+    color: white;
+    background-color: #FCF0BB;
+    text-decoration: none;
+    font-size:0.8em;
+    padding: 2%;
+    border-radius: 10px;
 }
 
 .profile .menu {
@@ -164,6 +177,48 @@ body {
     background-color: #FCF0BB;
     margin-bottom: 25px;
 }
+
+.badges {
+
+    display: block;
+    width: 350px;
+    text-align: center;
+    position: relative;
+
+}
+
+.badges h2 {
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: darkgray;
+    margin-bottom: 20px;
+}
+
+.badges p {
+
+    width: 80%;
+    margin-left: 10%;
+    font-size: 0.8em;
+}
+
+.badges .badges_filled {
+
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.badges .badges_filled img {
+
+    width: 50px;
+    height: 70px;
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
 
 
 

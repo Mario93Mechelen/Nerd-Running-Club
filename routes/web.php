@@ -20,6 +20,11 @@ Route::get('oauth/code_callback', 'Auth\LoginController@handleProviderCallback')
 Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/profile', 'UsersController@index');
+    Route::get('/achievements', 'UsersController@index');
     Route::get('/logout', 'Auth\LoginController@logout');
     Route::get('/activities','ActivitiesController@index');
 });
+
+
+
+

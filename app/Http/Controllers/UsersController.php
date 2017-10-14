@@ -15,6 +15,7 @@ class UsersController extends Controller
     {
         $user = auth()->user();
         return view('layouts.profile',compact('user'));
+        return view('layouts.achievements', compact('user'));
 
 
     }
