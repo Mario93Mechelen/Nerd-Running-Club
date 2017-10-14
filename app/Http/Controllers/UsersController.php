@@ -14,10 +14,12 @@ class UsersController extends Controller
     public function index()
     {
         $user = auth()->user();
-        return view('layouts.profile',compact('user'));
-        return view('layouts.achievements', compact('user'));
+        return view('layouts.profile', compact('user'));
+    }
 
-
+    public function badges()
+    {
+        return view('layouts.achievements');
     }
 
     /**
