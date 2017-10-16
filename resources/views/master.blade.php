@@ -28,6 +28,8 @@
 
         @yield('content')
 
+        @yield ('dashboard')
+
         @yield('badges')
 
     </div>

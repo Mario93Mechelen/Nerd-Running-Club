@@ -22,6 +22,7 @@ class UsersController extends Controller
         return view('layouts.achievements');
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
