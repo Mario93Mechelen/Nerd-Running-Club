@@ -15,7 +15,7 @@ body {
     min-height: 100vh;
     background-color: white;
     margin: 0 auto;
-    padding-top: 5em;
+    padding-top: 8em;
     padding-bottom: 5em;
 }
 
@@ -36,7 +36,7 @@ body {
 
 .loginStrava a {
     background-color: white;
-    width: 300px;
+    width: 200px;
     align-self: center;
     padding: 2%;
     display: flex;
@@ -44,13 +44,15 @@ body {
     justify-content: center;
     border-radius: 10px;
     margin-top: 50px;
+    text-decoration: none;
 }
 
 .loginStrava a p {
     text-decoration: none;
     color: #90C8C8;
-    font-size: 1em;
+    font-size: 0.8em;
     text-transform: uppercase;
+    padding-top: 5px;
 }
 
 .loginStrava a img {
@@ -100,7 +102,7 @@ body {
     width: 35px;
     height: 35px;
     cursor: pointer;
-    padding-top: 25px;
+    padding-top: 15px;
 }
 
 .footer a.friends img, .footer a.ach img{
