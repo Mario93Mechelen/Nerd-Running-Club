@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Strava;
+use App\Activity;
 
 class ActivitiesController extends Controller
 {
@@ -14,16 +16,36 @@ class ActivitiesController extends Controller
     public function index()
     {
         //https://www.strava.com/api/v3/athlete/activities?before=&after=&page=&per_page=" "Authorization: Bearer [[token]]
-        $client = new \GuzzleHttp\Client();
+        $strava = new Strava();
         $token = auth()->user()->token;
 
-        $res = $client->request('GET', 'https://www.strava.com/api/v3/athlete/activities/', [
+        $res = $strava->client->request('GET', '/api/v3/athlete/activities/', [
             'headers' => [
                 'Authorization' => 'Bearer '.$token,
             ]
         ]);
         $res = json_decode($res->getBody());
-        dd($res);
+        foreach ($res as $result) {
+
+            // Check if activity id already exists
+            $activityId = Activity::all()->where('activityId', $result->id)->first();
+
+            $user = auth()->user();
+            // Als activity id reeds bestaat in tabel --> niets
+            if ( $activityId === null)
+            {
+                $activity = new Activity;
+                $activity->name = $result->name;
+                $activity->activityId = $result->id;
+                $activity->user_id = $user->id;
+                $activity->distance = $result->distance;
+                $activity->averageSpeed = $result->average_speed;
+                $activity->save();
+            }
+        }
+
+        $activity = Activity::find(1)->user;
+        dd($activity);
     }
 
     /**

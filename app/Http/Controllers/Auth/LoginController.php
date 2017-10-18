@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
+use App\Strava;
 
 class LoginController extends Controller
 {
@@ -51,9 +52,9 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         $code = request()->code;
-        $client = new \GuzzleHttp\Client();
+        $strava = new Strava();
         //$url = "'https://www.strava.com/oauth/token?client_id=20594&client_secret=426f99ae57f2c243fdcc6e5fa320c011523c6161&code=".$code."'";
-        $res = $client->request('POST', 'https://www.strava.com/oauth/token', [
+        $res = $strava->client->request('POST', '/oauth/token', [
             'form_params' => [
                 'client_id' => '20594',
                 'client_secret' => '426f99ae57f2c243fdcc6e5fa320c011523c6161',
