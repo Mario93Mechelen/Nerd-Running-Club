@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    @include('layouts.nav')
+    @include('partials.nav')
 
     <div class="container">
 
@@ -34,7 +34,7 @@
 
     </div>
 
-    @include('layouts.footer')
+    @include('partials.footer')
 
 </body>
 </html>
