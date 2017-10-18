@@ -10,10 +10,6 @@
 
     </div>
 
-@endsection
-
-@section('dashboard')
-
     <div class="goal">
 
         <div class="goal_logo">
