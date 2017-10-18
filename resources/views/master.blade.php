@@ -28,10 +28,6 @@
 
         @yield('content')
 
-        @yield ('dashboard')
-
-        @yield('badges')
-
     </div>
 
     @include('layouts.footer')
