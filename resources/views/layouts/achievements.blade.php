@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('badges')
+@section('content')
 
     <div class="badges">
 
@@ -9,15 +9,15 @@
 
         <div class="badges_filled">
 
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
-            <img class="badge_unfilled" src="{{URL::asset('/img/badge.png')}}" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
+            <img class="badge_unfilled" src="/img/badge.png" alt="badges">
 
         </div>
 
