@@ -32,6 +32,8 @@
 
         @yield('badges')
 
+        @yield('runs')
+
     </div>
 
     @include('partials.footer')
