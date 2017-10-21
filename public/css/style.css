@@ -369,15 +369,24 @@ body {
     margin-left: 10%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .badges .badges_filled img {
 
-    width: 50px;
-    height: 70px;
-    margin-left: 10%;
-    margin-top: 50px;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.badges .badge_unfilled {
+    opacity: 0.3;
+}
+
+.badges .badge_filled {
+    opacity: 1;
 }
 
 .run {
