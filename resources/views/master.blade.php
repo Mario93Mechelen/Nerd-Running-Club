@@ -28,12 +28,15 @@
 
         @yield('content')
 
+<<<<<<< HEAD
         @yield ('dashboard')
 
         @yield('badges')
 
         @yield('runs')
 
+=======
+>>>>>>> master
     </div>
 
     @include('partials.footer')
