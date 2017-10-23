@@ -23,9 +23,13 @@ class UsersController extends Controller
     }
 
     public function runs()
-
     {
         return view('layouts.activities');
+    }
+
+    public function friends()
+    {
+        return view('layouts.friends');
     }
 
 
