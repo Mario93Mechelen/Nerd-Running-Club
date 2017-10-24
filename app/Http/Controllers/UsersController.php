@@ -22,10 +22,13 @@ class UsersController extends Controller
         return view('layouts.achievements');
     }
 
+<<<<<<< HEAD
     public function runs()
     {
         return view('layouts.activities');
     }
+=======
+>>>>>>> helena
 
     public function friends()
     {

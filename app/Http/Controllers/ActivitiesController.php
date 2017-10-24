@@ -45,7 +45,11 @@ class ActivitiesController extends Controller
         }
 
         $activity = Activity::find(1)->user;
-        dd($activity);
+
+        return view('layouts.activities', compact('activity'));
+
+
+
     }
 
     /**
@@ -55,7 +59,7 @@ class ActivitiesController extends Controller
      */
     public function create()
     {
-        //
+        return view ('layouts.activities');
     }
 
     /**
