@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('runs')
+@section('content')
     <style>
 
         .run {
@@ -73,7 +73,7 @@
                 <div id="distance">
 
                     <h3>Distance</h3>
-                    <p>5 km</p>
+                    <p>{{$activity->distance}}</p>
 
                 </div>
 

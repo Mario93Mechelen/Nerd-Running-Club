@@ -22,11 +22,6 @@ class UsersController extends Controller
         return view('layouts.achievements');
     }
 
-    public function runs()
-
-    {
-        return view('layouts.activities');
-    }
 
 
     /**
