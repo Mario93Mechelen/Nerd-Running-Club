@@ -12,15 +12,15 @@ class BadgesTableSeeder extends Seeder
     public function run()
     {
         DB::table('badges')->insert(array(
-            array('badge_name'=>'first_badge_time','badge_url'=>''),
-            array('badge_name'=>'second_badge_time','badge_url'=>''),
-            array('badge_name'=>'third_badge_time','badge_url'=>''),
-            array('badge_name'=>'first_badge_friend','badge_url'=>''),
-            array('badge_name'=>'second_badge_friend','badge_url'=>''),
-            array('badge_name'=>'third_badge_friend','badge_url'=>''),
-            array('badge_name'=>'first_badge_miles','badge_url'=>''),
-            array('badge_name'=>'second_badge_miles','badge_url'=>''),
-            array('badge_name'=>'third_badge_miles','badge_url'=>''),
+            array('badgename'=>'first_badge_time','badgeurl'=>''),
+            array('badgename'=>'second_badge_time','badgeurl'=>''),
+            array('badgename'=>'third_badge_time','badgeurl'=>''),
+            array('badgename'=>'first_badge_friend','badgeurl'=>''),
+            array('badgename'=>'second_badge_friend','badgeurl'=>''),
+            array('badgename'=>'third_badge_friend','badgeurl'=>''),
+            array('badgename'=>'first_badge_miles','badgeurl'=>''),
+            array('badgename'=>'second_badge_miles','badgeurl'=>''),
+            array('badgename'=>'third_badge_miles','badgeurl'=>''),
 
         ));
     }
