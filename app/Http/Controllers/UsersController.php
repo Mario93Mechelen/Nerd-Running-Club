@@ -27,12 +27,6 @@ class UsersController extends Controller
         return view('layouts.activities');
     }
 
-    public function friends()
-    {
-        return view('layouts.friends');
-    }
-
-
     /**
      * Show the form for creating a new resource.
      *
