@@ -22,11 +22,10 @@ class UsersController extends Controller
         return view('layouts.achievements');
     }
 
-    public function friends()
+    public function runs()
     {
-        return view('layouts.friends');
+        return view('layouts.activities');
     }
-
 
     /**
      * Show the form for creating a new resource.
