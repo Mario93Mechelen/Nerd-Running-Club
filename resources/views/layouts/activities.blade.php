@@ -59,6 +59,8 @@
 
     <div class="latestruns">
 
+        @foreach ($activity as $run)
+
         <div class="run">
 
             <div id="date">
@@ -73,7 +75,7 @@
                 <div id="distance">
 
                     <h3>Distance</h3>
-                    <p>{{$activity->distance}}</p>
+                    <p>{{$run->distance}}</p>
 
                 </div>
 
@@ -95,6 +97,8 @@
             </div>
 
         </div>
+
+        @endforeach
 
 
     </div>

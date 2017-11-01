@@ -69,7 +69,7 @@ class LoginController extends Controller
         if ( $user === null)
         {
             $user = new User;
-            $user->stravaId = $athlete->id;
+            $user->strava_id = $athlete->id;
             $user->firstname = $athlete->firstname;
             $user->lastname = $athlete->lastname;
             $user->email = $athlete->email;

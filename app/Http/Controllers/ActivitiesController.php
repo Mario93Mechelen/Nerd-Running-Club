@@ -28,23 +28,29 @@ class ActivitiesController extends Controller
         foreach ($res as $result) {
 
             // Check if activity id already exists
-            $activityId = Activity::all()->where('activityId', $result->id)->first();
+            $activityId = Activity::All()->where('activityId', $result->id)->first();
 
-            $user = auth()->user();
+            //$user = auth()->user();
+
             // Als activity id reeds bestaat in tabel --> niets
             if ( $activityId === null)
             {
                 $activity = new Activity;
+                $activity->strava_id = $result->athlete->id;
                 $activity->name = $result->name;
                 $activity->activityId = $result->id;
-                $activity->user_id = $user->id;
+                //$activity->user_id = $user->id;
                 $activity->distance = $result->distance;
                 $activity->averageSpeed = $result->average_speed;
                 $activity->save();
             }
         }
 
-        $activity = Activity::find(1)->user;
+        $stravaId = auth()->user()->stravaId;
+
+        $activity = Activity::All()->where('strava_id', $stravaId);
+
+        //dd($stravaId);
 
         return view('layouts.activities', compact('activity'));
 

@@ -4,7 +4,7 @@
 
     <div class="friends">
 
-        <h1>My friends</h1>
+        <h2>My friends</h2>
 
         <!--<form action="" method="POST">
 
@@ -19,8 +19,10 @@
             @foreach ($res as $result)
 
                 <li>
-                    <img src="{{ $result->profile_medium  }}" alt="{{ $result->firstname  }} {{ $result->lastname  }}">
-                    <a href="/friends/{{ $result->id  }}">{{ $result->firstname  }} {{ $result->lastname  }}</a>
+                    <a href="/friends/{{ $result->id  }}">
+                        <img src="{{ $result->profile_medium  }}" alt="{{ $result->firstname  }} {{ $result->lastname  }}">
+                    </a>
+                    <a class="friendslink" href="/friends/{{ $result->id  }}">{{ $result->firstname  }} {{ $result->lastname  }}</a>
                 </li>
 
             @endforeach
