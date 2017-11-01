@@ -16,7 +16,7 @@ class CreateFriendsTable extends Migration
         Schema::create('friends', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('friends_strava_id');
+            $table->integer('strava_id');
             $table->string('avatar');
             $table->string('firstname');
             $table->string('lastname');

@@ -8,6 +8,11 @@ class Friends extends Model
 {
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('User');
+    }
+
+    public function activity()
+    {
+        return $this->hasMany('Activity');
     }
 }
