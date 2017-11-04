@@ -9,21 +9,11 @@
 
         <div class="badges_filled">
 
-            <img class="badge_filled" src="/img/icons/time-badge-3.png" alt="badges">
-            <img class="badge_unfilled" src="/img/icons/time-badge-2.png" alt="badges">
-            <img class="badge_unfilled" src="/img/icons/time-badge-1.png" alt="badges">
+            @foreach ($badge as $b)
 
-            <img class="badge_unfilled" src="/img/icons/miles-badge-3.png" alt="badges">
-            <img class="badge_unfilled" src="/img/icons/miles-badge-2.png" alt="badges">
-            <img class="badge_unfilled" src="/img/icons/miles-badge-1.png" alt="badges">
+                <img src="{{$b->badgeurl}}">
 
-            <img class="badge_unfilled" src="/img/icons/friends-badge-3.png" alt="badges">
-            <img class="badge_unfilled" src="/img/icons/friends-badge-2.png" alt="badges">
-            <img class="badge_unfilled" src="/img/icons/friends-badge-1.png" alt="badges">
-
-            <img class="badge_unfilled" src="/img/icons/run-badge-3.png" alt="badges">
-            <img class="badge_unfilled" src="/img/icons/run-badge-2.png" alt="badges">
-            <img class="badge_unfilled" src="/img/icons/run-badge-1.png" alt="badges">
+            @endforeach
 
         </div>
 

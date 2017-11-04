@@ -65,7 +65,7 @@
 
             <div id="date">
 
-            <h1>2 days ago</h1>
+            <h1>{{ $run->name }}</h1>
                 <img src="" alt="Parcours">
 
             </div>

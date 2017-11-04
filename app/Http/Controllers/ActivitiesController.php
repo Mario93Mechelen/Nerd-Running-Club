@@ -39,7 +39,6 @@ class ActivitiesController extends Controller
                 $activity->strava_id = $result->athlete->id;
                 $activity->name = $result->name;
                 $activity->activityId = $result->id;
-                //$activity->user_id = $user->id;
                 $activity->distance = $result->distance;
                 $activity->averageSpeed = $result->average_speed;
                 $activity->save();
@@ -50,11 +49,7 @@ class ActivitiesController extends Controller
 
         $activity = Activity::All()->where('strava_id', $stravaId);
 
-        //dd($stravaId);
-
         return view('layouts.activities', compact('activity'));
-
-
 
     }
 
@@ -63,10 +58,6 @@ class ActivitiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view ('layouts.activities');
-    }
 
     /**
      * Store a newly created resource in storage.
