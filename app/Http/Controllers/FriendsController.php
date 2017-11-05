@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Strava;
 use App\Friends;
 use App\Activity;
+use Illuminate\Support\Facades\Auth;
 
 class FriendsController extends Controller
 {
@@ -14,9 +15,9 @@ class FriendsController extends Controller
     {
         //https://www.strava.com/api/v3/athletes/{id}/followers" "Authorization: Bearer [[token]]
         $strava = new Strava();
-        $token = auth()->user()->token;
-        $strava_id = auth()->user()->strava_id;
-        $user_id = auth()->user()->id;
+        $token = Auth::user()->token;
+        $strava_id =Auth::user()->strava_id;
+        $user_id = Auth::id();
 
         $res = $strava->client->request('GET', '/api/v3/athletes/' . $strava_id . '/followers', [
             'headers' => [
@@ -52,7 +53,7 @@ class FriendsController extends Controller
 
         //get activity from followers : https://www.strava.com/api/v3/activities/following
         $strava = new Strava();
-        $token = auth()->user()->token;
+        $token = Auth::user()->token;
 
         $res = $strava->client->request('GET', '/api/v3/activities/following/', [
             'headers' => [
