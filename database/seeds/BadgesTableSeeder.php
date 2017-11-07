@@ -26,5 +26,9 @@ class BadgesTableSeeder extends Seeder
             array('badgename'=>'third_badge_run','badgeurl'=>'img/icons/run-badge-3.png'),
 
         ));
+
+        DB::table('userbadges')->insert(array(
+            array('user_id' => 12, 'badge_id' => 3),
+        ));
     }
 }

@@ -20,7 +20,7 @@ Route::get('oauth/code_callback', 'Auth\LoginController@handleProviderCallback')
 Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/profile', 'UsersController@index');
-    Route::get('/badges', 'BadgesController@index');
+    Route::get('/badges', 'BadgesController@achievedBadges');
 
     Route::get('/logout', 'Auth\LoginController@logout');
     Route::get('/activities','ActivitiesController@index');
