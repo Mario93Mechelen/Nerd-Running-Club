@@ -66,10 +66,7 @@ class LoginController extends Controller
         $result= json_decode($res->getBody());
         $athlete = $result->athlete;
 
-        $user = User::all()->where('stravaId', $athlete->id)->first();
-        if ( $user === null)
-        {
-            $user = new User;
+        $user = User::firstOrNew(['strava_id' => $athlete->id]);
             $user->strava_id = $athlete->id;
             $user->firstname = $athlete->firstname;
             $user->lastname = $athlete->lastname;
@@ -78,7 +75,7 @@ class LoginController extends Controller
             $user->gender = $athlete->sex;
             $user->token = $result->access_token;
             $user->save();
-        }
+
         Auth::login($user);
 
         return redirect('profile');

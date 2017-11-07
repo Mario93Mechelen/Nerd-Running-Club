@@ -17,37 +17,7 @@ class ActivitiesController extends Controller
     public function index()
     {
         //https://www.strava.com/api/v3/athlete/activities?before=&after=&page=&per_page=" "Authorization: Bearer [[token]]
-        $strava = new Strava();
-        $token = Auth::user()->token;
-
-        $res = $strava->client->request('GET', '/api/v3/athlete/activities/', [
-            'headers' => [
-                'Authorization' => 'Bearer '.$token,
-            ]
-        ]);
-        $res = json_decode($res->getBody());
-        foreach ($res as $result) {
-
-            // Check if activity id already exists
-            $activityId = Activity::All()->where('activityId', $result->id)->first();
-
-            //$user = auth()->user();
-
-            // Als activity id reeds bestaat in tabel --> niets
-            if ( $activityId === null)
-            {
-                $activity = new Activity;
-                $activity->strava_id = $result->athlete->id;
-                $activity->name = $result->name;
-                $activity->activityId = $result->id;
-                //$activity->user_id = $user->id;
-                $activity->distance = $result->distance;
-                $activity->averageSpeed = $result->average_speed;
-                $activity->save();
-            }
-        }
-
-        $stravaId = Auth::user()->stravaId;
+        $stravaId = Auth::user()->strava_id;
 
         $activity = Activity::All()->where('strava_id', $stravaId);
 
