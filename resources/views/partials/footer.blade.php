@@ -1,8 +1,24 @@
+<style>
 
+    .footer {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer img {
+
+        width: 100px;
+        height: 100px;
+        margin-left: 35%;
+        margin-top: -80px;
+
+    }
+</style>
 
 <div class="footer">
 
-    <a href="/friends" class="friends"><img src="{{URL::asset('/img/friends.png')}}" alt="Friends"></a>
-    <a href="/achievements" class="ach"><img src="{{URL::asset('/img/achievements.png')}}" alt="Achievements"></a>
+    <a href="/profile"><img src="/img/logorunapp.png" alt="Logo Nerd Running App"></a>
 
 </div>
