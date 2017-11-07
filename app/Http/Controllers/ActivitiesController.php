@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Strava;
 use App\Activity;
+use Illuminate\Support\Facades\Auth;
 
 class ActivitiesController extends Controller
 {
@@ -17,7 +18,7 @@ class ActivitiesController extends Controller
     {
         //https://www.strava.com/api/v3/athlete/activities?before=&after=&page=&per_page=" "Authorization: Bearer [[token]]
         $strava = new Strava();
-        $token = auth()->user()->token;
+        $token = Auth::user()->token;
 
 
 
@@ -45,7 +46,7 @@ class ActivitiesController extends Controller
             }
         }
 
-        $stravaId = auth()->user()->stravaId;
+        $stravaId = Auth::user()->stravaId;
 
         $activity = Activity::All()->where('strava_id', $stravaId);
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 use App\Strava;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -78,14 +79,14 @@ class LoginController extends Controller
             $user->token = $result->access_token;
             $user->save();
         }
-        auth()->login($user);
+        Auth::login($user);
 
         return redirect('profile');
 
     }
 
     public function logout(){
-        auth()->logout();
+        Auth::logout();
 
         return redirect('/');
     }
