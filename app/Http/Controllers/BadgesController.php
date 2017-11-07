@@ -13,8 +13,8 @@ class BadgesController extends Controller
     {
 
         $badge = Badges::all();
-
         return view('layouts.achievements', compact('badge'));
+
 
     }
 }

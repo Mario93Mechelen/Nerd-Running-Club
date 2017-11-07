@@ -59,13 +59,13 @@
 
     <div class="latestruns">
 
-        @foreach ($activity as $run)
+        @foreach ($activity as $a)
 
         <div class="run">
 
             <div id="date">
 
-            <h1>{{ $run->name }}</h1>
+            <h1>{{ $a->name }}</h1>
                 <img src="" alt="Parcours">
 
             </div>
@@ -75,25 +75,18 @@
                 <div id="distance">
 
                     <h3>Distance</h3>
-                    <p>{{$run->distance}}</p>
+                    <p>{{$a->distance}}</p>
 
                 </div>
 
                 <div id="time">
 
                     <h3>Time</h3>
-                    <p>1h30m</p>
+                    <p>{{$a->average_speed}}</p>
 
                 </div>
 
-
-                <div id="kcal">
-
-                    <h3>Kcal</h3>
-                    <p>214</p>
-
-                </div>
-
+            <img src="">
             </div>
 
         </div>
