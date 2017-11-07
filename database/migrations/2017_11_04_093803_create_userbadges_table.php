@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActivitiesTable extends Migration
+class CreateUserbadgesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateActivitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('activities', function (Blueprint $table) {
+        Schema::create('userbadges', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('activityId');
-            $table->integer('strava_id');
-            $table->string('name');
-            $table->float('distance');
-            $table->float('averageSpeed');
+            $table->integer('user_id');
+            $table->integer('badge_id');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateActivitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activities');
+        Schema::dropIfExists('userbadges');
     }
 }

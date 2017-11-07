@@ -1,4 +1,5 @@
 @extends('master')
+
 <style>
 
     .badges a {
@@ -6,7 +7,7 @@
         text-decoration: none;
     }
 
-    #linkBadges p  {
+    #linkAchievements p  {
 
         background-color: #FDF0BC;
         height: 25px;
@@ -14,7 +15,7 @@
         color: #1b6d85;
         font-size: 0.8em;
         border-radius: 10px;
-        margin-top: 200px;
+        margin-top: 20px;
         margin-bottom: 50px;
     }
 
@@ -23,7 +24,7 @@
 
     <div class="badges">
 
-        <h2>Your earned badges</h2>
+        <h2>All the badges</h2>
         <p>For every achievement, you earn a badge!</p>
 
         <div class="badges_filled">
@@ -36,7 +37,7 @@
 
         </div>
 
-        <a href="/badges" id="linkBadges"><p>See all the badges you need to earn</p></a>
+        <a href="/achievements" id="linkAchievements"><p>Your already earned badges</p></a>
 
         <h2>Good luck at the 10 miles!</h2>
 

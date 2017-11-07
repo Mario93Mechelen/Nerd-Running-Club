@@ -16,16 +16,11 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        //https://www.strava.com/api/v3/athlete/activities?before=&after=&page=&per_page=" "Authorization: Bearer [[token]]
-        $stravaId = Auth::user()->strava_id;
+        $stravaId = Auth::user()->stravaId;
 
         $activity = Activity::All()->where('strava_id', $stravaId);
 
-        //dd($stravaId);
-
         return view('layouts.activities', compact('activity'));
-
-
 
     }
 
@@ -34,10 +29,6 @@ class ActivitiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view ('layouts.activities');
-    }
 
     /**
      * Store a newly created resource in storage.

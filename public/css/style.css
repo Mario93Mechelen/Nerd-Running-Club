@@ -67,7 +67,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
     height: 70px;
     position: fixed;
     top:0;
@@ -75,7 +74,7 @@ body {
     z-index: 10;
 }
 
-.nav img {
+.footer img {
     width: 80px;
     height: 80px;
     margin-left: 30px;
@@ -484,6 +483,35 @@ body {
     border-radius: 50%;
     margin: 15px auto;
     border: 10px solid #FDF0BC;
+}
+
+.badges a {
+
+    text-decoration: none;
+}
+
+#linkAchievements p  {
+
+    background-color: #FDF0BC;
+    height: 25px;
+    padding-top: 15px;
+    color: #1b6d85;
+    font-size: 0.8em;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#linkBadges p  {
+
+    background-color: #FDF0BC;
+    height: 25px;
+    padding-top: 15px;
+    color: #1b6d85;
+    font-size: 0.8em;
+    border-radius: 10px;
+    margin-top: 200px;
+    margin-bottom: 50px;
 }
 
 

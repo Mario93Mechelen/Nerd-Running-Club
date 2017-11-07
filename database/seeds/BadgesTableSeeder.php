@@ -12,16 +12,23 @@ class BadgesTableSeeder extends Seeder
     public function run()
     {
         DB::table('badges')->insert(array(
-            array('badgename'=>'first_badge_time','badgeurl'=>''),
-            array('badgename'=>'second_badge_time','badgeurl'=>''),
-            array('badgename'=>'third_badge_time','badgeurl'=>''),
-            array('badgename'=>'first_badge_friend','badgeurl'=>''),
-            array('badgename'=>'second_badge_friend','badgeurl'=>''),
-            array('badgename'=>'third_badge_friend','badgeurl'=>''),
-            array('badgename'=>'first_badge_miles','badgeurl'=>''),
-            array('badgename'=>'second_badge_miles','badgeurl'=>''),
-            array('badgename'=>'third_badge_miles','badgeurl'=>''),
+            array('badgename'=>'first_badge_time','badgeurl'=>'img/icons/time-badge-1.png'),
+            array('badgename'=>'second_badge_time','badgeurl'=>'img/icons/time-badge-2.png'),
+            array('badgename'=>'third_badge_time','badgeurl'=>'img/icons/time-badge-3.png'),
+            array('badgename'=>'first_badge_friend','badgeurl'=>'img/icons/friends-badge-1.png'),
+            array('badgename'=>'second_badge_friend','badgeurl'=>'img/icons/friends-badge-2.png'),
+            array('badgename'=>'third_badge_friend','badgeurl'=>'img/icons/friends-badge-3.png'),
+            array('badgename'=>'first_badge_miles','badgeurl'=>'img/icons/miles-badge-1.png'),
+            array('badgename'=>'second_badge_miles','badgeurl'=>'img/icons/miles-badge-2.png'),
+            array('badgename'=>'third_badge_miles','badgeurl'=>'img/icons/miles-badge-3.png'),
+            array('badgename'=>'first_badge_run','badgeurl'=>'img/icons/run-badge-1.png'),
+            array('badgename'=>'second_badge_run','badgeurl'=>'img/icons/run-badge-2.png'),
+            array('badgename'=>'third_badge_run','badgeurl'=>'img/icons/run-badge-3.png'),
 
+        ));
+
+        DB::table('userbadges')->insert(array(
+            array('user_id' => 14, 'badge_id' => 1),
         ));
     }
 }

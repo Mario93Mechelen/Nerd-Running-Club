@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Strava;
+use App\Activity;
+use App\User;
+
 class UsersController extends Controller
 {
     /**
@@ -18,14 +22,12 @@ class UsersController extends Controller
         return view('layouts.profile', compact('user'));
     }
 
-    public function badges()
-    {
-        return view('layouts.achievements');
-    }
-
     public function runs()
     {
-        return view('layouts.activities');
+
+
+
+
     }
 
     /**
