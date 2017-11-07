@@ -14,38 +14,12 @@ class FriendsController extends Controller
     public function index()
     {
         //https://www.strava.com/api/v3/athletes/{id}/followers" "Authorization: Bearer [[token]]
-        $strava = new Strava();
-        $token = Auth::user()->token;
-        $strava_id =Auth::user()->strava_id;
-        $user_id = Auth::id();
-
-        $res = $strava->client->request('GET', '/api/v3/athletes/' . $strava_id . '/followers', [
-            'headers' => [
-                'Authorization' => 'Bearer '.$token,
-            ]
-        ]);
-        $res = json_decode($res->getBody());
-        foreach ($res as $result) {
-
-            // Check if friends id already exists
-            $friendsId = Friends::All()->where('user_id', $user_id)->where('strava_id', $result->id)->first();
-
-            // Als friends id reeds bestaat in tabel --> niets
-            if ( $friendsId === null)
-            {
-                $friend = new Friends;
-                $friend->user_id = $user_id;
-                $friend->strava_id = $result->id;
-                $friend->firstname = $result->firstname;
-                $friend->lastname = $result->lastname;
-                $friend->avatar = $result->profile_medium;
-                $friend->save();
-            }
-        }
+        $res = Friends::all();
         return view('layouts.friends', compact('res'));
         //$user = Friends::find(1)->user;
         //dd($user);
     }
+
 
     public function friend($id) {
 
