@@ -19,6 +19,8 @@ class ActivitiesController extends Controller
         $strava = new Strava();
         $token = auth()->user()->token;
 
+
+
         $res = $strava->client->request('GET', '/api/v3/athlete/activities/', [
             'headers' => [
                 'Authorization' => 'Bearer '.$token,
@@ -29,8 +31,6 @@ class ActivitiesController extends Controller
 
             // Check if activity id already exists
             $activityId = Activity::All()->where('activityId', $result->id)->first();
-
-            //$user = auth()->user();
 
             // Als activity id reeds bestaat in tabel --> niets
             if ( $activityId === null)

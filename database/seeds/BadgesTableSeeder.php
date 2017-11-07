@@ -21,6 +21,9 @@ class BadgesTableSeeder extends Seeder
             array('badgename'=>'first_badge_miles','badgeurl'=>'img/icons/miles-badge-1.png'),
             array('badgename'=>'second_badge_miles','badgeurl'=>'img/icons/miles-badge-2.png'),
             array('badgename'=>'third_badge_miles','badgeurl'=>'img/icons/miles-badge-3.png'),
+            array('badgename'=>'first_badge_run','badgeurl'=>'img/icons/run-badge-1.png'),
+            array('badgename'=>'second_badge_run','badgeurl'=>'img/icons/run-badge-2.png'),
+            array('badgename'=>'third_badge_run','badgeurl'=>'img/icons/run-badge-3.png'),
 
         ));
     }
