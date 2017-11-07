@@ -28,7 +28,7 @@ class BadgesTableSeeder extends Seeder
         ));
 
         DB::table('userbadges')->insert(array(
-            array('user_id' => 12, 'badge_id' => 3),
+            array('user_id' => 14, 'badge_id' => 1),
         ));
     }
 }

@@ -26,8 +26,9 @@ class BadgesController extends Controller
         $id = Auth::user()->id;
 
         $achieved =  Userbadges::all()->where('user_id', $id);
+        $badge = Badges::find($achieved);
 
-        return view('layouts.achievements', compact('achieved'));
+        return view('layouts.achievements', compact('badge'));
 
 
     }
