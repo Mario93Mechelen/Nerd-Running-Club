@@ -20,7 +20,7 @@
 
                 <li>
                     <a href="/friends/{{ $result->id  }}">
-                        <img src="{{ $result->profile_medium  }}" alt="{{ $result->firstname  }} {{ $result->lastname  }}">
+                        <img src="{{ $result->avatar  }}" alt="{{ $result->firstname  }} {{ $result->lastname  }}">
                     </a>
                     <a class="friendslink" href="/friends/{{ $result->id  }}">{{ $result->firstname  }} {{ $result->lastname  }}</a>
                 </li>
