@@ -8,25 +8,14 @@
 
         <h2>{{  $friend->firstname  }} {{  $friend->lastname  }}</h2>
 
-        <div class="activities">
+        <div class="latestruns">
 
-            @foreach ($activity as $run)
+            @foreach ($activity as $a)
 
-                <div class="activity_run">
-
-                    <p>Name : {{ $run->name }}</p>
-
-                    <p>Distance : {{ $run->distance  }} m</p>
-
-                    <p>Time : {{ $run->time  }} sec</p>
-
-                    <p>Average Speed : {{ $run->averageSpeed  }} m/s</p>
-
-                    <hr/>
-
-                </div>
+                @include('partials.activitiesView')
 
             @endforeach
+
 
         </div>
 
