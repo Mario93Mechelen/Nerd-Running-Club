@@ -1,13 +1,3 @@
-<style>
-
-    .settings img {
-
-        margin-left: 280px;
-        margin-top: 10px;
-    }
-
-</style>
-
 
 <div class="nav">
 
