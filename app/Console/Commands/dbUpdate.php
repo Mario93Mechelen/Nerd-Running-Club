@@ -84,17 +84,42 @@ class dbUpdate extends Command
             ]);
             $res = json_decode($res->getBody());
             foreach ($res as $result) {
+                if($result->average_speed < 7.5) {
 
-                // Check if activity id already exists
-                $activity = Activity::firstOrNew(['activityId'=>$result->id]);
-                $activity->strava_id = $result->athlete->id;
-                $activity->name = $result->name;
-                $activity->activityId = $result->id;
-                $activity->time = $result->elapsed_time;
-                //$activity->user_id = $user->id;
-                $activity->distance = $result->distance;
-                $activity->averageSpeed = $result->average_speed;
-                $activity->save();
+                    // Check if activity id already exists
+                    $activity = Activity::firstOrNew(['activityId' => $result->id]);
+                    $activity->strava_id = $result->athlete->id;
+                    $activity->name = $result->name;
+                    $activity->activityId = $result->id;
+                    $activity->time = $result->elapsed_time;
+                    //$activity->user_id = $user->id;
+                    $activity->distance = $result->distance;
+                    $activity->averageSpeed = $result->average_speed;
+                    $activity->save();
+                }
+
+            }
+
+            $res = $strava->client->request('GET', '/api/v3/activities/following/', [
+                'headers' => [
+                    'Authorization' => 'Bearer '.$token,
+                ]
+            ]);
+            $res = json_decode($res->getBody());
+            foreach ($res as $result) {
+                if($result->average_speed < 7.5) {
+
+
+                    // Check if activity id already exists
+                    $activity = Activity::firstOrNew(['activityId' => $result->id]);
+                    $activity->strava_id = $result->athlete->id;
+                    $activity->name = $result->name;
+                    $activity->activityId = $result->id;
+                    $activity->distance = $result->distance;
+                    $activity->time = $result->moving_time;
+                    $activity->averageSpeed = $result->average_speed;
+                    $activity->save();
+                }
 
             }
 
