@@ -19,6 +19,7 @@ class CreateActivitiesTable extends Migration
             $table->integer('strava_id');
             $table->string('name');
             $table->float('distance');
+            $table->integer('time');
             $table->float('averageSpeed');
             $table->timestamps();
         });
