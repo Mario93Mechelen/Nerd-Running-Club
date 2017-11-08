@@ -12,23 +12,15 @@ class BadgesTableSeeder extends Seeder
     public function run()
     {
         DB::table('badges')->insert(array(
-            array('badgename'=>'first_badge_time','badgeurl'=>'img/icons/time-badge-1.png'),
-            array('badgename'=>'second_badge_time','badgeurl'=>'img/icons/time-badge-2.png'),
-            array('badgename'=>'third_badge_time','badgeurl'=>'img/icons/time-badge-3.png'),
-            array('badgename'=>'first_badge_friend','badgeurl'=>'img/icons/friends-badge-1.png'),
-            array('badgename'=>'second_badge_friend','badgeurl'=>'img/icons/friends-badge-2.png'),
-            array('badgename'=>'third_badge_friend','badgeurl'=>'img/icons/friends-badge-3.png'),
-            array('badgename'=>'first_badge_miles','badgeurl'=>'img/icons/miles-badge-1.png'),
-            array('badgename'=>'second_badge_miles','badgeurl'=>'img/icons/miles-badge-2.png'),
-            array('badgename'=>'third_badge_miles','badgeurl'=>'img/icons/miles-badge-3.png'),
-            array('badgename'=>'first_badge_run','badgeurl'=>'img/icons/run-badge-1.png'),
-            array('badgename'=>'second_badge_run','badgeurl'=>'img/icons/run-badge-2.png'),
-            array('badgename'=>'third_badge_run','badgeurl'=>'img/icons/run-badge-3.png'),
-
-        ));
-
-        DB::table('userbadges')->insert(array(
-            array('user_id' => 1, 'badge_id' => 1 ),
+            array('badgename'=>'first_badge_time','badgeurl'=>'img/icons/time-badge-1.png', 'badgetext'=>'You just ran 15 minutes.'),
+            array('badgename'=>'second_badge_time','badgeurl'=>'img/icons/time-badge-2.png', 'badgetext'=>'You just ran 30 minutes.'),
+            array('badgename'=>'third_badge_time','badgeurl'=>'img/icons/time-badge-3.png', 'badgetext'=>'You just ran 1 hour. '),
+            array('badgename'=>'first_badge_friend', 'badgeurl'=> 'img/icons/friends-badge-1.png', 'badgetext'=>'You have 1 buddy on Strava'),
+            array('badgename'=>'second_badge_friend','badgeurl'=>'img/icons/friends-badge-2.png', 'badgetext'=>'You have 5 buddies on Strava'),
+            array('badgename'=>'third_badge_friend','badgeurl'=>'img/icons/friends-badge-3.png', 'badgetext'=>'You have 10 buddies on Strava'),
+            array('badgename'=>'first_badge_miles','badgeurl'=>'img/icons/miles-badge-1.png', 'badgetext'=>'You just ran 5 kilometers.'),
+            array('badgename'=>'second_badge_miles','badgeurl'=>'img/icons/miles-badge-2.png', 'badgetext'=>'You just ran 10 kilometers.'),
+            array('badgename'=>'third_badge_miles','badgeurl'=>'img/icons/miles-badge-3.png', 'badgetext'=>'You just ran 15 kilometers.'),
         ));
     }
 }

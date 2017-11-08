@@ -17,6 +17,7 @@ class CreateBadgesTable extends Migration
             $table->increments('id');
             $table->string('badgename');
             $table->string('badgeurl');
+            $table->string('badgetext');
             $table->timestamps();
         });
     }
