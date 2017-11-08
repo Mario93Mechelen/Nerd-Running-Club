@@ -26,7 +26,7 @@ class FriendsController extends Controller
         $friend = Friends::all()->where('strava_id', $id)->first();
 
         //get activity from followers : https://www.strava.com/api/v3/activities/following
-        $strava = new Strava();
+        /*$strava = new Strava();
         $token = Auth::user()->token;
 
         $res = $strava->client->request('GET', '/api/v3/activities/following/', [
@@ -54,7 +54,7 @@ class FriendsController extends Controller
                 $activity->averageSpeed = $result->average_speed;
                 $activity->save();
             }
-        }
+        }*/
 
         $activity = Activity::All()->where('strava_id', $id);
 
