@@ -96,6 +96,12 @@ body {
     height: 35px;
 }
 
+.settings img {
+
+    margin-left: 280px;
+    margin-top: 10px;
+}
+
 .footer a.friends, .footer a.ach {
     display: block;
     width: 35px;
@@ -122,6 +128,23 @@ body {
     bottom: 0;
     width: 350px;
     z-index: 10;
+}
+
+
+.footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer img {
+
+    width: 100px;
+    height: 100px;
+    margin-left: 35%;
+    margin-top: -80px;
+
 }
 
 .profile{
@@ -512,6 +535,49 @@ body {
     border-radius: 10px;
     margin-top: 200px;
     margin-bottom: 50px;
+}
+
+.latestruns {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 100px;
+}
+
+
+.run {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #FCF0BB;
+    padding: 20px;
+}
+
+.run #date h1 {
+
+    font-size: 1em;
+    color: #1b6d85;
+    text-align: center;
+}
+
+.run #info {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.run #info h3{
+    color: #2ab27b;
+
 }
 
 
