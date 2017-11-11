@@ -6,14 +6,6 @@
 
         <h2>My friends</h2>
 
-        <!--<form action="" method="POST">
-
-            <input type="text" name="search" id="search" placeholder="Find a friend">
-
-            <input type="submit" value="Search">
-
-        </form>-->
-
         <ul>
 
             @foreach ($res as $result)
