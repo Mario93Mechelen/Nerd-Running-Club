@@ -57,8 +57,8 @@ class LoginController extends Controller
         //$url = "'https://www.strava.com/oauth/token?client_id=20594&client_secret=426f99ae57f2c243fdcc6e5fa320c011523c6161&code=".$code."'";
         $res = $strava->client->request('POST', '/oauth/token', [
             'form_params' => [
-                'client_id' => '20594',
-                'client_secret' => '426f99ae57f2c243fdcc6e5fa320c011523c6161',
+                'client_id' =>  env("STRAVA_APP_ID"),
+                'client_secret' => env("STRAVA_APP_SECRET"),
                 'code' => $code,
             ]
         ]);
