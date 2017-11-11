@@ -19,10 +19,10 @@
             @foreach ($res as $result)
 
                 <li>
-                    <a href="/friends/{{ $result->id  }}">
+                    <a href="/friends/{{ $result->strava_id  }}">
                         <img src="{{ $result->avatar  }}" alt="{{ $result->firstname  }} {{ $result->lastname  }}">
                     </a>
-                    <a class="friendslink" href="/friends/{{ $result->id  }}">{{ $result->firstname  }} {{ $result->lastname  }}</a>
+                    <a class="friendslink" href="/friends/{{ $result->strava_id  }}">{{ $result->firstname  }} {{ $result->lastname  }}</a>
                 </li>
 
             @endforeach
