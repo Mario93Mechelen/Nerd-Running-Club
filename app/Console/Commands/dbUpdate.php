@@ -98,6 +98,26 @@ class dbUpdate extends Command
 
             }
 
+            $res = $strava->client->request('GET', '/api/v3/activities/following/', [
+                'headers' => [
+                    'Authorization' => 'Bearer '.$token,
+                ]
+            ]);
+            $res = json_decode($res->getBody());
+            foreach ($res as $result) {
+
+                // Check if activity id already exists
+                $activity = Activity::firstOrNew(['activityId'=>$result->id]);
+                    $activity->strava_id = $result->athlete->id;
+                    $activity->name = $result->name;
+                    $activity->activityId = $result->id;
+                    $activity->distance = $result->distance;
+                    $activity->time = $result->moving_time;
+                    $activity->averageSpeed = $result->average_speed;
+                    $activity->save();
+
+            }
+
         }
     }
 }

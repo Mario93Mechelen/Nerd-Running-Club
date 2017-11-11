@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="/css/reset.css" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
 
+    <script src="https://unpkg.com/vue"></script>
+
     <title>Nerd-Running-Club</title>
 
 </head>
@@ -31,6 +33,5 @@
     </div>
 
     @include('partials.footer')
-
 </body>
 </html>
