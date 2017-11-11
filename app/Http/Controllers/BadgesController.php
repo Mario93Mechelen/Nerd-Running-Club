@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\Friends;
 use Illuminate\Http\Request;
 
@@ -26,9 +27,16 @@ class BadgesController extends Controller
     {
 
         $id = Auth::user()->id;
+
+        // Checken van Friends badge
         $this->checkFriends1($id);
         $this->checkFriends2($id);
         $this->checkFriends3($id);
+
+        // Checken van Run badge
+        $this->checkRuns1($id);
+        $this->checkRuns2($id);
+        $this->checkRuns3($id);
 
         $badge =  User::find($id)->badge;
         return view('layouts.achievements', compact('badge'));
@@ -83,4 +91,51 @@ class BadgesController extends Controller
         }
 
     }
+
+    public function checkRuns1($id) {
+
+
+        $runs = Activity::all()->where('user_id', $id)->count();
+
+            if ($runs == 1) {
+
+                $userBadge = Badges_User::firstOrNew(['user_id' => $id, 'badge_id' => 7]);
+                $userBadge->user_id = $id;
+                $userBadge->badge_id = 7;
+                $userBadge->save();
+            }
+
+    }
+
+    public function checkRuns2($id) {
+
+
+        $runs = Activity::all()->where('user_id', $id)->count();
+
+        if ($runs >= 5) {
+
+            $userBadge = Badges_User::firstOrNew(['user_id' => $id, 'badge_id' => 8]);
+            $userBadge->user_id = $id;
+            $userBadge->badge_id = 8;
+            $userBadge->save();
+        }
+
+    }
+
+    public function checkRuns3($id) {
+
+
+        $runs = Activity::all()->where('user_id', $id)->count();
+
+        if ($runs >= 10) {
+
+            $userBadge = Badges_User::firstOrNew(['user_id' => $id, 'badge_id' => 9]);
+            $userBadge->user_id = $id;
+            $userBadge->badge_id = 9;
+            $userBadge->save();
+        }
+
+    }
+
+
 }
