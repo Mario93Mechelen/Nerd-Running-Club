@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Strava;
 use App\Activity;
 use App\User;
+use App\Schedule;
 
 class UsersController extends Controller
 {
@@ -19,7 +20,8 @@ class UsersController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('layouts.profile', compact('user'));
+        $goals = Schedule::all()->first();
+        return view('layouts.profile', compact('user', 'goals'));
     }
 
     public function runs()
