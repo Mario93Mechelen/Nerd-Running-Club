@@ -47,7 +47,8 @@ class LoginController extends Controller
 
     public function redirectToProvider()
     {
-        return redirect('https://www.strava.com/oauth/authorize?client_id=20594&response_type=code&redirect_uri=http://homestead.app/oauth/code_callback&scope=write&state=mystate&approval_prompt=force');
+        $id = env("STRAVA_APP_ID");
+        return redirect('https://www.strava.com/oauth/authorize?client_id='.$id.'&response_type=code&redirect_uri=http://homestead.app/oauth/code_callback&scope=write&state=mystate&approval_prompt=force');
     }
 
     public function handleProviderCallback()
