@@ -14,8 +14,8 @@ class FriendsController extends Controller
     public function index()
     {
         //https://www.strava.com/api/v3/athletes/{id}/followers" "Authorization: Bearer [[token]]
-        $strava_id = Auth::user()->strava_id;
-        $res = Friends::all()->where("strava_id", $strava_id);
+        $id = Auth::id();
+        $res = Friends::all()->where("user_id", $id);
         return view('layouts.friends', compact('res'));
         //$user = Friends::find(1)->user;
         //dd($user);
