@@ -11,7 +11,7 @@
 
     <div class="goals">
 
-        <h3>{{$goals->week}}</h3>
+        <h3>Week nr. {{$goals->week}}</h3>
         <p>{{$goals->goal}}</p>
 
     </div>
@@ -49,23 +49,21 @@
             <a href="">
                 <img src="/img/vlagje.png" alt="Friends">
             </a>
-            <h1>Only <p id="diffDays"></p> days to go!</h1>
+            <h1>Only days <?php
+
+                date_default_timezone_set('Europe/Brussels');
+                $from = strtotime('22-04-2018');
+                $today = time();
+                $difference = $from - $today;
+                echo floor($difference / 86400 );
+                ?> to go!</h1>
+
+
 
         </div>
 
     </div>
 
-    <script>
-
-        var oneDay = 24*60*60*1000;
-        var firstDate = new Date(2017,11,02);
-        var secondDate = new Date(2018,04,22);
-
-        var daystogo = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-
-        document.getElementById('diffDays').innerHTML= daystogo;
-
-    </script>
 
 
 @endsection
