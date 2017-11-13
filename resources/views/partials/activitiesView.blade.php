@@ -29,6 +29,12 @@
 
         </div>
 
+        <div class="mapsactivity">
+            {{ $a->mapsActivity( $a->latitude, $a->longitude ) }}
+
+            {!! Mapper::render() !!}
+        </div>
+
 
 
     </div>

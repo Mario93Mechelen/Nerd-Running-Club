@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Strava;
 use App\Activity;
 use Illuminate\Support\Facades\Auth;
+use Mapper;
 
 class ActivitiesController extends Controller
 {

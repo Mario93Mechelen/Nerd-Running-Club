@@ -92,9 +92,10 @@ class dbUpdate extends Command
                     $activity->name = $result->name;
                     $activity->activityId = $result->id;
                     $activity->time = $result->elapsed_time;
-                    //$activity->user_id = $user->id;
                     $activity->distance = $result->distance;
                     $activity->averageSpeed = $result->average_speed;
+                    $activity->latitude = $result->start_latitude;
+                    $activity->longitude = $result->start_longitude;
                     $activity->save();
                 }
 
@@ -116,8 +117,10 @@ class dbUpdate extends Command
                     $activity->name = $result->name;
                     $activity->activityId = $result->id;
                     $activity->distance = $result->distance;
-                    $activity->time = $result->moving_time;
+                    $activity->time = $result->elapsed_time;
                     $activity->averageSpeed = $result->average_speed;
+                    $activity->latitude = $result->start_latitude;
+                    $activity->longitude = $result->start_longitude;
                     $activity->save();
                 }
 

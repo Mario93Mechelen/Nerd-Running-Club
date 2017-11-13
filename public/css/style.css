@@ -5,7 +5,6 @@ body {
 
 .container{
     display: block;
-    /*min-height: 100vh;*/
     width: 100%;
     background-color: white;
     margin: 0 auto;
@@ -547,6 +546,16 @@ body {
 
 .run #info h3{
     color: #2ab27b;
+}
+
+.run .mapsactivity {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 25px auto;
+    border: 5px solid #FCF0BB;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .tiles {
