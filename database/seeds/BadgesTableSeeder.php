@@ -21,6 +21,9 @@ class BadgesTableSeeder extends Seeder
             array('badgename'=>'first_badge_miles','badgeurl'=>'img/icons/miles-badge-1.png', 'badgetext'=>'You just ran 5 kilometers.'),
             array('badgename'=>'second_badge_miles','badgeurl'=>'img/icons/miles-badge-2.png', 'badgetext'=>'You just ran 10 kilometers.'),
             array('badgename'=>'third_badge_miles','badgeurl'=>'img/icons/miles-badge-3.png', 'badgetext'=>'You just ran 15 kilometers.'),
+            array('badgename'=>'first_badge_run','badgeurl'=>'img/icons/run-badge-1.png', 'badgetext'=>'You just ran 5 times.'),
+            array('badgename'=>'second_badge_run','badgeurl'=>'img/icons/run-badge-2.png', 'badgetext'=>'You just ran 10 times.'),
+            array('badgename'=>'third_badge_run','badgeurl'=>'img/icons/run-badge-3.png', 'badgetext'=>'You just ran 20 times.'),
         ));
     }
 }

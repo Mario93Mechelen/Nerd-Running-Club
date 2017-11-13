@@ -148,184 +148,37 @@ body {
     border-radius: 10px;
 }
 
+.goals {
 
-.goal {
+    width: 100%;
+    height: 100px;
 
-    display: flex;
-    flex-direction: row;
-    background-color: #8EBDBD;
-    height: 150px;
-}
-
-.goal_logo {
-
-    display: flex;
-    flex-direction: column;
-}
-
-.goal .goal_logo img {
-
-    width: 50px;
-    height: auto;
-    margin-top: -90px;
-    margin-left: 35px;
+    background-color: #9db4e0;
 
 }
 
-.goal .goal_logo #bg_goal {
+.goals h3 {
 
-    width: 120px;
-    height: 120px;
-    background-color: #8EBDBD;
-    border-radius: 100px;
-    margin-top: -60px;
-
-}
-
-.goal .goal_logo p {
-
-    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
     color: white;
-    margin-top: 30px;
-    text-align: center;
-}
-
-.goal .goal_logo h3 {
-
-    font-size: 1.8em;
-    color: white;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.goal .text_goal {
 
     text-align: center;
+    padding-top: 20px;
+}
+
+.goals p {
+
     color: white;
-    margin-top: 50px;
-}
 
-
-.achievement {
-
-    display: flex;
-    flex-direction: row;
-    background-color:#8CBD9C;
-    height: 180px;
-
-}
-.achiev_logo {
-
-    display: flex;
-    flex-direction: column;
-
-
-}
-
-.achievement .achiev_logo #bg_achiev {
-
-    width: 120px;
-    height: 120px;
-    background-color: #8CBD9C;
-    border-radius: 100px;
-    margin-top: -60px;
-
-}
-
-.achievement .achiev_logo img {
-
-    width: 50px;
-    height: auto;
-    margin-top: -90px;
-    margin-left: 35px;
-}
-
-.achievement .text_achiev h3 {
-
-    text-align: right;
-    color: white;
-    margin-top: 50px;
-    font-size: 1.4em;
-}
-
-.achievement .text_achiev p {
-
-    text-align: right;
-    color: white;
-    font-size: 0.8em;
-    margin-top: 10px;
-    margin-left: 38px;
-}
-
-.chron {
-
-    display: flex;
-    flex-direction: row;
-    background-color: #8EBDBD;
-    height: 150px;
-}
-
-.chron_logo {
-
-    display: flex;
-    flex-direction: column;
-}
-
-.chron .chron_logo img {
-
-    width: 50px;
-    height: auto;
-    margin-top: -90px;
-    margin-left: 35px;
-
-}
-
-.chron .chron_logo #bg_chron {
-
-    width: 120px;
-    height: 120px;
-    background-color: #8EBDBD;
-    border-radius: 100px;
-    margin-top: -60px;
-
-}
-
-.chron .chron_logo p {
-
-    font-size: 0.6em;
-    color: white;
-    margin-top: 20px;
     text-align: center;
+    padding-top: 20px;
+    font-size: 1.2em;
 }
 
-.chron .chron_logo h3 {
 
-    font-size: 1em;
-    color: white;
-    margin-top: 10px;
-    text-align: center;
-}
 
-.chron .text_chron {
 
-    color: white;
-    margin-top: 50px;
-}
-
-.chron .text_chron p {
-
-    font-size: 0.6em;
-    color: white;
-    margin-left: 5px;
-    text-align: left;
-
-}
-
-.chron .text_chron h3{
-
-    font-size: 2em;
-    margin-top: 20px;
-}
 
 .badges {
 
