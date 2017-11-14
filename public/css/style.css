@@ -401,14 +401,12 @@ body {
     color: #2ab27b;
 }
 
-.run .mapsactivity {
-    display: block;
-    width: 150px;
-    height: 150px;
+.mapsactivity {
+    width: 200px;
+    height: 200px;
     margin: 25px auto;
     border: 5px solid #FCF0BB;
     box-sizing: border-box;
-    position: relative;
 }
 
 .tiles {

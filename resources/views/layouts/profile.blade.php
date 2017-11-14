@@ -49,14 +49,14 @@
             <a href="">
                 <img src="/img/vlagje.png" alt="Friends">
             </a>
-            <h1>Only days <?php
+            <h1>Only <?php
 
                 date_default_timezone_set('Europe/Brussels');
                 $from = strtotime('22-04-2018');
                 $today = time();
                 $difference = $from - $today;
                 echo floor($difference / 86400 );
-                ?> to go!</h1>
+                ?> days to go!</h1>
 
 
 

@@ -29,14 +29,11 @@
 
         </div>
 
-        <div class="mapsactivity">
-            {{ $a->mapsActivity( $a->latitude, $a->longitude ) }}
+    </div>
 
-            {!! Mapper::render() !!}
-        </div>
-
-
-
+    <div class="mapsactivity">
+        {{ $a->mapsActivity( $a->latitude, $a->longitude ) }}
+        {!! Mapper::render() !!}
     </div>
 
 </div>
