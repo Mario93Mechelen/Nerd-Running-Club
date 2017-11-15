@@ -25,11 +25,18 @@ class FriendsController extends Controller
 
     public function friend($id) {
 
-        $friend = User::find($id);
+        $userid = Auth::id();
+        $frienship = Friends::where(['user_id' => $userid, 'friend_id' => $id]);
 
-        $activity = Activity::All()->where('user_id', $id);
+        if($frienship->count()>0) {
+            $friend = User::find($id);
 
-        return view('layouts.friendsprofile', compact('friend', 'activity'));
+            $activity = Activity::All()->where('user_id', $id);
+
+            return view('layouts.friendsprofile', compact('friend', 'activity'));
+        }else{
+            return redirect('/friends');
+        }
     }
 
     public function storeOrDelete(Request $request)
