@@ -22,6 +22,7 @@ class UsersController extends Controller
         $user = Auth::user();
         $strava_id = Auth::user()->strava_id;
 
+
         $schedule = Schedule_User::all()->first();
         $goals = Schedule::all()->where('id', $schedule->schedule_id)->first();
 
@@ -101,4 +102,6 @@ class UsersController extends Controller
     {
         //
     }
+
+
 }
