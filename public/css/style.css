@@ -1,3 +1,4 @@
+/* ---------------------- BASIC + LOGIN VIEW ------------------------ */
 body {
     font-family: 'Lato', sans-serif;
     background-color: white;
@@ -9,7 +10,7 @@ body {
     background-color: white;
     margin: 0 auto;
     padding-top: 8em;
-    padding-bottom: 2em;
+    padding-bottom: 4em;
 }
 
 .loginStrava {
@@ -113,6 +114,8 @@ body {
     height: 100%;
 }
 
+/* --------------------- PROFILE ----------------------- */
+
 .profile{
     display: block;
     width: 100%;
@@ -178,64 +181,7 @@ body {
 
 
 
-
-
-.badges {
-
-    display: block;
-    width: 100%;
-    text-align: center;
-    position: relative;
-
-}
-
-.badges h2 {
-
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: darkgray;
-    margin-bottom: 20px;
-}
-
-.badges p {
-
-    width: 80%;
-    margin-left: 10%;
-    font-size: 0.8em;
-}
-
-.badges .badges_filled {
-
-    width: 80%;
-    margin-left: 10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.badges .badges_filled img {
-
-    width: 85px;
-    height: 85px;
-    margin-bottom: 1em;
-    margin-top: 1em;
-}
-
-.badges .badge_unfilled {
-    opacity: 0.3;
-}
-
-.badges .badge_filled {
-    opacity: 1;
-}
-
-.run {
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+/* ----------------- VIEW RUN - - PARTIAL LAYOUT RUN ----------------------- */
 
 #distance, #time, #kcal {
     display: flex;
@@ -279,6 +225,8 @@ body {
     text-transform: uppercase;
     font-size: 1em;
 }
+
+/* ---------------------- FRIENDS --------------------------- */
 
 .friends h2, .friendsprofile h2, .latestruns h2 {
     text-align: center;
@@ -330,34 +278,65 @@ body {
     border: 10px solid #FDF0BC;
 }
 
-.badges a {
-
-    text-decoration: none;
+/* ------------- BADGES ----------------- */
+.badges {
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
 
-#linkAchievements p  {
+.badges h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: darkgray;
+    margin-bottom: 20px;
+}
 
-    background-color: #FDF0BC;
-    height: 25px;
-    padding-top: 15px;
-    color: #1b6d85;
+.badges h4 {
+    width: 80%;
+    margin-left: 10%;
     font-size: 0.8em;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-bottom: 50px;
 }
 
-#linkBadges p  {
-
-    background-color: #FDF0BC;
-    height: 25px;
-    padding-top: 15px;
-    color: #1b6d85;
-    font-size: 0.8em;
-    border-radius: 10px;
-    margin-top: 200px;
-    margin-bottom: 50px;
+.badges .badges_filled {
+    width: 80%;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
+.badges .badge {
+    display: block;
+    width: 30%;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.badges .badge p {
+    text-transform: uppercase;
+    color: darkgray;
+    font-size: 0.6em;
+    letter-spacing: 0.1em;
+}
+
+.badges .badges_filled img {
+    width: 85px;
+    height: 85px;
+    margin: 5px auto;
+}
+
+.badges .badge_unfilled {
+    opacity: 0.3;
+}
+
+.badges .badge_filled {
+    opacity: 1;
+}
+
+/* ------------- ACHIEVEMENTS ----------------------- */
 
 .latestruns {
 
@@ -408,6 +387,8 @@ body {
     border: 5px solid #FCF0BB;
     box-sizing: border-box;
 }
+
+/* ------------------ FRONTPAGE - - PROFILE --------------------------- */
 
 .tiles {
     display: flex;
@@ -497,6 +478,15 @@ body {
     .tile {
         width: 20vw;
         height: 10em;
+    }
+
+    .badges .badges_filled {
+        width: 70%;
+    }
+
+    .badges .badges_filled img {
+        width: 150px;
+        height: 150px;
     }
 }
 

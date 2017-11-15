@@ -14,15 +14,6 @@ use Illuminate\Support\Facades\Auth;
 class BadgesController extends Controller
 {
 
-    public function index()
-    {
-
-        $badge = Badges::all();
-        return view('layouts.badges', compact('badge'));
-
-
-    }
-
     public function achievedBadges()
     {
 
@@ -54,7 +45,8 @@ class BadgesController extends Controller
         $this->checkRuns3($strava_id);
 
         $badge =  User::find($id)->badge;
-        return view('layouts.achievements', compact('badge'));
+        $badges = Badges::all();
+        return view('layouts.achievements', compact('badge', 'badges'));
 
 
     }

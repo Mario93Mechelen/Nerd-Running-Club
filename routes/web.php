@@ -21,7 +21,6 @@ Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/profile', 'UsersController@index');
     Route::get('/achievements', 'BadgesController@achievedBadges');
-    Route::get('/badges', 'BadgesController@index');
 
     Route::get('/logout', 'Auth\LoginController@logout');
     Route::get('/activities','ActivitiesController@index');
