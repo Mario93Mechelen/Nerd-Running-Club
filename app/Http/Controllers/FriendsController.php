@@ -17,8 +17,8 @@ class FriendsController extends Controller
         $myID = Auth::id();
         //https://www.strava.com/api/v3/athletes/{id}/followers" "Authorization: Bearer [[token]
         $noFriendIDS = Friends::all()->where('user_id', $myID)->pluck('friend_id');
-        $res = User::all()->whereNotIn('id', $noFriendIDS)->where('id','!=',$myID);
-        $friends = User::all();
+        $res = User::all()->whereNotIn('id', $noFriendIDS)->where('id','!=',$myID)->sortBy('firstname');
+        $friends = User::find($myID)->friends;
         return view('layouts.friends', compact('res', 'friends'));
     }
 

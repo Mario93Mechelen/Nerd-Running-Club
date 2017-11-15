@@ -8,8 +8,7 @@
 
         <ul>
 
-            @foreach ($friends as $friend)
-                @foreach($friend->friends as $user)
+            @foreach ($friends as $user)
                 <li>
                     <a href="/friends/{{ $user->id  }}">
                         <div class="name"><p>{{$user->firstname}}</p></div>
@@ -22,7 +21,6 @@
                         <button class="btn btn-unfollow" type="submit">Unfollow</button>
                     </form>
                 </li>
-                @endforeach
             @endforeach
                 @foreach ($res as $user)
                         <li>
