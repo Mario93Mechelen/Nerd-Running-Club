@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
-use App\Strava;
+use App\nerdrunningclub\Strava;
 use App\Friends;
 use App\Activity;
 use App\Schedule;

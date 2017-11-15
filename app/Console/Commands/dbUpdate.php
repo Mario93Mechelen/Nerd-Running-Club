@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Strava;
+use App\nerdrunningclub\Strava;
 use App\Friends;
 use App\User;
 use App\Activity;
@@ -51,12 +51,7 @@ class dbUpdate extends Command
         foreach ($allUsers as $user) {
             $token = $user->token;
 
-            $res = $strava->client->request('GET', '/api/v3/athlete/activities/', [
-                'headers' => [
-                    'Authorization' => 'Bearer '.$token,
-                ]
-            ]);
-            $res = json_decode($res->getBody());
+            $res = $strava->get('/api/v3/athlete/activities/', $token);
             foreach ($res as $result) {
                 if($result->average_speed < 7.5) {
 
