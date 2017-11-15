@@ -11,10 +11,14 @@
             @foreach ($res as $result)
 
                 <li>
-                    <a href="/friends/{{ $result->strava_id  }}">
+                    <a href="/friends/{{ $result->id  }}">
                         <img src="{{ $result->avatar  }}" alt="{{ $result->firstname  }} {{ $result->lastname  }}">
                     </a>
-                    <a class="friendslink" href="/friends/{{ $result->strava_id  }}">{{ $result->firstname  }} {{ $result->lastname  }}</a>
+                    <form action="/friends" method="post">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="userid" value="{{$result->id}}">
+                    <button class="btn btn-follow" type="submit">Follow</button>
+                    </form>
                 </li>
 
             @endforeach

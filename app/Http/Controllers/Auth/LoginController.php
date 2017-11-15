@@ -10,6 +10,7 @@ use App\Friends;
 use App\Activity;
 use App\Schedule;
 use App\Schedule_User;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -83,35 +84,7 @@ class LoginController extends Controller
             $user->save();
 
         Auth::login($user);
-
         $token = Auth::user()->token;
-        $strava_id = Auth::user()->strava_id;
-        $user_id = Auth::id();
-
-        $res = $strava->client->request('GET', '/api/v3/athletes/' . $strava_id . '/followers', [
-            'headers' => [
-                'Authorization' => 'Bearer ' . $token,
-            ]
-        ]);
-        $res = json_decode($res->getBody());
-        foreach ($res as $result) {
-
-            /*// Check if friends id already exists
-            $friendsId = Friends::All()->where('user_id', $user_id)->where('strava_id', $result->id)->first();
-
-            // Als friends id reeds bestaat in tabel --> niets
-            if ( $friendsId === null)
-            {*/
-            $friend = Friends::firstOrNew(['strava_id' => $result->id, 'user_id' => $user_id]);
-
-            //$friend = new Friends;
-            $friend->user_id = $user_id;
-            $friend->strava_id = $result->id;
-            $friend->firstname = $result->firstname;
-            $friend->lastname = $result->lastname;
-            $friend->avatar = $result->profile_medium;
-            $friend->save();
-        };
 
         $res = $strava->client->request('GET', '/api/v3/athlete/activities/', [
             'headers' => [
@@ -136,190 +109,8 @@ class LoginController extends Controller
             }
 
         }
-
-        $res = $strava->client->request('GET', '/api/v3/activities/following/', [
-            'headers' => [
-                'Authorization' => 'Bearer '.$token,
-            ]
-        ]);
-        $res = json_decode($res->getBody());
-        foreach ($res as $result) {
-            if($result->average_speed < 7.5) {
-
-
-                // Check if activity id already exists
-                $activity = Activity::firstOrNew(['activityId' => $result->id]);
-                $activity->strava_id = $result->athlete->id;
-                $activity->name = $result->name;
-                $activity->activityId = $result->id;
-                $activity->distance = $result->distance;
-                $activity->time = $result->elapsed_time;
-                $activity->averageSpeed = $result->average_speed;
-                $activity->latitude = $result->start_latitude;
-                $activity->longitude = $result->start_longitude;
-                $activity->save();
-            }
-
-        }
-
-        $id = Auth::user()->id;
-        $strava_id = Auth::user()->strava_id;
-
-        $goals = Schedule::all();
-
-        foreach ($goals as $g) {
-
-            $completed = Schedule_User::firstOrNew(['user_id' => $id, 'schedule_id' => $g->id]);
-            $completed->user_id = $id;
-            $completed->schedule_id = $g->id;
-            $completed->save();
-
-            $this->goalsWeek1($strava_id);
-            $this->goalsWeek2($strava_id);
-            $this->goalsWeek3($strava_id);
-            $this->goalsWeek4($strava_id);
-            $this->goalsWeek5($strava_id);
-            $this->goalsWeek6($strava_id);
-            $this->goalsWeek7($strava_id);
-            $this->goalsWeek8($strava_id);
-            $this->goalsWeek9($strava_id);
-            $this->goalsWeek10($strava_id);
-
-        }
-
-
         return redirect('profile');
 
-    }
-
-    public function goalsWeek1($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 3000) {
-
-                Schedule_User::where('schedule_id', 1)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek2($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 5000) {
-
-                Schedule_User::where('schedule_id', 2)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek3($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 8000) {
-
-                Schedule_User::where('schedule_id', 3)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek4($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 9000) {
-
-                Schedule_User::where('schedule_id', 4)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek5($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 10000) {
-
-                Schedule_User::where('schedule_id', 5)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek6($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 11000) {
-
-                Schedule_User::where('schedule_id', 6)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek7($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 12000) {
-
-                Schedule_User::where('schedule_id', 7)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek8($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 14000) {
-
-                Schedule_User::where('schedule_id', 8)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek9($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 15000) {
-
-                Schedule_User::where('schedule_id', 9)->delete();
-            }
-        }
-    }
-
-    public function goalsWeek10($strava_id) {
-
-        $schedule = Activity::all()->where('strava_id', $strava_id);
-
-        foreach ($schedule as $s){
-
-            if(($s->distance) >= 16000) {
-
-                Schedule_User::where('schedule_id', 10)->delete();
-            }
-        }
     }
 
     public function logout(){

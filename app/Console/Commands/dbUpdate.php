@@ -7,6 +7,7 @@ use App\Strava;
 use App\Friends;
 use App\User;
 use App\Activity;
+use App\Schedule;
 use Carbon\Carbon;
 
 class dbUpdate extends Command
@@ -49,33 +50,6 @@ class dbUpdate extends Command
 
         foreach ($allUsers as $user) {
             $token = $user->token;
-            $strava_id = $user->strava_id;
-            $user_id = $user->id;
-
-            $res = $strava->client->request('GET', '/api/v3/athletes/' . $strava_id . '/followers', [
-                'headers' => [
-                    'Authorization' => 'Bearer ' . $token,
-                ]
-            ]);
-            $res = json_decode($res->getBody());
-            foreach ($res as $result) {
-
-                /*// Check if friends id already exists
-                $friendsId = Friends::All()->where('user_id', $user_id)->where('strava_id', $result->id)->first();
-
-                // Als friends id reeds bestaat in tabel --> niets
-                if ( $friendsId === null)
-                {*/
-                $friend = Friends::firstOrNew(['strava_id' => $result->id, 'user_id' => $user_id]);
-
-                //$friend = new Friends;
-                $friend->user_id = $user_id;
-                $friend->strava_id = $result->id;
-                $friend->firstname = $result->firstname;
-                $friend->lastname = $result->lastname;
-                $friend->avatar = $result->profile_medium;
-                $friend->save();
-            };
 
             $res = $strava->client->request('GET', '/api/v3/athlete/activities/', [
                 'headers' => [
@@ -101,31 +75,7 @@ class dbUpdate extends Command
 
             }
 
-            $res = $strava->client->request('GET', '/api/v3/activities/following/', [
-                'headers' => [
-                    'Authorization' => 'Bearer '.$token,
-                ]
-            ]);
-            $res = json_decode($res->getBody());
-            foreach ($res as $result) {
-                if($result->average_speed < 7.5) {
-
-
-                    // Check if activity id already exists
-                    $activity = Activity::firstOrNew(['activityId' => $result->id]);
-                    $activity->strava_id = $result->athlete->id;
-                    $activity->name = $result->name;
-                    $activity->activityId = $result->id;
-                    $activity->distance = $result->distance;
-                    $activity->time = $result->elapsed_time;
-                    $activity->averageSpeed = $result->average_speed;
-                    $activity->latitude = $result->start_latitude;
-                    $activity->longitude = $result->start_longitude;
-                    $activity->save();
-                }
-
-            }
-
         }
     }
+
 }

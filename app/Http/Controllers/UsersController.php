@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
 use App\Strava;
@@ -20,8 +21,7 @@ class UsersController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $strava_id = Auth::user()->strava_id;
-
+        Artisan::call('update:schedule');
 
         $schedule = Schedule_User::all()->first();
         $goals = Schedule::all()->where('id', $schedule->schedule_id)->first();

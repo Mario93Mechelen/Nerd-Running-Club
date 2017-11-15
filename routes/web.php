@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/activities','ActivitiesController@index');
     Route::get('/friends', 'FriendsController@index');
     Route::get('/friends/{id}', 'FriendsController@friend');
+
+    Route::post('/friends', 'FriendsController@store');
 });
 
 
