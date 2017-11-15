@@ -23,5 +23,28 @@ class Strava
         ]);
     }
 
+    public function get($url,$token)
+    {
+        $params = [
+            'headers' => [
+                'Authorization' => 'Bearer '.$token,
+            ]
+        ];
+        $res = $this->client->request('GET',$url,$params);
+        return $res = \GuzzleHttp\json_decode($res->getBody());
+    }
+
+    public function post($url,$code)
+    {
+        $params =[
+            'form_params' => [
+                'client_id' =>  env("STRAVA_APP_ID"),
+                'client_secret' => env("STRAVA_APP_SECRET"),
+                'code' => $code,
+            ]
+        ];
+        $res = $this->client->request('POST',$url,$params);
+        return $res = \GuzzleHttp\json_decode($res->getBody());
+    }
 
 }

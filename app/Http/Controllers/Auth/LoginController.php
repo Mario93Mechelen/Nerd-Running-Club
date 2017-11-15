@@ -62,16 +62,8 @@ class LoginController extends Controller
         $code = request()->code;
         $strava = new Strava();
         //$url = "'https://www.strava.com/oauth/token?client_id=20594&client_secret=426f99ae57f2c243fdcc6e5fa320c011523c6161&code=".$code."'";
-        $res = $strava->client->request('POST', '/oauth/token', [
-            'form_params' => [
-                'client_id' =>  env("STRAVA_APP_ID"),
-                'client_secret' => env("STRAVA_APP_SECRET"),
-                'code' => $code,
-            ]
-        ]);
-
-        $result= json_decode($res->getBody());
-        $athlete = $result->athlete;
+        $res = $strava->post( '/oauth/token', $code);
+        $athlete = $res->athlete;
 
         $user = User::firstOrNew(['strava_id' => $athlete->id]);
             $user->strava_id = $athlete->id;
@@ -80,18 +72,13 @@ class LoginController extends Controller
             $user->email = $athlete->email;
             $user->avatar = $athlete->profile;
             $user->gender = $athlete->sex;
-            $user->token = $result->access_token;
+            $user->token = $res->access_token;
             $user->save();
 
         Auth::login($user);
         $token = Auth::user()->token;
 
-        $res = $strava->client->request('GET', '/api/v3/athlete/activities/', [
-            'headers' => [
-                'Authorization' => 'Bearer '.$token,
-            ]
-        ]);
-        $res = json_decode($res->getBody());
+        $res = $strava->get('/api/v3/athlete/activities/', $token);
         foreach ($res as $result) {
             if($result->average_speed < 7.5) {
 
