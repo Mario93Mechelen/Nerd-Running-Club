@@ -42,5 +42,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Badges', 'badges__users','user_id', 'badge_id');
     }
 
+    public function goals() {
+
+        return $this->belongsToMany('App\Schedule', 'schedule__users','user_id', 'schedule_id');
+
+    }
+
 
 }
