@@ -34,7 +34,7 @@ class User extends Authenticatable
 
     public function friends()
     {
-        return $this->hasMany('App\Friends', 'friend_id', 'id');
+        return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
     }
 
     public function badge() {

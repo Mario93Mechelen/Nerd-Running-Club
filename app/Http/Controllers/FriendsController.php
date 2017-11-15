@@ -16,8 +16,10 @@ class FriendsController extends Controller
     {
         $myID = Auth::id();
         //https://www.strava.com/api/v3/athletes/{id}/followers" "Authorization: Bearer [[token]
-        $res = User::all()->where('id','!=',$myID);
-        return view('layouts.friends', compact('res'));
+        $noFriendIDS = Friends::all()->where('user_id', $myID)->pluck('friend_id');
+        $res = User::all()->whereNotIn('id', $noFriendIDS)->where('id','!=',$myID);
+        $friends = User::all();
+        return view('layouts.friends', compact('res', 'friends'));
     }
 
 
@@ -30,19 +32,26 @@ class FriendsController extends Controller
         return view('layouts.friendsprofile', compact('friend', 'activity'));
     }
 
-    public function store(Request $request)
+    public function storeOrDelete(Request $request)
     {
         $myID = Auth::id();
         $friendID = $request->input('userid');
+        $action = $request->input('action');
 
-        $friend = Friends::firstOrNew(['friend_id' => $friendID, 'user_id' => $myID]);
+        if($action=="store")
+        {
+            $friend = Friends::firstOrNew(['friend_id' => $friendID, 'user_id' => $myID]);
 
-        //$friend = new Friends;
-        $friend->user_id = $myID;
-        $friend->friend_id = $friendID;
-        $friend->save();
-
+            //$friend = new Friends;
+            $friend->user_id = $myID;
+            $friend->friend_id = $friendID;
+            $friend->save();
+        }else{
+            $friendship = Friends::where(['user_id' => $myID, 'friend_id' => $friendID]);
+            $friendship->delete();
+        }
         return redirect('/friends');
     }
+
 
 }
