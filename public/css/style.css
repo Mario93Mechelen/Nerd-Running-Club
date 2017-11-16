@@ -409,6 +409,7 @@ body {
 .tile  {
     width: 50%;
     height: 45vw;
+    position:relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -503,6 +504,75 @@ body {
     top: 35%;
     left:21%;
     text-overflow:ellipsis;
+}
+
+a.info
+{
+    height:50%;
+    width:100%;
+    position:absolute;
+    background-color: white;
+    display:block;
+    color:#9db4e0;
+    text-decoration: none;
+    text-align: center;
+    padding-top:30%;
+    border-radius:1px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition:all 1s ease-in-out;
+    z-index:500;
+}
+
+.notifications
+{
+    height:50px;
+    position:fixed;
+    left:70%;
+    top:20px;
+    cursor:pointer;
+}
+
+.box
+{
+    border-radius:1px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width:300px;
+    max-height:400px;
+    color:#9db4e0;
+    background-color: white;
+    position:fixed;
+    top: 70px;
+    left:60%;
+    z-index:500;
+    display:flex;
+    flex-direction:column;
+}
+
+.notification
+{
+    display:flex;
+    flex-direction: row;
+}
+
+.notification p
+{
+    flex-basis:40%;
+    padding-top:30px;
+    margin-left:20px;
+}
+
+.circle
+{
+    padding:5px;
+    border-radius:50%;
+    background-color: red;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .8s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0
 }
 
 @media screen and (min-width: 750px) {

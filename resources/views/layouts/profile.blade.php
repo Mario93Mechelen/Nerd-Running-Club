@@ -18,8 +18,10 @@
 
     <div class="tiles">
 
-        <div class="tile friends">
-
+        <div class="tile friends" @mouseover="friends = true" @mouseleave="friends = false">
+            <transition name="fade">
+            <a href="/friends" class="info" v-show="friends">Add some friends to run with</a>
+            </transition>
             <a href="/friends">
                 <img src="/img/icons/friends-badge-1.png" alt="Friends">
             </a>
@@ -27,8 +29,10 @@
 
         </div>
 
-        <div class="tile runs">
-
+        <div class="tile runs" @mouseover="runs = true" @mouseleave="runs = false">
+            <transition name="fade">
+            <a href="/activities" class="info" v-show="runs">Checkout how many miles you ran so far</a>
+            </transition>
             <a href="/activities">
                 <img src="/img/chronometer.png" alt="Chronometer">
             </a>
@@ -36,16 +40,20 @@
 
         </div>
 
-        <div class="tile achiev">
-
+        <div class="tile achiev" @mouseover="achiev = true" @mouseleave="achiev = false">
+            <transition name="fade">
+            <a href="/achievements" class="info" v-show="achiev">See how many badges you gained</a>
+            </transition>
             <a href="/achievements">
                 <img src="/img/badge.png" alt="Achievements">
             </a>
             <h1>Your badges</h1>
         </div>
 
-        <div class="tile miles">
-
+        <div class="tile miles" @mouseover="miles = true" @mouseleave="miles = false">
+            <transition name="fade">
+            <a href="" class="info" v-show="miles">You better hurry, the clock is ticking</a>
+            </transition>
             <a href="">
                 <img src="/img/vlagje.png" alt="Friends">
             </a>
