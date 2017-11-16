@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/friends/{id}', 'FriendsController@friend');
 
     Route::post('/friends', 'FriendsController@storeOrDelete');
+    Route::post('/profile', 'FriendsController@store');
 });
 
 

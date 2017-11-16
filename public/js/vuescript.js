@@ -4,6 +4,7 @@ var app = new Vue({
         friends: false,
         runs: false,
         achiev:false,
-        miles:false
+        miles:false,
     }
-})
+});
+

@@ -21,9 +21,7 @@
 
 </head>
 <body>
-
     @include('partials.nav')
-    @include('partials.notificationsbox')
     <div class="container">
 
         @yield('content')
@@ -33,5 +31,6 @@
     @include('partials.footer')
     <script src="https://unpkg.com/vue"></script>
     <script src="/js/vuescript.js"></script>
+    <script src="/js/vuescript2.js"></script>
 </body>
 </html>

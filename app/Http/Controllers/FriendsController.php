@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 use App\Strava;
 use App\Friends;
@@ -68,6 +69,26 @@ class FriendsController extends Controller
             $friendship->update(['follow'=>false]);
         }
         return redirect('/friends');
+    }
+
+    public function store(Request $request){
+        $myID = Auth::id();
+        $friendID = $request->input('userid');
+        $check = Friends::where(['friend_id' => $friendID, 'user_id' => $myID])->pluck('follow');
+        if($check->count() == 0) {
+            $friend = Friends::firstOrNew(['friend_id' => $friendID, 'user_id' => $myID]);
+
+            //$friend = new Friends;
+            $friend->user_id = $myID;
+            $friend->friend_id = $friendID;
+            $friend->follow = true;
+            $friend->save();
+        }else{
+            $friendship = Friends::where(['user_id' => $myID, 'friend_id' => $friendID]);
+            $friendship->update(['follow'=>true]);
+        }
+
+        return Redirect::back();
     }
 
 

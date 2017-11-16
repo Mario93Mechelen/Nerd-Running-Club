@@ -527,22 +527,23 @@ a.info
 {
     height:50px;
     position:fixed;
-    left:70%;
+    left:25px;
     top:20px;
     cursor:pointer;
+    display:flex;
+    flex-direction: row;
 }
 
 .box
 {
     border-radius:1px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width:300px;
-    max-height:400px;
+    width:100vw;
+    max-height:100vh;
     color:#9db4e0;
     background-color: white;
     position:fixed;
     top: 70px;
-    left:60%;
     z-index:500;
     display:flex;
     flex-direction:column;
@@ -556,16 +557,43 @@ a.info
 
 .notification p
 {
-    flex-basis:40%;
+    flex-basis:30%;
     padding-top:30px;
     margin-left:20px;
 }
 
+.notification form
+{
+    flex-basis:60%;
+}
+
+.notification.btn
+{
+    justify-self:flex-end;
+    margin-right:20px;
+}
+
+.notification img
+{
+    flex-basis:10%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-top:25px;
+    justify-self:flex-start;
+    border-radius: 50%;
+    margin-left: 25px;
+}
+
 .circle
 {
-    padding:5px;
     border-radius:50%;
+    color:white;
+    height:20px;
+    width:20px;
+    text-align:center;
     background-color: red;
+    margin-left:10px;
 }
 
 .fade-enter-active, .fade-leave-active {
@@ -573,6 +601,22 @@ a.info
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0
+}
+
+/* always present */
+.expand-transition {
+    transition: all .3s ease;
+    height: 30px;
+    padding: 10px;
+    background-color: #eee;
+    overflow: hidden;
+}
+/* .expand-enter defines the starting state for entering */
+/* .expand-leave defines the ending state for leaving */
+.expand-enter, .expand-leave {
+    height: 0;
+    padding: 0 10px;
+    opacity: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -611,6 +655,18 @@ a.info
     .badges .badges_filled img {
         width: 150px;
         height: 150px;
+    }
+
+    .box
+    {
+        width:400px;
+        max-height:400px;
+        left:60%;
+    }
+
+    .notifications
+    {
+        left:70%;
     }
 }
 
