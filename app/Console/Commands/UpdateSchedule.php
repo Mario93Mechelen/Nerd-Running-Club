@@ -45,7 +45,6 @@ class UpdateSchedule extends Command
         //
         $allUsers = User::all();
         $user_id = Auth::id();
-        $strava_id = Auth::user()->strava_id;
             $goals = Schedule::all();
 
             foreach ($goals as $g) {
@@ -55,22 +54,22 @@ class UpdateSchedule extends Command
                 $completed->schedule_id = $g->id;
                 $completed->save();
 
-                $this->goalsWeek1($strava_id);
-                $this->goalsWeek2($strava_id);
-                $this->goalsWeek3($strava_id);
-                $this->goalsWeek4($strava_id);
-                $this->goalsWeek5($strava_id);
-                $this->goalsWeek6($strava_id);
-                $this->goalsWeek7($strava_id);
-                $this->goalsWeek8($strava_id);
-                $this->goalsWeek9($strava_id);
-                $this->goalsWeek10($strava_id);
+                $this->goalsWeek1($user_id);
+                $this->goalsWeek2($user_id);
+                $this->goalsWeek3($user_id);
+                $this->goalsWeek4($user_id);
+                $this->goalsWeek5($user_id);
+                $this->goalsWeek6($user_id);
+                $this->goalsWeek7($user_id);
+                $this->goalsWeek8($user_id);
+                $this->goalsWeek9($user_id);
+                $this->goalsWeek10($user_id);
 
         }
     }
-    public function goalsWeek1($strava_id) {
+    public function goalsWeek1($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -81,9 +80,9 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek2($strava_id) {
+    public function goalsWeek2($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -94,9 +93,9 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek3($strava_id) {
+    public function goalsWeek3($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -107,9 +106,9 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek4($strava_id) {
+    public function goalsWeek4($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -120,9 +119,9 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek5($strava_id) {
+    public function goalsWeek5($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -133,9 +132,9 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek6($strava_id) {
+    public function goalsWeek6($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -146,9 +145,9 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek7($strava_id) {
+    public function goalsWeek7($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -159,9 +158,9 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek8($strava_id) {
+    public function goalsWeek8($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -172,9 +171,9 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek9($strava_id) {
+    public function goalsWeek9($user_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s){
 
@@ -185,10 +184,10 @@ class UpdateSchedule extends Command
         }
     }
 
-    public function goalsWeek10($strava_id)
+    public function goalsWeek10($user_id)
     {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('user_id', $user_id);
 
         foreach ($schedule as $s) {
 

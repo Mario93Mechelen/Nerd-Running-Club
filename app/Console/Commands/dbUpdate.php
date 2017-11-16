@@ -57,7 +57,7 @@ class dbUpdate extends Command
 
                     // Check if activity id already exists
                     $activity = Activity::firstOrNew(['activityId' => $result->id]);
-                    $activity->strava_id = $result->athlete->id;
+                    $activity->user_id = $user->id;
                     $activity->name = $result->name;
                     $activity->activityId = $result->id;
                     $activity->time = $result->elapsed_time;

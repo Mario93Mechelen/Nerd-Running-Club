@@ -77,6 +77,7 @@ class LoginController extends Controller
 
         Auth::login($user);
         $token = Auth::user()->token;
+        $id = Auth::id();
 
         $res = $strava->get('/api/v3/athlete/activities/', $token);
         foreach ($res as $result) {
@@ -84,7 +85,7 @@ class LoginController extends Controller
 
                 // Check if activity id already exists
                 $activity = Activity::firstOrNew(['activityId' => $result->id]);
-                $activity->strava_id = $result->athlete->id;
+                $activity->user_id = $id;
                 $activity->name = $result->name;
                 $activity->activityId = $result->id;
                 $activity->time = $result->elapsed_time;

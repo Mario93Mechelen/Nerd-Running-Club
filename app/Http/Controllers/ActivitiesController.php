@@ -17,9 +17,9 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        $stravaId = Auth::user()->strava_id;
+        $stravaId = Auth::id();
 
-        $activity = Activity::All()->where('strava_id', $stravaId);
+        $activity = Activity::All()->where('user_id', $stravaId);
 
         return view('layouts.activities', compact('activity'));
 

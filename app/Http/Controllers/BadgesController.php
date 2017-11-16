@@ -28,21 +28,21 @@ class BadgesController extends Controller
 
         // Checken van Time badge
 
-        $this->checkTime1($strava_id);
-        $this->checkTime2($strava_id);
-        $this->checkTime3($strava_id);
+        $this->checkTime1($id);
+        $this->checkTime2($id);
+        $this->checkTime3($id);
 
         // Checken van Miles badge
 
-        $this->checkMiles1($strava_id);
-        $this->checkMiles2($strava_id);
-        $this->checkMiles3($strava_id);
+        $this->checkMiles1($id);
+        $this->checkMiles2($id);
+        $this->checkMiles3($id);
 
 
         // Checken van Run badge
-        $this->checkRuns1($strava_id);
-        $this->checkRuns2($strava_id);
-        $this->checkRuns3($strava_id);
+        $this->checkRuns1($id);
+        $this->checkRuns2($id);
+        $this->checkRuns3($id);
 
         $badge =  User::find($id)->badge;
         $badges = Badges::all();
@@ -54,7 +54,7 @@ class BadgesController extends Controller
     public function checkFriends1($id)
     {
 
-        $count = Friends::all()->where('user_id', $id)->count();
+        $count = Friends::where(['user_id'=>$id, 'follow'=>true])->count();
 
         if ($count >= 1) {
 
@@ -70,7 +70,7 @@ class BadgesController extends Controller
     public function checkFriends2($id)
     {
 
-        $count = Friends::all()->where('user_id', $id)->count();
+        $count = Friends::where(['user_id'=>$id, 'follow'=>true])->count();
 
         if ($count >= 3) {
 
@@ -86,7 +86,7 @@ class BadgesController extends Controller
     public function checkFriends3($id)
     {
 
-        $count = Friends::all()->where('user_id', $id)->count();
+        $count = Friends::where(['user_id'=>$id, 'follow'=>true])->count();
 
         if ($count >= 5) {
 
@@ -99,10 +99,8 @@ class BadgesController extends Controller
 
     }
 
-    public function checkTime1($strava_id) {
-
-        $id = Auth::user()->id;
-        $miles = Activity::all()->where('strava_id', $strava_id);
+    public function checkTime1($id) {
+        $miles = Activity::all()->where('user_id', $id);
 
         foreach ($miles as $m) {
 
@@ -118,10 +116,9 @@ class BadgesController extends Controller
 
     }
 
-    public function checkTime2($strava_id) {
+    public function checkTime2($id) {
 
-        $id = Auth::user()->id;
-        $miles = Activity::all()->where('strava_id', $strava_id);
+        $miles = Activity::all()->where('user_id', $id);
 
         foreach ($miles as $m) {
 
@@ -137,10 +134,9 @@ class BadgesController extends Controller
 
     }
 
-    public function checkTime3($strava_id) {
+    public function checkTime3($id) {
 
-        $id = Auth::user()->id;
-        $miles = Activity::all()->where('strava_id', $strava_id);
+        $miles = Activity::all()->where('user_id', $id);
 
         foreach ($miles as $m) {
 
@@ -156,10 +152,9 @@ class BadgesController extends Controller
 
     }
 
-    public function checkMiles1($strava_id) {
+    public function checkMiles1($id) {
 
-        $id = Auth::user()->id;
-        $miles = Activity::all()->where('strava_id', $strava_id);
+        $miles = Activity::all()->where('user_id', $id);
 
         foreach ($miles as $m) {
 
@@ -175,10 +170,9 @@ class BadgesController extends Controller
 
     }
 
-    public function checkMiles2($strava_id) {
+    public function checkMiles2($id) {
 
-        $id = Auth::user()->id;
-        $miles = Activity::all()->where('strava_id', $strava_id);
+        $miles = Activity::all()->where('user_id', $id);
 
         foreach ($miles as $m) {
 
@@ -194,10 +188,8 @@ class BadgesController extends Controller
 
     }
 
-    public function checkMiles3($strava_id) {
-
-        $id = Auth::user()->id;
-        $miles = Activity::all()->where('strava_id', $strava_id);
+    public function checkMiles3($id) {
+        $miles = Activity::all()->where('user_id', $id);
 
         foreach ($miles as $m) {
 
@@ -215,10 +207,8 @@ class BadgesController extends Controller
 
 
 
-    public function checkRuns1($strava_id) {
-
-        $id = Auth::user()->id;
-        $runs = Activity::all()->where('strava_id', $strava_id)->count();
+    public function checkRuns1($id) {
+        $runs = Activity::all()->where('user_id', $id)->count();
 
 
         if ($runs >= 5) {
@@ -230,10 +220,8 @@ class BadgesController extends Controller
         }
     }
 
-    public function checkRuns2($strava_id) {
-
-        $id = Auth::user()->id;
-        $runs = Activity::all()->where('strava_id', $strava_id)->count();
+    public function checkRuns2($id) {
+        $runs = Activity::all()->where('user_id', $id)->count();
 
 
         if ($runs >= 10) {
@@ -245,10 +233,8 @@ class BadgesController extends Controller
         }
     }
 
-    public function checkRuns3($strava_id) {
-
-        $id = Auth::user()->id;
-        $runs = Activity::all()->where('strava_id', $strava_id)->count();
+    public function checkRuns3($id) {
+        $runs = Activity::all()->where('user_id', $id)->count();
 
 
         if ($runs >= 20) {
