@@ -17,15 +17,13 @@
     <link rel="stylesheet" href="/css/reset.css" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
 
-    <script src="https://unpkg.com/vue"></script>
-
     <title>Nerd-Running-Club</title>
 
 </head>
 <body>
 
     @include('partials.nav')
-
+    @include('partials.notificationsbox')
     <div class="container">
 
         @yield('content')
@@ -33,5 +31,7 @@
     </div>
 
     @include('partials.footer')
+    <script src="https://unpkg.com/vue"></script>
+    <script src="/js/vuescript.js"></script>
 </body>
 </html>
