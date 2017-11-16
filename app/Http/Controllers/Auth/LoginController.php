@@ -54,7 +54,7 @@ class LoginController extends Controller
     {
         $id = env("STRAVA_APP_ID");
         $redirecturi = env("STRAVA_REDIRECTURI");
-        return redirect('https://www.strava.com/oauth/authorize?client_id='.$id.'&response_type=code&redirect_uri='.$redirecturi.'&scope=write&state=mystate&approval_prompt=force');
+        return redirect('https://www.strava.com/oauth/authorize?client_id='.$id.'&response_type=code&redirect_uri='.$redirecturi.'&scope=write&state=mystate&approval_prompt=auto');
     }
 
     public function handleProviderCallback()
