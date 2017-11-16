@@ -16,17 +16,20 @@ class FriendsController extends Controller
     {
         $myID = Auth::id();
         //https://www.strava.com/api/v3/athletes/{id}/followers" "Authorization: Bearer [[token]
-        $noFriendIDS = Friends::all()->where('user_id', $myID)->pluck('friend_id');
-        $res = User::all()->whereNotIn('id', $noFriendIDS)->where('id','!=',$myID)->sortBy('firstname');
-        $friends = User::find($myID)->friends;
-        return view('layouts.friends', compact('res', 'friends'));
+        $friendIDS = Friends::where(['user_id' => $myID, 'follow' => true])->pluck('friend_id');
+        $followerIDS = Friends::where(['friend_id' => $myID, 'follow' => true])->pluck('user_id');
+        $friends = User::all()->whereIn('id', $friendIDS)->whereIn('id',$followerIDS)->sortBy('firstname');
+        $following = User::all()->whereIn('id', $friendIDS)->whereNotIn('id',$followerIDS)->sortBy('firstname');
+        $followers = User::all()->whereIn('id',$followerIDS)->whereNotIn('id',$friendIDS)->sortBy('firstname');
+        $res = User::all()->whereNotIn('id', $friendIDS)->whereNotIn('id',$followerIDS)->where('id','!=',$myID)->sortBy('firstname');
+        return view('layouts.friends', compact('res', 'following', 'followers', 'friends'));
     }
 
 
     public function friend($id) {
 
         $userid = Auth::id();
-        $frienship = Friends::where(['user_id' => $userid, 'friend_id' => $id]);
+        $frienship = Friends::where(['user_id' => $userid, 'friend_id' => $id, 'follow'=>true]);
 
         if($frienship->count()>0) {
             $friend = User::find($id);
@@ -44,18 +47,25 @@ class FriendsController extends Controller
         $myID = Auth::id();
         $friendID = $request->input('userid');
         $action = $request->input('action');
+        $check = Friends::where(['friend_id' => $friendID, 'user_id' => $myID])->pluck('follow');
 
         if($action=="store")
         {
-            $friend = Friends::firstOrNew(['friend_id' => $friendID, 'user_id' => $myID]);
+            if($check->count() == 0) {
+                $friend = Friends::firstOrNew(['friend_id' => $friendID, 'user_id' => $myID]);
 
-            //$friend = new Friends;
-            $friend->user_id = $myID;
-            $friend->friend_id = $friendID;
-            $friend->save();
+                //$friend = new Friends;
+                $friend->user_id = $myID;
+                $friend->friend_id = $friendID;
+                $friend->follow = true;
+                $friend->save();
+            }else{
+                $friendship = Friends::where(['user_id' => $myID, 'friend_id' => $friendID]);
+                $friendship->update(['follow'=>true]);
+            }
         }else{
             $friendship = Friends::where(['user_id' => $myID, 'friend_id' => $friendID]);
-            $friendship->delete();
+            $friendship->update(['follow'=>false]);
         }
         return redirect('/friends');
     }
