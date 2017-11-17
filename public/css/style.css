@@ -238,7 +238,7 @@ body {
 
 .friends ul li {
     display: flex;
-    width: 25%;
+    width: 40%;
     flex-direction: row;
     margin: 15px auto;
     padding-bottom: 10px;
@@ -667,6 +667,10 @@ a.info
     .notifications
     {
         left:70%;
+    }
+
+    .friends ul li {
+        width:60%;
     }
 }
 
