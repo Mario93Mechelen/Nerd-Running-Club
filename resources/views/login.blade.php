@@ -14,8 +14,8 @@
         <link rel="shortcut icon" href="/img/logorunapp.png" />
 
         <!-- CSS Styling -->
-        <link rel="stylesheet" href="{{ url('/') }}./css/reset.css" type="text/css"/>
-        <link rel="stylesheet" href="{{ url('/') }}./css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/reset.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/style.css" type="text/css"/>
         
     </head>
     <body>
