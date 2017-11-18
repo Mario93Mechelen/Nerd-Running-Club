@@ -6,7 +6,7 @@
     </a>
 
     <div class="notifications"  v-on:click="showMobileMenu = !showMobileMenu">
-        <p>Notifications</p>
+        <img src="../img/notifications.png" alt="notifications" id="notif">
         @if($notifications->count()>0)
         <transition name="fade">
         <p class="circle" v-show="!showMobileMenu">{{$notifications->count()}}</p>

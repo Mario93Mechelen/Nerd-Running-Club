@@ -7,7 +7,7 @@
         <h2>Find some buddies to go the extra mile with!</h2>
 
         <ul>
-
+            <div class="justfriends">
             @foreach ($friends as $user)
                 <li>
                     <a href="/friends/{{ $user->id  }}">
@@ -23,6 +23,9 @@
                     <p class="warn">You are friends!</p>
                 </li>
             @endforeach
+            </div>
+
+                <div class="following">
                 @foreach ($following as $user)
                     <li>
                         <a href="/friends/{{ $user->id  }}">
@@ -53,7 +56,9 @@
                         <p class="warn">{{$user->firstname}} follows you!</p>
                     </li>
                 @endforeach
+                </div>
 
+            <div class="follower">
             @foreach ($res as $user)
                         <li>
                             <a href="/friends/{{ $user->id  }}">
@@ -68,6 +73,7 @@
                             </form>
                         </li>
                 @endforeach
+            </div>
         </ul>
 
     </div>
