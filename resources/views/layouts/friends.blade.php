@@ -20,7 +20,7 @@
                         <input type="hidden" name="action" value="delete">
                         <button class="btn btn-unfollow" type="submit">Unfollow</button>
                     </form>
-                    <p>You are friends!</p>
+                    <p class="warn">You are friends!</p>
                 </li>
             @endforeach
                 @foreach ($following as $user)
@@ -35,7 +35,7 @@
                             <input type="hidden" name="action" value="delete">
                             <button class="btn btn-unfollow" type="submit">Unfollow</button>
                         </form>
-                        <p>Are you still waiting for {{$user->firstname}} to like you back?</p>
+                        <p class="warn two">Are you still waiting for {{$user->firstname}} to like you back?</p>
                     </li>
                 @endforeach
                 @foreach ($followers as $user)
@@ -50,7 +50,7 @@
                             <input type="hidden" name="action" value="store">
                             <button class="btn btn-follow" type="submit">Follow</button>
                         </form>
-                        <p>{{$user->firstname}} follows you!</p>
+                        <p class="warn">{{$user->firstname}} follows you!</p>
                     </li>
                 @endforeach
 
