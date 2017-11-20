@@ -14,6 +14,12 @@
         @endif
     </div>
     
+    <div class="profile-icon">
+        <a href="/profile">
+            <img src="/img/profile-icon.png" alt="profile">
+        </a>
+    </div>
+    
     <a class="logout" href="/logout">
         <img src="/img/logout.png" alt="Log out">
     </a>

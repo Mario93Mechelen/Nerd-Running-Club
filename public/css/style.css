@@ -556,6 +556,10 @@ a.info.clockbox
     box-sizing: border-box;
 }
 
+.mapsactivity #map-canvas-1 {
+    z-index: 0;
+}
+
 /* ------------------ FRONTPAGE - - PROFILE --------------------------- */
 
 .tiles {
@@ -633,6 +637,18 @@ a.info.clockbox
     cursor:pointer;
     display:flex;
     flex-direction: row;
+}
+
+.profile-icon {
+    height: 50px;
+    position: fixed;
+    left: 75px;
+    top: 10px;
+}
+
+.profile-icon img {
+    display: block;
+    height: 50px;
 }
 
 .box
@@ -783,6 +799,10 @@ a.info.clockbox
         left:70%;
     }
 
+    .profile-icon {
+        left: 77%;
+    }
+
     .friends ul li {
         width:50%;
     }
@@ -826,6 +846,26 @@ a.info.clockbox
         margin-left: 25%;
         margin-bottom: 50px;
     }
+
+    .activity-flex {
+        display: flex;
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .run #info {
+        width: 25%;
+        height: 5em;
+        margin-top: 35px;
+    }
+
+    .mapsactivity {
+        margin: 0;
+    }
+
+
 }
 
 @media screen and (min-width: 1500px) {

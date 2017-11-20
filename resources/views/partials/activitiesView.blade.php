@@ -6,34 +6,38 @@
 
     </div>
 
-    <div id="info">
+    <div class="activity-flex">
 
-        <div id="distance">
+        <div id="info">
 
-            <h3>Distance</h3>
-            <p>{{$a->distance}} m</p>
+            <div id="distance">
+
+                <h3>Distance</h3>
+                <p>{{$a->distance}} m</p>
+
+            </div>
+
+            <div id="time">
+
+                <h3>Av. Speed</h3>
+                <p>{{$a->averageSpeed}} m/s</p>
+
+            </div>
+
+            <div id="time">
+
+                <h3>Total time</h3>
+                <p>{{$a->time}} sec</p>
+
+            </div>
 
         </div>
 
-        <div id="time">
-
-            <h3>Av. Speed</h3>
-            <p>{{$a->averageSpeed}} m/s</p>
-
+        <div class="mapsactivity">
+            {{ $a->mapsActivity( $a->latitude, $a->longitude ) }}
+            {!! Mapper::render() !!}
         </div>
 
-        <div id="time">
-
-            <h3>Total time</h3>
-            <p>{{$a->time}} sec</p>
-
-        </div>
-
-    </div>
-
-    <div class="mapsactivity">
-        {{ $a->mapsActivity( $a->latitude, $a->longitude ) }}
-        {!! Mapper::render() !!}
     </div>
 
 </div>

@@ -22,7 +22,16 @@ class Activity extends Model
     }
 
     public function mapsActivity( $latitude, $longitude ) {
-        Mapper::map($latitude, $longitude, ['zoom' => 15, 'ui' => false, 'streetViewControl' => false, 'mapTypeControl' => false ]);
+        Mapper::map($latitude, $longitude, [
+            'zoom' => 9,
+            'ui' => false,
+            'streetViewControl' => false,
+            'mapTypeControl' => false,
+            'fullscreenControl' => false,
+            'scaleControl' => false,
+            'zoomControl' => false,
+            'scrollWheelZoom' => false
+        ]);
     }
 
 }
