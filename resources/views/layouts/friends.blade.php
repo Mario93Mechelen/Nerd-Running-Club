@@ -6,6 +6,8 @@
 
         <h2>Find some buddies to go the extra mile with!</h2>
 
+        <a href="/ranking">Go to the ranking</a>
+
         <ul>
             <div class="justfriends">
             @foreach ($friends as $user)

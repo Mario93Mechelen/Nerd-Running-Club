@@ -25,6 +25,11 @@ class ActivitiesController extends Controller
 
     }
 
+    public function ranking() {
+
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
