@@ -139,6 +139,7 @@ body {
     letter-spacing: 3px;
     color: darkgray;
     margin-bottom: 20px;
+
 }
 
 .profile #logout {
@@ -158,6 +159,7 @@ body {
 
     background-color: #9db4e0;
 
+
 }
 
 .goals h3 {
@@ -166,6 +168,7 @@ body {
     letter-spacing: 5px;
     color: white;
 
+    text-shadow: 2px 2px grey;
     text-align: center;
     padding-top: 20px;
 }
@@ -177,6 +180,7 @@ body {
     text-align: center;
     padding-top: 20px;
     font-size: 1.2em;
+
 }
 
 
@@ -228,6 +232,13 @@ body {
 
 /* ---------------------- FRIENDS --------------------------- */
 
+.friends {
+
+    display: flex;
+    flex-direction: column;
+}
+
+
 .friends h2, .friendsprofile h2, .latestruns h2 {
     text-align: center;
     text-transform: uppercase;
@@ -236,9 +247,10 @@ body {
     margin-bottom: 50px;
 }
 
+
 .friends ul li {
     display: flex;
-    width: 40%;
+    width: 90%;
     flex-direction: row;
     margin: 15px auto;
     padding-bottom: 10px;
@@ -255,7 +267,8 @@ body {
     margin-top:10px;
     justify-self:flex-start;
     border-radius: 50%;
-    margin-left: 25px;
+    margin-left: 20px;
+    margin-right: 25px;
     border: 10px solid white;
 }
 
@@ -286,6 +299,152 @@ body {
     margin: 15px auto;
     border: 10px solid #FDF0BC;
 }
+
+.btn
+{
+    display: block;
+    margin: 30px auto;
+    padding: 12px 24px;
+    /* width:100px;
+     height:30px;*/
+    overflow: hidden;
+    font-weight:bold;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    cursor:pointer;
+
+    margin-left:80px;
+    justify-self:flex-end;
+}
+
+.btn-follow
+{
+    background-color: #9db4e0;
+    color: white;
+}
+
+.btn-unfollow
+{
+    background-color: white;
+    color: #9db4e0;
+}
+
+.name
+{
+    text-align: center;
+    color: grey;
+    position: absolute;
+    margin-left: 90%;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.friends ul .justfriends li {
+
+    background-color: #9db4e0;
+}
+
+.friends ul .following li {
+
+    background-color: #8CBD9C ;
+}
+
+.friends ul .justfriends .name {
+
+   color: white;
+}
+
+.friends ul .following .name {
+
+    color: white;
+}
+
+.friends ul .following button {
+
+    color: #8CBD9C;
+}
+
+.warn {
+
+    color: white;
+    font-size: 0.5em;
+    width: 10%;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.two {
+
+    margin-top: 25px;
+
+}
+a.info.friendsbox
+{
+
+    position:absolute;
+    background-color: white;
+    display:block;
+    color: #9db4e0 ;
+    padding: 33%;
+    text-decoration: none;
+    text-align: center;
+    border-radius:1px;
+    transition:all 1s ease-in-out;
+    z-index:500;
+}
+
+a.info.milesbox
+
+{
+
+    position:absolute;
+    background-color: #FCF0BB;
+    display:block;
+    color:white;
+    padding: 18% 37% 18% 37%;
+    text-decoration: none;
+    text-align: center;
+    border-radius:1px;
+    transition:all 1s ease-in-out;
+    z-index:500;
+}
+
+a.info.badgesbox
+
+{
+
+    position:absolute;
+    background-color: #8CBD9C;
+    display:block;
+    color:white;
+    padding: 22% 38% 22% 38%;
+    text-decoration: none;
+    text-align: center;
+    border-radius:1px;
+    transition:all 1s ease-in-out;
+    z-index:500;
+}
+
+a.info.clockbox
+
+{
+
+    position:absolute;
+    background-color: white;
+    display:block;
+    color:#9db4e0;
+    padding: 18% 37% 18% 37%;
+    text-decoration: none;
+    text-align: center;
+    border-radius:1px;
+    transition:all 1s ease-in-out;
+    z-index:500;
+}
+
+
+
 
 /* ------------- BADGES ----------------- */
 .badges {
@@ -397,6 +556,10 @@ body {
     box-sizing: border-box;
 }
 
+.mapsactivity #map-canvas-1 {
+    z-index: 0;
+}
+
 /* ------------------ FRONTPAGE - - PROFILE --------------------------- */
 
 .tiles {
@@ -414,6 +577,7 @@ body {
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
+
 }
 
 .tile a {
@@ -463,65 +627,6 @@ body {
 
 
 
-.btn
-{
-    display: block;
-    margin: 30px auto;
-    padding: 12px 24px;
-   /* width:100px;
-    height:30px;*/
-    overflow: hidden;
-    font-weight:bold;
-    border-width: 0;
-    outline: none;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    cursor:pointer;
-
-    margin-left:25px;
-    justify-self:flex-end;
-}
-
-.btn-follow
-{
-    background-color: #9db4e0;
-    color: white;
-}
-
-.btn-unfollow
-{
-    background-color: #EEEEEE;
-    color: #9db4e0;
-}
-
-.name
-{
-    height:25px;
-    width:80px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 35%;
-    left:21%;
-    text-overflow:ellipsis;
-}
-
-a.info
-{
-    height:50%;
-    width:100%;
-    position:absolute;
-    background-color: white;
-    display:block;
-    color:#9db4e0;
-    text-decoration: none;
-    text-align: center;
-    padding-top:30%;
-    border-radius:1px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition:all 1s ease-in-out;
-    z-index:500;
-}
 
 .notifications
 {
@@ -532,6 +637,18 @@ a.info
     cursor:pointer;
     display:flex;
     flex-direction: row;
+}
+
+.profile-icon {
+    height: 50px;
+    position: fixed;
+    left: 75px;
+    top: 10px;
+}
+
+.profile-icon img {
+    display: block;
+    height: 50px;
 }
 
 .box
@@ -549,6 +666,11 @@ a.info
     flex-direction:column;
 }
 
+#notif {
+
+    width: 30px;
+    height: 30px;
+}
 .notification
 {
     display:flex;
@@ -639,13 +761,21 @@ a.info
         display: none;
     }
 
+    .goals {
+
+        box-shadow: 2px 1px 2px 1px grey ;
+    }
+
     .tiles {
-        justify-content: space-around;
+        justify-content: center;
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 50px;
     }
 
     .tile {
-        width: 20vw;
-        height: 10em;
+        width: 230px;
+        height: 230px;
     }
 
     .badges .badges_filled {
@@ -669,12 +799,105 @@ a.info
         left:70%;
     }
 
-    .friends ul li {
-        width:60%;
+    .profile-icon {
+        left: 77%;
     }
+
+    .friends ul li {
+        width:50%;
+    }
+
+    .warn {
+
+        font-size: 0.7em;
+    }
+
+    .two {
+
+        margin-top: 8px;
+    }
+
+    a.info.friendsbox
+    {
+        padding: 32%;
+    }
+
+    a.info.milesbox
+
+    {
+        padding: 18% 37% 18% 37%;
+    }
+
+    a.info.badgesbox
+
+    {
+        padding: 18% 36% 18% 36%;
+    }
+
+    a.info.clockbox
+
+    {
+        padding: 18% 37% 18% 37%;
+    }
+
+    .goals {
+
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 50px;
+    }
+
+    .activity-flex {
+        display: flex;
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .run #info {
+        width: 25%;
+        height: 5em;
+        margin-top: 35px;
+    }
+
+    .mapsactivity {
+        margin: 0;
+    }
+
+
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1500px) {
+
+    .friends ul li {
+        width: 30%;
+    }
+
+    .name {
+
+        margin-left: 70%;
+    }
+
+    .warn {
+
+        font-size: 0.8em;
+        width: 20%;
+        margin-left: 20px;
+    }
+
+    .two {
+
+        margin-top: 30px;
+    }
+
+    .goals {
+
+        width: 40%;
+        margin-left: 30%;
+        box-shadow: 2px 1px 2px 1px grey ;
+    }
+
 
 }
 
