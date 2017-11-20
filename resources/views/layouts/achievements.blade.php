@@ -9,37 +9,26 @@
 
         <div class="badges_filled">
 
-            @foreach ($badges as $b)
+            @foreach($badges as $badge)
+                @if(in_array($badge->id, $myBadges))
+                    <div class="badge badge_filled">
 
-                @foreach ($badge as $earned)
+                        <img src="{{ $badge->badgeurl }}">
 
-                    @if ($earned->id == $b->id)
+                        <p>{{ $badge->badgetext }}</p>
 
-                        <!-- Als id badge = id behaald badge -> opacity 1 -->
+                    </div>
+                @else
+                <div class="badge badge_unfilled">
 
-                        <div class="badge badge_filled">
+                    <img src="{{ $badge->badgeurl }}">
 
-                            <img src="{{ $b->badgeurl }}">
+                    <p>{{ $badge->badgetext }}</p>
 
-                            <p>{{ $b->badgetext }}</p>
-
-                        </div>
-
-                    @else
-
-                        <div class="badge badge_unfilled">
-
-                            <img src="{{ $b->badgeurl }}">
-
-                            <p>{{ $b->badgetext }}</p>
-
-                        </div>
-
-                    @endif
-
-                @endforeach
-
+                </div>
+                @endif
             @endforeach
+
 
         </div>
 

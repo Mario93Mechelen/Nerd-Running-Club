@@ -44,9 +44,9 @@ class BadgesController extends Controller
         $this->checkRuns2($id);
         $this->checkRuns3($id);
 
-        $badge =  User::find($id)->badge;
+        $myBadges =  User::find($id)->badge->pluck('id')->toArray();
         $badges = Badges::all();
-        return view('layouts.achievements', compact('badge', 'badges'));
+        return view('layouts.achievements', compact('myBadges', 'badges'));
 
 
     }
