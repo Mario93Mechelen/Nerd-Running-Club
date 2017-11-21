@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Strava;
+use App\User;
 use App\Activity;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 use Mapper;
+use App\Friends;
 
 class ActivitiesController extends Controller
 {
@@ -27,7 +30,20 @@ class ActivitiesController extends Controller
 
     public function ranking() {
 
+        $user = Auth::user();
+        $myID = Auth::id();
+        Artisan::call('update:schedule');
 
+        $friendIDS = Friends::where(['user_id' => $myID, 'follow' => true])->pluck('friend_id');
+        $followerIDS = Friends::where(['friend_id' => $myID, 'follow' => true])->pluck('user_id');
+
+        $friendIDS->push($myID);
+        $followerIDS->push($myID);
+
+        $winners = Activity::all()->whereIn('user_id',$followerIDS)->whereIn('user_id',$friendIDS)->sortByDesc('distance')->groupBy('user_id');
+
+
+        return view('layouts.ranking', compact('winners','users'));
     }
 
     /**

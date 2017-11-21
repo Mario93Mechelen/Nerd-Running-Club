@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Badges_User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 use App\Strava;
 use App\Friends;
 use App\User;
+use App\Badges;
 use App\Activity;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,11 +20,17 @@ class FriendsController extends Controller
         $myID = Auth::id();
         //https://www.strava.com/api/v3/athletes/{id}/followers" "Authorization: Bearer [[token]
         $friendIDS = Friends::where(['user_id' => $myID, 'follow' => true])->pluck('friend_id');
+
         $followerIDS = Friends::where(['friend_id' => $myID, 'follow' => true])->pluck('user_id');
+
         $friends = User::all()->whereIn('id', $friendIDS)->whereIn('id',$followerIDS)->sortBy('firstname');
+
         $following = User::all()->whereIn('id', $friendIDS)->whereNotIn('id',$followerIDS)->sortBy('firstname');
+
         $followers = User::all()->whereIn('id',$followerIDS)->whereNotIn('id',$friendIDS)->sortBy('firstname');
+
         $res = User::all()->whereNotIn('id', $friendIDS)->whereNotIn('id',$followerIDS)->where('id','!=',$myID)->sortBy('firstname');
+        
         return view('layouts.friends', compact('res', 'following', 'followers', 'friends'));
     }
 
@@ -37,7 +45,9 @@ class FriendsController extends Controller
 
             $activity = Activity::All()->where('user_id', $id);
 
-            return view('layouts.friendsprofile', compact('friend', 'activity'));
+            $badge =  User::find($id)->badge;
+
+            return view('layouts.friendsprofile', compact('friend', 'activity', 'badge'));
         }else{
             return redirect('/friends');
         }

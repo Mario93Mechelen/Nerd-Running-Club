@@ -38,6 +38,7 @@ class BadgesController extends Controller
 
         $badge =  User::find($id)->badge;
         $badges = Badges::all();
+
         return view('layouts.achievements', compact('badge', 'badges'));
 
 

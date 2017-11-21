@@ -6,14 +6,14 @@
 
         <h2>Find some buddies to go the extra mile with!</h2>
 
-        <a href="/ranking">Go to the ranking</a>
+        <a href="/ranking" id="rankingLink">Go to the ranking</a>
 
         <ul>
             <div class="justfriends">
             @foreach ($friends as $user)
                 <li>
                     <a href="/friends/{{ $user->id  }}">
-                        <div class="name"><p>{{$user->firstname}}</p></div>
+                        <div class="name"><p>{{$user->firstname}} {{$user->lastname}}</p></div>
                         <img src="{{ $user->avatar  }}" alt="{{ $user->firstname  }} {{ $user->lastname  }}">
                     </a>
                     <form action="/friends" method="post">
@@ -31,7 +31,7 @@
                 @foreach ($following as $user)
                     <li>
                         <a href="/friends/{{ $user->id  }}">
-                            <div class="name"><p>{{$user->firstname}}</p></div>
+                            <div class="name"><p>{{$user->firstname}} {{$user->lastname}}</p></div>
                             <img src="{{ $user->avatar  }}" alt="{{ $user->firstname  }} {{ $user->lastname  }}">
                         </a>
                         <form action="/friends" method="post">
@@ -46,7 +46,7 @@
                 @foreach ($followers as $user)
                     <li>
                         <a href="/friends/{{ $user->id  }}">
-                            <div class="name"><p>{{$user->firstname}}</p></div>
+                            <div class="name"><p>{{$user->firstname}} {{$user->lastname}}</p></div>
                             <img src="{{ $user->avatar  }}" alt="{{ $user->firstname  }} {{ $user->lastname  }}">
                         </a>
                         <form action="/friends" method="post">
@@ -64,7 +64,7 @@
             @foreach ($res as $user)
                         <li>
                             <a href="/friends/{{ $user->id  }}">
-                                <div class="name"><p>{{$user->firstname}}</p></div>
+                                <div class="name"><p>{{$user->firstname}} {{$user->lastname}}</p></div>
                                 <img src="{{ $user->avatar  }}" alt="{{ $user->firstname  }} {{ $user->lastname  }}">
                             </a>
                             <form action="/friends" method="post">
