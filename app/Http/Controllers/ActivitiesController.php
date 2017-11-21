@@ -41,9 +41,15 @@ class ActivitiesController extends Controller
         $followerIDS->push($myID);
 
         $winners = Activity::all()->whereIn('user_id',$followerIDS)->whereIn('user_id',$friendIDS)->sortByDesc('distance')->groupBy('user_id');
-
-
-        return view('layouts.ranking', compact('winners','users'));
+        $winningActivities = [];
+        $i=1;
+        foreach($winners as $winner){
+            $winningActivities[$i]=$winner[0];
+            if($i++==3){
+                break;
+            }
+        }
+        return view('layouts.ranking', compact('winningActivities','users'));
     }
 
     /**
