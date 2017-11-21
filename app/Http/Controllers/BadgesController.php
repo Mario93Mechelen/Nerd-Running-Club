@@ -38,12 +38,8 @@ class BadgesController extends Controller
 
         $myBadges =  User::find($id)->badge->pluck('id')->toArray();
         $badges = Badges::all();
-<<<<<<< HEAD
         return view('layouts.achievements', compact('myBadges', 'badges'));
-=======
 
-        return view('layouts.achievements', compact('badge', 'badges'));
->>>>>>> RankingLink
 
 
     }

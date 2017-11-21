@@ -920,8 +920,6 @@ a.info.clockbox
         margin-left: 25%;
         margin-bottom: 50px;
     }
-
-<<<<<<< HEAD
     .activity-flex {
         display: flex;
         width: 100%;
@@ -940,8 +938,6 @@ a.info.clockbox
         margin: 0;
     }
 
-
-=======
     .ranking {
 
         width: 40%;
@@ -949,7 +945,7 @@ a.info.clockbox
 
     }
 
->>>>>>> RankingLink
+
 }
 
 @media screen and (min-width: 1500px) {
