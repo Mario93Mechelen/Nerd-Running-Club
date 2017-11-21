@@ -238,6 +238,21 @@ body {
     flex-direction: column;
 }
 
+#rankingLink {
+
+    text-decoration: none;
+    width: 10%;
+    padding: 1%;
+    border-radius: 50px;
+    background-color: #efeaa2;
+    color: white;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 30px;
+
+
+}
+
 
 .friends h2, .friendsprofile h2, .latestruns h2 {
     text-align: center;
@@ -332,13 +347,14 @@ body {
 
 .name
 {
-    text-align: center;
+    text-align: left;
     color: grey;
     position: absolute;
     margin-left: 90%;
-    margin-top: 40px;
+    margin-top: 35px;
     text-transform: uppercase;
     font-size: 0.8em;
+    line-height: 15px;
 }
 
 .friends ul .justfriends li {
@@ -365,6 +381,8 @@ body {
 
     color: #8CBD9C;
 }
+
+
 
 .warn {
 
@@ -443,8 +461,64 @@ a.info.clockbox
     z-index:500;
 }
 
+/* ---------------------- FRIENDS --------------------------- */
+
+.badges_friend {
+
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.badges_friend img {
+
+    width: 80px;
+    height: 80px;
+    border: none;
+
+}
 
 
+/* ------------- RANKING ----------------- */
+
+.ranking {
+
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 15%;
+
+}
+
+.ranking h1 {
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: darkgray;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ranking .number {
+
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.ranking .number h2 {
+
+    background-color: #ff5d5b;
+    padding: 4%;
+    width: 4%;
+    color: white;
+    border-radius: 200px;
+    text-align: center;
+
+}
 
 /* ------------- BADGES ----------------- */
 .badges {
@@ -847,6 +921,7 @@ a.info.clockbox
         margin-bottom: 50px;
     }
 
+<<<<<<< HEAD
     .activity-flex {
         display: flex;
         width: 100%;
@@ -866,6 +941,15 @@ a.info.clockbox
     }
 
 
+=======
+    .ranking {
+
+        width: 40%;
+        margin-left: 30%;
+
+    }
+
+>>>>>>> RankingLink
 }
 
 @media screen and (min-width: 1500px) {
@@ -896,6 +980,13 @@ a.info.clockbox
         width: 40%;
         margin-left: 30%;
         box-shadow: 2px 1px 2px 1px grey ;
+    }
+
+    .ranking {
+
+        width: 20%;
+        margin-left: 40%;
+
     }
 
 
