@@ -34,8 +34,11 @@
         </div>
 
         <div class="mapsactivity">
-            {{ $a->mapsActivity( $a->latitude, $a->longitude ) }}
-            {!! Mapper::render() !!}
+            @if ( $a->latitude == NULL || $a->latitude == NULL  )
+                <p class="mapsnotavailable">Maps is not available.</p>
+            @else
+                <img src="{{ $a->googleMaps( $a->latitude, $a->longitude ) }}" alt="Error Loading Maps">
+            @endif
         </div>
 
     </div>
