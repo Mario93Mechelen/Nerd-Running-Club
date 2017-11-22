@@ -82,13 +82,14 @@ class LoginController extends Controller
 
         $res = $strava->get('/api/v3/athlete/activities/', $token);
         foreach ($res as $result) {
-
-            if($result->start_latitude!=null&&$result->start_longitude!=null) {
-                $googlemaps = new Googlemaps();
-                $address = $googlemaps->get($result->start_latitude, $result->start_longitude);
-                $address = $address->results[1]->address_components[0]->long_name;
-            }else{
-                $address="no address";
+            if(Activity::where('activityId',$result->id)!=null) {
+                if ($result->start_latitude != null && $result->start_longitude != null) {
+                    $googlemaps = new Googlemaps();
+                    $address = $googlemaps->get($result->start_latitude, $result->start_longitude);
+                    $address = $address->results[1]->address_components[0]->long_name;
+                } else {
+                    $address = "no address";
+                }
             }
                 if ($result->average_speed < 7.5) {
 
