@@ -12,7 +12,7 @@ composer install
 
 composer dump-autoload
 
-php artisan migrate:refresh --seed
+php artisan migrate --seed
 
 @endtask
 
@@ -28,6 +28,6 @@ composer install
 
 composer dump-autoload
 
-php artisan migrate:refresh --seed
+php artisan migrate --seed
 
 @endtask
