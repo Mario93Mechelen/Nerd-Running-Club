@@ -9,9 +9,11 @@
         <h2>{{  $friend->firstname  }} {{  $friend->lastname  }}</h2>
 
 
-        <h2>Achieved badges</h2>
+
 
         <div class="badges_friend">
+
+            <h3>{{$friend->firstname}} already earned {{$badge->count()}} badges!</h3>
             @foreach ($badge as $b)
 
                 <img src="../{{ $b->badgeurl }}">

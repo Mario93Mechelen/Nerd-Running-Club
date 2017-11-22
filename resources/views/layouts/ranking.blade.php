@@ -7,12 +7,15 @@
         <h1>Top 5 Longest Runs</h1>
 
         @foreach($winningActivities as $w)
+            @foreach($user->where('id', ($w->user_id)) as $u)
 
             <div class="number number1">
-            <h2>1</h2>
-            <h3>{{$w->user_id}}</h3>
+            <img src="{{$u->avatar}}">
+            <h4>{{$u->firstname}} {{$u->lastname}}</h4>
             <p>{{$w->distance}} miles</p>
             </div>
+
+            @endforeach
 
         @endforeach
 
