@@ -9,6 +9,7 @@ use App\User;
 use App\Activity;
 use App\Schedule;
 use Carbon\Carbon;
+use App\nerdrunningclub\Googlemaps;
 
 class dbUpdate extends Command
 {
@@ -53,6 +54,13 @@ class dbUpdate extends Command
 
             $res = $strava->get('/api/v3/athlete/activities/', $token);
             foreach ($res as $result) {
+                if($result->start_latitude!=null&&$result->start_longitude!=null) {
+                    $googlemaps = new Googlemaps();
+                    $address = $googlemaps->get($result->start_latitude, $result->start_longitude);
+                    $address = $address->results[1]->address_components[0]->long_name;
+                }else{
+                    $address="no address";
+                }
                 if($result->average_speed < 7.5) {
 
                     // Check if activity id already exists
@@ -63,8 +71,7 @@ class dbUpdate extends Command
                     $activity->time = $result->elapsed_time;
                     $activity->distance = $result->distance;
                     $activity->averageSpeed = $result->average_speed;
-                    $activity->latitude = $result->start_latitude;
-                    $activity->longitude = $result->start_longitude;
+                    $activity->address = $address;
                     $activity->save();
                 }
 

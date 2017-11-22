@@ -12,6 +12,7 @@ use App\Schedule;
 use App\Schedule_User;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
+use App\nerdrunningclub\Googlemaps;
 
 class LoginController extends Controller
 {
@@ -81,20 +82,27 @@ class LoginController extends Controller
 
         $res = $strava->get('/api/v3/athlete/activities/', $token);
         foreach ($res as $result) {
-            if($result->average_speed < 7.5) {
 
-                // Check if activity id already exists
-                $activity = Activity::firstOrNew(['activityId' => $result->id]);
-                $activity->user_id = $id;
-                $activity->name = $result->name;
-                $activity->activityId = $result->id;
-                $activity->time = $result->elapsed_time;
-                $activity->distance = $result->distance;
-                $activity->averageSpeed = $result->average_speed;
-                $activity->latitude = $result->start_latitude;
-                $activity->longitude = $result->start_longitude;
-                $activity->save();
+            if($result->start_latitude!=null&&$result->start_longitude!=null) {
+                $googlemaps = new Googlemaps();
+                $address = $googlemaps->get($result->start_latitude, $result->start_longitude);
+                $address = $address->results[1]->address_components[0]->long_name;
+            }else{
+                $address="no address";
             }
+                if ($result->average_speed < 7.5) {
+
+                    // Check if activity id already exists
+                    $activity = Activity::firstOrNew(['activityId' => $result->id]);
+                    $activity->user_id = $id;
+                    $activity->name = $result->name;
+                    $activity->activityId = $result->id;
+                    $activity->time = $result->elapsed_time;
+                    $activity->distance = $result->distance;
+                    $activity->averageSpeed = $result->average_speed;
+                    $activity->address = $address;
+                    $activity->save();
+                }
 
         }
         return redirect('profile');

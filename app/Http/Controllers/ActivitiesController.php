@@ -27,15 +27,7 @@ class ActivitiesController extends Controller
 
         $activity = Activity::All()->where('user_id', $stravaId);
 
-        /*$client = new Client();
-        $url = 'https://maps.googleapis.com/maps/api/staticmap?center=51.024779,4.484782&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C51.024779,4.484782&key=AIzaSyAuVtcvIZX0MMqEZrJ2_ghI2MsWQ5MmvPM';
-        $res = $client->request('GET', $url)->getBody();
-        $result = json_decode(json_encode($res));
-        dd($result);*/
-        //$result = \GuzzleHttp\json_decode($res->getBody());
-
         return view('layouts.activities', compact('activity'));
-
     }
 
     public function ranking() {

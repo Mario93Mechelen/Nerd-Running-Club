@@ -21,8 +21,7 @@ class CreateActivitiesTable extends Migration
             $table->float('distance');
             $table->integer('time');
             $table->float('averageSpeed');
-            $table->decimal('latitude', 5, 2)->nullable();
-            $table->decimal('longitude', 5, 2)->nullable();
+            $table->string('address');
             $table->timestamps();
         });
     }

@@ -34,10 +34,11 @@
         </div>
 
         <div class="mapsactivity">
-            @if ( $a->latitude == NULL || $a->latitude == NULL  )
+            @if ( $a->address == "no address")
                 <p class="mapsnotavailable">Maps is not available.</p>
             @else
-                <img src="{{ $a->googleMaps( $a->latitude, $a->longitude ) }}" alt="Error Loading Maps">
+                <iframe width="200" height="200" src="//www.google.com/maps/embed/v1/place?q={{$a->address}}&zoom=10&key=AIzaSyAuVtcvIZX0MMqEZrJ2_ghI2MsWQ5MmvPM">
+                </iframe>
             @endif
         </div>
 
