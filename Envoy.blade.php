@@ -12,6 +12,8 @@ composer install
 
 composer dump-autoload
 
+php artisan migrate:refresh --seed
+
 @endtask
 
 @task ('deploy-pro', ['on' => 'web'])
