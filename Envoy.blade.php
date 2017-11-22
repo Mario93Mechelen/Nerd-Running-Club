@@ -13,3 +13,19 @@ composer install
 composer dump-autoload
 
 @endtask
+
+@task ('deploy-pro', ['on' => 'web'])
+
+cd laravel/Nerd-Running-Club/
+
+git reset --hard HEAD~1
+
+git pull
+
+composer install
+
+composer dump-autoload
+
+php artisan migrate:refresh --seed
+
+@endtask
