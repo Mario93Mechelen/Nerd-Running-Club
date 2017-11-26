@@ -10,9 +10,8 @@
             @foreach($user->where('id', ($w->user_id)) as $u)
 
             <div class="number number1">
-            <img src="{{$u->avatar}}">
-            <h4>{{$u->firstname}} {{$u->lastname}}</h4>
             <p>{{$w->distance}} miles</p>
+                <h4> by </h4><img src="{{$u->avatar}}">
             </div>
 
             @endforeach

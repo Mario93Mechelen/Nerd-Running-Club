@@ -14,15 +14,20 @@
         @endif
     </div>
     
-    <div class="profile-icon">
+    <!--<div class="profile-icon">
         <a href="/profile">
             <img src="/img/profile-icon.png" alt="profile">
         </a>
-    </div>
+    </div>-->
+
+    <a class="profilelink" href="/profile">
+        <p>profile</p>
+    </a>
     
     <a class="logout" href="/logout">
-        <img src="/img/logout.png" alt="Log out">
+        <p>logout</p>
     </a>
+
     <transition name="expand">
     @include('partials.notificationsbox')
     </transition>

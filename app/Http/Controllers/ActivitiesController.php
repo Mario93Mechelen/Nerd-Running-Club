@@ -27,6 +27,7 @@ class ActivitiesController extends Controller
 
         $activity = Activity::All()->where('user_id', $stravaId);
 
+
         return view('layouts.activities', compact('activity'));
     }
 

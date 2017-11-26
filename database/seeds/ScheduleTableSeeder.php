@@ -24,6 +24,7 @@ class ScheduleTableSeeder extends Seeder
             array('week'=>8,'goal'=>'Run this week at least 14 miles.', 'completed' => false),
             array('week'=>9,'goal'=>'Run this week at least 15 miles.', 'completed' => false),
             array('week'=>10,'goal'=>'Run this week at least 16 miles.', 'completed' => false),
+            array('week'=>11,'goal'=>'Finished! Good luck with the 1O miles.', 'completed' => false),
 
         ));
     }

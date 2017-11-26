@@ -22,11 +22,10 @@
 
         <div class="loginStrava">
 
-            <img src="{{URL::asset('/img/logorunapp.png')}}" alt="Logo Nerd Running App">
+           <h2>Welcome in the Nerd-Running-Club.</h2>
 
             <a href="/login/strava">
-                <p>Login with</p>
-                <img src="{{URL::asset('/img/stravalogo.png')}}" alt="Strava" height="50" width="200">
+                <p>Login with Strava</p>
             </a>
             
         </div>
