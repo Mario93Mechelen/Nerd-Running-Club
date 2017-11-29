@@ -17,6 +17,8 @@ Route::get('/', 'Auth\LoginController@showHome')->name('login');
 Route::get('login/strava', 'Auth\LoginController@redirectToProvider');
 Route::get('oauth/code_callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::get('/hall-of-fame', 'ActivitiesController@showHall');
+
 Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/profile', 'UsersController@index');

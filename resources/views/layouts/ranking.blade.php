@@ -10,7 +10,7 @@
             @foreach($user->where('id', ($w->user_id)) as $u)
 
             <div class="number number1">
-            <p>{{$w->distance}} miles</p>
+            <p>{{$w->distance/1000}} km</p>
                 <h4> by </h4><img src="{{$u->avatar}}">
             </div>
 

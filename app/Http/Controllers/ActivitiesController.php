@@ -13,6 +13,7 @@ use App\nerdrunningclub\Googlemaps;
 use App\Friends;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\DB;
 
 class ActivitiesController extends Controller
 {
@@ -33,7 +34,6 @@ class ActivitiesController extends Controller
 
     public function ranking() {
 
-        $user = Auth::user();
         $myID = Auth::id();
         Artisan::call('update:schedule');
 
@@ -50,7 +50,7 @@ class ActivitiesController extends Controller
         foreach($winners as $winner){
 
             $winningActivities[$i]=$winner[0];
-            if($i++==3){
+            if($i++==5){
                 break;
             }
         }
@@ -60,6 +60,23 @@ class ActivitiesController extends Controller
         return view('layouts.ranking', compact('winningActivities','user'));
     }
 
+    public function showHall(){
+        $winners = Activity::all()->sortByDesc('distance')->groupBy('user_id');
+        $winningActivities = [];
+        $i=1;
+
+        foreach($winners as $winner){
+
+            $winningActivities[$i]=$winner[0];
+            if($i++==5){
+                break;
+            }
+        }
+
+        $user = User::all();
+
+        return view('layouts.ranking', compact('winningActivities','user'));
+    }
     /**
      * Show the form for creating a new resource.
      *
