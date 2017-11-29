@@ -71,7 +71,11 @@ class LoginController extends Controller
             $user->firstname = $athlete->firstname;
             $user->lastname = $athlete->lastname;
             $user->email = $athlete->email;
-            $user->avatar = $athlete->profile;
+            if($athlete->profile == "" || $athlete->profile == NULL || $athlete->profile == "avatar/athlete/large.png"){
+                $user->avatar = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
+            } else {
+                $user->avatar = $athlete->profile;
+            }
             $user->gender = $athlete->sex;
             $user->token = $res->access_token;
             $user->save();
