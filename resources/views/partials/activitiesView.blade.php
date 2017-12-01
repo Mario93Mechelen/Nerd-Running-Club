@@ -13,21 +13,21 @@
             <div id="distance">
 
                 <h3>Distance</h3>
-                <p>{{$a->distance}} m</p>
+                <p>{{round($a->distance*0.0006,2)}} miles</p>
 
             </div>
 
             <div id="time">
 
                 <h3>Av. Speed</h3>
-                <p>{{$a->averageSpeed}} m/s</p>
+                <p>{{round($a->averageSpeed*2.237,2)}} mph</p>
 
             </div>
 
             <div id="time">
 
                 <h3>Total time</h3>
-                <p>{{$a->time}} sec</p>
+                <p>{{round($a->time/60)}} mins</p>
 
             </div>
 

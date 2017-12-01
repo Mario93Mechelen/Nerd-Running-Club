@@ -11,3 +11,4 @@ class Schedule_User extends Model
         'user_id', 'schedule_id'
     ];
 }
+

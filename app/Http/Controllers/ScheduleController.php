@@ -47,130 +47,150 @@ class ScheduleController extends Controller
 
     public function goalsWeek1($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-10-15');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
-         foreach ($schedule as $s){
+        foreach ($schedule as $s){
 
-             if(($s->distance) >= 3000) {
+            if(($s->distance) >= 3000&&($s->date)<='2017-10-15') {
 
-                    Schedule_User::where('schedule_id', 1)->delete();
-             }
-         }
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
+            }
+        }
     }
 
     public function goalsWeek2($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-11-05');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 5000) {
+            if(($s->distance) >= 5000&&($s->date)<='2017-11-05') {
 
-                Schedule_User::where('schedule_id', 2)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }
 
     public function goalsWeek3($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-11-26');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 8000) {
+            if(($s->distance) >= 8000&&($s->date)<='2017-11-26') {
 
-                Schedule_User::where('schedule_id', 3)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }
 
     public function goalsWeek4($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-10-15');
+        $schedule = Activity::all();
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 9000) {
+            if(($s->distance) >= 9000&&($s->date)<='2017-10-15') {
 
-                Schedule_User::where('schedule_id', 4)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }
 
     public function goalsWeek5($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-12-03');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 10000) {
+            if(($s->distance) >= 10000&&($s->date)<='2017-12-03') {
 
-                Schedule_User::where('schedule_id', 5)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }
 
     public function goalsWeek6($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-12-24');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 11000) {
+            if(($s->distance) >= 11000&&($s->date)<='2017-12-24') {
 
-                Schedule_User::where('schedule_id', 6)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }
 
     public function goalsWeek7($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2018-01-14');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 12000) {
+            if(($s->distance) >= 12000&&($s->date)<='2018-01-14') {
 
-                Schedule_User::where('schedule_id', 7)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }
 
     public function goalsWeek8($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2018-02-04');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 14000) {
+            if(($s->distance) >= 14000&&($s->date)<='2018-02-04') {
 
-                Schedule_User::where('schedule_id', 8)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }
 
     public function goalsWeek9($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2018-02-25');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 15000) {
+            if(($s->distance) >= 15000&&($s->date)<='2018-02-25') {
 
-                Schedule_User::where('schedule_id', 9)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }
 
     public function goalsWeek10($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2018-03-18');
+        $schedule = Activity::all()->where('strava_id', $strava_id);
 
         foreach ($schedule as $s){
 
-            if(($s->distance) >= 16000) {
+            if(($s->distance) >= 16000&&($s->date)<='2018-03-18') {
 
-                Schedule_User::where('schedule_id', 10)->delete();
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'yes']);
+            }else{
+                Schedule_User::where(['schedule_id'=> 1,'user_id'=>$strava_id])->update(['confirmed'=>'no']);
             }
         }
     }

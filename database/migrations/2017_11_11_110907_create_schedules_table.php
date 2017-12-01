@@ -17,7 +17,7 @@ class CreateSchedulesTable extends Migration
             $table->increments('id');
             $table->integer('week');
             $table->text('goal');
-            $table->boolean('completed');
+            $table->date('end_date');
             $table->timestamps();
         });
     }

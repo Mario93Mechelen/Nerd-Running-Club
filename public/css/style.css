@@ -721,6 +721,7 @@ a.info.clockbox
 
 
 
+
 .notifications
 {
     height:50px;
@@ -939,10 +940,25 @@ a.info.clockbox
 
         font-size: 1em;
         border: 1px solid grey;
+        box-sizing: border-box;
         padding: 1% 1.2%;
         border-radius: 100px;
-        color: #228092;
         margin-left: 1%;
+    }
+
+    .blue{
+        background-color:#228092;
+        color:white;
+    }
+
+    .orange{
+        background-color:#E8800D;
+        color:white;
+    }
+
+    .grey{
+        background-color:C2C1A5;
+        color:#228092;
     }
 
     .tiles {

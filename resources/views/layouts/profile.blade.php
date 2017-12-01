@@ -6,8 +6,8 @@
 
     <div class="goals">
 
-        <h3>Week nr. {{$goals->week}} :</h3>
-        <p>{{$goals->goal}}</p>
+        <h3>Challenge nr. {{$goalnow->week}} :</h3>
+        <p>{{$goalnow->goal}}</p>
 
     </div>
 

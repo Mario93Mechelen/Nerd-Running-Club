@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,8 +26,8 @@ class UsersController extends Controller
         $myID = Auth::id();
         Artisan::call('update:schedule');
 
-        $schedule = Schedule_User::all()->first();
-        $goals = Schedule::all()->where('id', $schedule->schedule_id)->first();
+        $schedule = Schedule_User::all();
+        $goalnow = Schedule::where('end_date','>=',Carbon::now())->orderBy('end_date')->first();
 
 
         $friendIDS = Friends::where(['user_id' => $myID, 'follow' => true])->pluck('friend_id');
@@ -39,7 +40,7 @@ class UsersController extends Controller
         //maar ik zal mijn token hier zetten, plak die bij 1 van de fake users en zet de scheduler in Kernel.php even op everyMinute();
         //token: 4594438fcaf0110a3acf4cbfa23be88db0f083ab
 
-        return view('layouts.profile', compact('user', 'goals', 'winners'));
+        return view('layouts.profile', compact('user', 'goalnow','schedule', 'winners'));
     }
 
     public function runs()

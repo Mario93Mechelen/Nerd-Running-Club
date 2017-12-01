@@ -17,6 +17,7 @@ class CreateScheduleUsersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('schedule_id');
+            $table->string('confirmed');
             $table->timestamps();
         });
     }
