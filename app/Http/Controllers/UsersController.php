@@ -28,7 +28,7 @@ class UsersController extends Controller
 
         $schedule = Schedule_User::all();
         $goalnow = Schedule::where('end_date','>=',Carbon::now())->orderBy('end_date')->first();
-
+        $successusers = Schedule_User::all()->where('confirmed','==','yes');
 
         $friendIDS = Friends::where(['user_id' => $myID, 'follow' => true])->pluck('friend_id');
         $followerIDS = Friends::where(['friend_id' => $myID, 'follow' => true])->pluck('user_id');
@@ -40,7 +40,7 @@ class UsersController extends Controller
         //maar ik zal mijn token hier zetten, plak die bij 1 van de fake users en zet de scheduler in Kernel.php even op everyMinute();
         //token: 4594438fcaf0110a3acf4cbfa23be88db0f083ab
 
-        return view('layouts.profile', compact('user', 'goalnow','schedule', 'winners'));
+        return view('layouts.profile', compact('user', 'goalnow','schedule', 'winners','successusers'));
     }
 
     public function runs()

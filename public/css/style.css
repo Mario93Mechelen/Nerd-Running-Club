@@ -944,6 +944,7 @@ a.info.clockbox
         padding: 1% 1.2%;
         border-radius: 100px;
         margin-left: 1%;
+        max-height:50px;
     }
 
     .blue{
@@ -957,7 +958,7 @@ a.info.clockbox
     }
 
     .grey{
-        background-color:C2C1A5;
+        background-color:#C2C1A5;
         color:#228092;
     }
 
@@ -967,6 +968,40 @@ a.info.clockbox
         margin-left: 12.5%;
         margin-bottom: 50px;
         margin-top: 80px;
+    }
+
+    .bubble
+    {
+        position: relative;
+        display:inline-block;
+        max-width:250px;
+        min-width:60px;
+        padding: 20px;
+        background: #FFFFFF;
+        border: #7F7F7F solid 4px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+    }
+
+    .bubblecontainer
+    {
+        position:absolute;
+        bottom:42%;
+        display:none;
+    }
+
+    .bubble img
+    {
+        border-radius:100px;
+        width:20px;
+        height:20px;
+    }
+
+    .userimages
+    {
+        display:flex;
+        flex-direction:row;
     }
 
     .tile {

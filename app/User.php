@@ -48,6 +48,9 @@ class User extends Authenticatable
 
     }
 
+    public function user_schedule(){
+        return $this->hasMany('App\Schedule_User','user_id','id');
+    }
 
 
 

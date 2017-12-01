@@ -16,6 +16,7 @@
     <!-- CSS Styling -->
     <link rel="stylesheet" href="/css/reset.css" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <title>Nerd-Running-Club</title>
 
@@ -31,6 +32,7 @@
 
     @include('partials.footer')
     <script src="https://unpkg.com/vue"></script>
+    <script src="/js/script.js"></script>
     <script src="/js/vuescript.js"></script>
     <script src="/js/vuescript2.js"></script>
 </body>
