@@ -11,7 +11,7 @@ $(document).ready(function(){
        console.log($str);
        $str = $str.charAt(0);
        console.log($str);
-           $('#bubble' + $str).has('p').show();
+           $('#bubble' + $str).has('img').show();
 
     });
     $('.week').on('mouseleave',function(){
