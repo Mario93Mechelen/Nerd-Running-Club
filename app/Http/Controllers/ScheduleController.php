@@ -47,7 +47,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek1($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-10-15');
 
          foreach ($schedule as $s){
 
@@ -60,7 +60,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek2($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-11-05');
 
         foreach ($schedule as $s){
 
@@ -73,7 +73,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek3($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-11-26');
 
         foreach ($schedule as $s){
 
@@ -86,7 +86,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek4($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-10-15');
 
         foreach ($schedule as $s){
 
@@ -99,7 +99,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek5($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-12-03');
 
         foreach ($schedule as $s){
 
@@ -112,7 +112,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek6($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2017-12-24');
 
         foreach ($schedule as $s){
 
@@ -125,7 +125,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek7($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2018-01-14');
 
         foreach ($schedule as $s){
 
@@ -138,7 +138,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek8($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2018-02-04');
 
         foreach ($schedule as $s){
 
@@ -151,7 +151,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek9($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2018-02-25');
 
         foreach ($schedule as $s){
 
@@ -164,7 +164,7 @@ class ScheduleController extends Controller
 
     public function goalsWeek10($strava_id) {
 
-        $schedule = Activity::all()->where('strava_id', $strava_id);
+        $schedule = Activity::all()->where('strava_id', $strava_id)->where('date','<=','2018-03-18');
 
         foreach ($schedule as $s){
 
