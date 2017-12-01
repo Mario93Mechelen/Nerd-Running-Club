@@ -26,7 +26,7 @@ class UsersController extends Controller
         $myID = Auth::id();
         Artisan::call('update:schedule');
 
-        $schedule = Schedule_User::all();
+        $schedule = Schedule_User::all()->where('user_id',$myID);
         $goalnow = Schedule::where('end_date','>=',Carbon::now())->orderBy('end_date')->first();
         $successusers = Schedule_User::all()->where('confirmed','==','yes');
 
