@@ -13,7 +13,7 @@
             <div id="distance">
 
                 <h3>Distance</h3>
-                <p>{{round($a->distance*0.0006,2)}} miles</p>
+                <p>{{round($a->distance*0.000621371192,2)}} miles</p>
 
             </div>
 
