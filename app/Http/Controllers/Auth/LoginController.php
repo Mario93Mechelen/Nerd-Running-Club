@@ -10,6 +10,7 @@ use App\Friends;
 use App\Activity;
 use App\Schedule;
 use App\Schedule_User;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use App\nerdrunningclub\Googlemaps;
@@ -96,6 +97,10 @@ class LoginController extends Controller
                 }
             }
                 if ($result->average_speed < 7.5) {
+                    $date = $result->start_date;
+                    $date = substr($date,0,10);
+                    //5e6d26295a226ef9732084cc012ce08590d7b1c8
+
 
                     // Check if activity id already exists
                     $activity = Activity::firstOrNew(['activityId' => $result->id]);
@@ -105,6 +110,7 @@ class LoginController extends Controller
                     $activity->time = $result->elapsed_time;
                     $activity->distance = $result->distance;
                     $activity->averageSpeed = $result->average_speed;
+                    $activity->date = $date;
                     $activity->address = $address;
                     $activity->save();
                 }

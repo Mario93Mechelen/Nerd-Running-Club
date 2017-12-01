@@ -22,6 +22,7 @@ class CreateActivitiesTable extends Migration
             $table->integer('time');
             $table->float('averageSpeed');
             $table->string('address');
+            $table->date('date');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ class Activity extends Model
 {
     //
     protected $fillable = [
-        'activityId', 'name', 'distance', 'time', 'strava_id', 'averagespeed'
+        'activityId', 'name', 'distance', 'time', 'strava_id', 'averagespeed','date'
     ];
 
     public function user()

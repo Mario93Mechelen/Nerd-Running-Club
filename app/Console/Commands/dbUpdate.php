@@ -64,7 +64,8 @@ class dbUpdate extends Command
                     }
                 }
                 if($result->average_speed < 7.5) {
-
+                    $date = $result->start_date;
+                    $date = substr($date,0,10);
                     // Check if activity id already exists
                     $activity = Activity::firstOrNew(['activityId' => $result->id]);
                     $activity->user_id = $user->id;
@@ -73,6 +74,7 @@ class dbUpdate extends Command
                     $activity->time = $result->elapsed_time;
                     $activity->distance = $result->distance;
                     $activity->averageSpeed = $result->average_speed;
+                    $activity->date = $date;
                     $activity->address = $address;
                     $activity->save();
                 }
