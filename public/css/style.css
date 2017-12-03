@@ -98,9 +98,11 @@ body {
     height: 50px;
     background-image: url("../img/bg_login.jpg");
     background-position: center;
-    bottom: 0;
     z-index: 10;
     display: block;
+    position: fixed;
+    left:0px;
+    bottom:0px;
 }
 
 
@@ -369,7 +371,7 @@ body {
 
 .friends ul .following button {
 
-    color: white;
+    color: #228092;
 }
 
 
@@ -717,11 +719,6 @@ a.info.clockbox
 .achiev {
     background-color: #E8800D;
 }
-
-
-
-
-
 .notifications
 {
     height:50px;
@@ -939,7 +936,7 @@ a.info.clockbox
     .goals_timeline .week {
 
         font-size: 1em;
-        border: 1px solid grey;
+        border: 1px solid transparent;
         box-sizing: border-box;
         padding: 1% 1.2%;
         border-radius: 100px;
@@ -959,43 +956,49 @@ a.info.clockbox
 
     .grey{
         background-color:#C2C1A5;
-        color:#228092;
+        color:#E8800D;
+    }
+
+    .goals_timeline .week10 {
+
+        padding: 1% 1%;
     }
 
     .tiles {
         justify-content: center;
-        width: 70%;
-        margin-left: 12.5%;
+        width: 80%;
+        margin-left: 10%;
         margin-bottom: 50px;
         margin-top: 80px;
     }
 
     .bubble
     {
-        position: relative;
-        display:inline-block;
         max-width:250px;
         min-width:60px;
         padding: 20px;
-        background: #FFFFFF;
-        border: #7F7F7F solid 4px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        border-radius: 20px;
+        background: #228092;
+        border: #228092 solid 2px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        color: white;
     }
 
     .bubblecontainer
     {
         position:absolute;
-        bottom:42%;
+        bottom:47%;
+        left: 72%;
         display:none;
     }
 
     .bubble img
     {
         border-radius:100px;
-        width:20px;
-        height:20px;
+        width:40px;
+        height:40px;
+        margin-left: 10px;
     }
 
     .userimages
@@ -1092,8 +1095,21 @@ a.info.clockbox
         flex-wrap: wrap;
     }
 
+    .run #date h1 {
+
+        font-size: 1em;
+        color: white;
+        text-align: left;
+        width: 30%;
+        margin-left: 45%;
+        margin-top: 20px;
+        line-height: 20px;
+    }
+
+
     .run #info {
-        width: 25%;
+        width: 30%;
+        margin-left: 5%;
         height: 5em;
         margin-top: 35px;
     }
