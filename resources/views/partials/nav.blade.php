@@ -21,7 +21,7 @@
     </div>-->
 
     <a class="profilelink" href="/profile">
-        <p>profile</p>
+        <p>home</p>
     </a>
     
     <a class="logout" href="/logout">

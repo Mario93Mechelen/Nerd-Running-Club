@@ -98,9 +98,11 @@ body {
     height: 50px;
     background-image: url("../img/bg_login.jpg");
     background-position: center;
-    bottom: 0;
     z-index: 10;
     display: block;
+    position: fixed;
+    left:0px;
+    bottom:0px;
 }
 
 
@@ -369,7 +371,7 @@ body {
 
 .friends ul .following button {
 
-    color: white;
+    color: #228092;
 }
 
 
@@ -720,8 +722,11 @@ a.info.clockbox
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fixingerrors
 .notifications
 {
     height:50px;
@@ -962,10 +967,15 @@ a.info.clockbox
         color:#228092;
     }
 
+    .goals_timeline .week10 {
+
+        padding: 1% 1%;
+    }
+
     .tiles {
         justify-content: center;
-        width: 70%;
-        margin-left: 12.5%;
+        width: 80%;
+        margin-left: 10%;
         margin-bottom: 50px;
         margin-top: 80px;
     }
@@ -1092,8 +1102,21 @@ a.info.clockbox
         flex-wrap: wrap;
     }
 
+    .run #date h1 {
+
+        font-size: 1em;
+        color: white;
+        text-align: left;
+        width: 30%;
+        margin-left: 45%;
+        margin-top: 20px;
+        line-height: 20px;
+    }
+
+
     .run #info {
-        width: 25%;
+        width: 30%;
+        margin-left: 5%;
         height: 5em;
         margin-top: 35px;
     }
