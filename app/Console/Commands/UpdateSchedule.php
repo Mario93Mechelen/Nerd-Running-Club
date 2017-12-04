@@ -80,7 +80,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 1610&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[0]))) {
 
                 Schedule_User::where(['schedule_id'=> 1,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[0])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[0])){
                 Schedule_User::where(['schedule_id'=> 1,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -93,7 +93,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 3220&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[1]))) {
 
                 Schedule_User::where(['schedule_id'=> 2,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[1])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[1])){
                 Schedule_User::where(['schedule_id'=> 2,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -106,7 +106,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 4830&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[2]))) {
 
                 Schedule_User::where(['schedule_id'=> 3,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[2])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[2])){
                 Schedule_User::where(['schedule_id'=> 3,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -119,7 +119,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 6440&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[3]))) {
 
                 Schedule_User::where(['schedule_id'=> 4,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[3])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[3])){
                 Schedule_User::where(['schedule_id'=> 4,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -132,7 +132,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 8050&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[4]))) {
 
                 Schedule_User::where(['schedule_id'=> 5,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[4])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[4])){
                 Schedule_User::where(['schedule_id'=> 5,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -145,7 +145,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 9660&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[5]))) {
 
                 Schedule_User::where(['schedule_id'=> 6,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[5])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[5])){
                 Schedule_User::where(['schedule_id'=> 6,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -158,7 +158,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 11230&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[6]))) {
 
                 Schedule_User::where(['schedule_id'=> 7,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[6])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[6])){
                 Schedule_User::where(['schedule_id'=> 7,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -171,7 +171,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 12870&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[7]))) {
 
                 Schedule_User::where(['schedule_id'=> 8,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[7])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[7])){
                 Schedule_User::where(['schedule_id'=> 8,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -184,7 +184,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 14490&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[8]))) {
 
                 Schedule_User::where(['schedule_id'=> 9,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[8])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[8])){
                 Schedule_User::where(['schedule_id'=> 9,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }
@@ -197,7 +197,7 @@ class UpdateSchedule extends Command
             if(($s->distance) >= 16100&&(Carbon::parse($s->date))<=(Carbon::parse($goaldates[9]))) {
 
                 Schedule_User::where(['schedule_id'=> 10,'user_id'=>$user_id])->update(['confirmed'=>'yes']);
-            }elseif(Carbon::parse($s->date)>=Carbon::parse($goaldates[9])){
+            }elseif(Carbon::parse($s->date)>Carbon::parse($goaldates[9])){
                 Schedule_User::where(['schedule_id'=> 10,'user_id'=>$user_id])->update(['confirmed'=>'no']);
             }
         }

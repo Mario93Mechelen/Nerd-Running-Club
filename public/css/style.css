@@ -1005,8 +1005,8 @@ a.info.clockbox
     .bubblecontainer
     {
         position:absolute;
-        bottom:47%;
-        left: 72%;
+        bottom:42%;
+        left: 75%;
         display:none;
     }
 
@@ -1193,6 +1193,14 @@ a.info.clockbox
         width: 30%;
         margin-left: 35%;
 
+    }
+
+    .bubblecontainer
+    {
+        position:absolute;
+        bottom:47%;
+        left: 72%;
+        display:none;
     }
 
 

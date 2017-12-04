@@ -27,7 +27,7 @@ class UsersController extends Controller
         Artisan::call('update:schedule');
 
         $schedule = Schedule_User::all()->where('user_id',$myID);
-        $goalnow = Schedule::where('end_date','>=',Carbon::now())->orderBy('end_date')->first();
+        $goalnow = Schedule::where('end_date','>',Carbon::now())->orderBy('end_date')->first();
         $successusers = Schedule_User::all()->where('confirmed','==','yes');
 
         $friendIDS = Friends::where(['user_id' => $myID, 'follow' => true])->pluck('friend_id');
