@@ -28,6 +28,8 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('db:update')->hourly(30);
+        $schedule->command('tables:drop')->cron('* * 30 4 *');
+        $schedule->command('db:seed')->cron('* * 30 4 *');
     }
 
     /**

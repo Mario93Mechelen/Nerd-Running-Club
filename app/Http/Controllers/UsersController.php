@@ -39,7 +39,6 @@ class UsersController extends Controller
         //hierna moet je op één of andere manier nog checken welke de hoogste is van elke groep, das moeilijk als de users fake zijn
         //maar ik zal mijn token hier zetten, plak die bij 1 van de fake users en zet de scheduler in Kernel.php even op everyMinute();
         //token: 4594438fcaf0110a3acf4cbfa23be88db0f083ab
-
         return view('layouts.profile', compact('user', 'goalnow','schedule', 'winners','successusers'));
     }
 
