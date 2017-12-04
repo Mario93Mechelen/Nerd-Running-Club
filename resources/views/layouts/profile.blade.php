@@ -67,6 +67,8 @@
 
     </div>
 
+    @if($reachedBadges !== null)
+
     <div class="rankingBadges">
 
         <h1>Last three gained badges by some of the nerds</h1>
@@ -98,6 +100,8 @@
         </div>
 
     </div>
+
+    @endif
 
 
 
