@@ -11,6 +11,7 @@
 
     </div>
 
+
     @include('partials/schedule')
 
     <div class="tiles">
@@ -65,6 +66,42 @@
         </div>
 
     </div>
+
+    <div class="rankingBadges">
+
+        <h1>Last three gained badges by some of the nerds</h1>
+
+        <div class="rankingB">
+            @foreach($reachedBadges as $r)
+
+                <div class="rankingBB">
+
+                    <div class="rankingBProf">
+                        @foreach($reachedUser->where('id', ($r->user_id)) as $u)
+
+                            <h3>{{$u->firstname}} just received the </h3>
+
+                        @endforeach
+                    </div>
+
+                    <div class="rankingBBadge">
+                        @foreach($badges->where('id', ($r->badge_id)) as $b)
+
+                            <img src="{{$b->badgeurl}}">
+
+                        @endforeach
+                    </div>
+
+                </div>
+
+            @endforeach
+        </div>
+
+    </div>
+
+
+
+
 
 
 

@@ -175,6 +175,61 @@ body {
     display: none;
 }
 
+.rankingBadges {
+
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    text-align:  center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+
+}
+
+.rankingBadges h1 {
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #228092;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.rankingB {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.rankingBB {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.rankingBProf {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.rankingBProf h3 {
+
+    font-size: 1em;
+    color: #228092;
+    padding-top: 25px;
+}
+
+.rankingBBadge img {
+
+    width: 80px;
+    height: auto;
+}
+
 
 
 /* ----------------- VIEW RUN - - PARTIAL LAYOUT RUN ----------------------- */
@@ -736,6 +791,7 @@ a.info.clockbox
 .achiev {
     background-color: #E8800D;
 }
+
 .notifications
 {
     height:50px;
@@ -973,7 +1029,7 @@ a.info.clockbox
 
     .grey{
         background-color:#C2C1A5;
-        color:#E8800D;
+        color:white;
     }
 
     .goals_timeline .week10 {
