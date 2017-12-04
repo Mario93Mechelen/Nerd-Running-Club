@@ -230,19 +230,36 @@ body {
     flex-direction: column;
 }
 
+div.friendsNav {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    margin: 15px auto;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.friendsNav a {
+    text-decoration: underline;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.friendsNav a:hover {
+    text-decoration: none;}
+
 #rankingLink {
 
     text-decoration: none;
     width: 30%;
     padding: 5%;
     border-radius: 50px;
-    background-color: #E8800D;
+    /*background-color: #E8800D;*/
+    background-color: gray;
     color: white;
     text-align: center;
     align-self: center;
     margin-bottom: 30px;
-
-
 }
 
 
@@ -1127,7 +1144,7 @@ a.info.clockbox
 
     #rankingLink {
 
-        width: 10%;
+        width: 220px;
         padding: 1%;
 
 

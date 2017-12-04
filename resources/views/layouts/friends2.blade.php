@@ -8,15 +8,7 @@
 
         <a href="/ranking" id="rankingLink">Go to the ranking</a>
 
-        <div class="friendsNav">
-            <a href="/friends/type/friends">Friends</a>
-            <a href="/friends/type/followers">Followers</a>
-            <a href="/friends/type/following">Following</a>
-            <a href="/friends/type/all">All Users</a>
-        </div>
-
         <ul>
-            @if($type == 'friends')
             <div class="justfriends">
             @foreach ($friends as $user)
                 <li>
@@ -34,12 +26,8 @@
                 </li>
             @endforeach
             </div>
-            @endif
 
-
-                
                 <div class="following">
-                @if($type == 'following')
                 @foreach ($following as $user)
                     <li>
                         <a href="/friends/{{ $user->id  }}">
@@ -55,9 +43,6 @@
                         <p class="warn two">Are you still waiting for {{$user->firstname}} to like you back?</p>
                     </li>
                 @endforeach
-                @endif
-
-                @if($type == 'followers')
                 @foreach ($followers as $user)
                     <li>
                         <a href="/friends/{{ $user->id  }}">
@@ -73,11 +58,8 @@
                         <p class="warn">{{$user->firstname}} follows you!</p>
                     </li>
                 @endforeach
-                @endif
                 </div>
-                
 
-            @if($type == 'all')
             <div class="follower">
             @foreach ($res as $user)
                         <li>
@@ -92,9 +74,8 @@
                                 <button class="btn btn-follow" type="submit">Follow</button>
                             </form>
                         </li>
-            @endforeach
+                @endforeach
             </div>
-            @endif
         </ul>
 
     </div>

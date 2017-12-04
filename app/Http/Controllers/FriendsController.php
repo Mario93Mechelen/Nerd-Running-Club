@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 class FriendsController extends Controller
 {
-    public function index()
+    public function index($type)
     {
         $myID = Auth::id();
         //https://www.strava.com/api/v3/athletes/{id}/followers" "Authorization: Bearer [[token]
@@ -31,7 +31,7 @@ class FriendsController extends Controller
 
         $res = User::all()->whereNotIn('id', $friendIDS)->whereNotIn('id',$followerIDS)->where('id','!=',$myID)->sortBy('firstname');
         
-        return view('layouts.friends', compact('res', 'following', 'followers', 'friends'));
+        return view('layouts.friends', compact('res', 'following', 'followers', 'friends', 'type'));
     }
 
 

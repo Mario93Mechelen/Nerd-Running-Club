@@ -17,9 +17,9 @@
 
         <div class="tile friends" @mouseover="friends = true" @mouseleave="friends = false">
             <transition name="fade">
-            <a href="/friends" class="info friendsbox" v-show="friends">Add some friends to run with.</a>
+            <a href="/friends/type/friends" class="info friendsbox" v-show="friends">Add some friends to run with.</a>
             </transition>
-            <a href="/friends">
+            <a href="/friends/type/friends">
 
             <h1>Friends</h1>
             </a>
