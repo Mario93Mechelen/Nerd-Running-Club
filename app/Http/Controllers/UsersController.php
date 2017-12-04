@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Artisan;
@@ -12,6 +13,9 @@ use App\Activity;
 use App\Schedule;
 use App\Schedule_User;
 use App\Friends;
+use App\Badges;
+use App\User;
+use App\Badges_User;
 
 class UsersController extends Controller
 {
@@ -39,7 +43,14 @@ class UsersController extends Controller
         //hierna moet je op één of andere manier nog checken welke de hoogste is van elke groep, das moeilijk als de users fake zijn
         //maar ik zal mijn token hier zetten, plak die bij 1 van de fake users en zet de scheduler in Kernel.php even op everyMinute();
         //token: 4594438fcaf0110a3acf4cbfa23be88db0f083ab
-        return view('layouts.profile', compact('user', 'goalnow','schedule', 'winners','successusers'));
+
+        $reachedBadges = Badges_User::orderBy('id', 'desc')->take(3)->get();
+        $badges = Badges::all();
+        $reachedUser = User::all();
+
+
+        return view('layouts.profile', compact('user', 'goalnow','schedule', 'winners','successusers','reachedUser', 'badges', 'reachedBadges'));
+
     }
 
     public function runs()

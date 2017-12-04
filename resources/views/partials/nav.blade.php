@@ -6,19 +6,13 @@
     </a>
 
     <div class="notifications"  v-on:click="showMobileMenu = !showMobileMenu">
-        <img src="../img/notifications.png" alt="notifications" id="notif">
+        <img src="/img/notifications.png" alt="notifications" id="notif">
         @if($notifications->count()>0)
         <transition name="fade">
         <p class="circle" v-show="!showMobileMenu">{{$notifications->count()}}</p>
         </transition>
         @endif
     </div>
-    
-    <!--<div class="profile-icon">
-        <a href="/profile">
-            <img src="/img/profile-icon.png" alt="profile">
-        </a>
-    </div>-->
 
     <a class="profilelink" href="/profile">
         <p>home</p>

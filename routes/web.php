@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/logout', 'Auth\LoginController@logout');
     Route::get('/activities','ActivitiesController@index');
     Route::get('/ranking', 'ActivitiesController@ranking');
-    Route::get('/friends', 'FriendsController@index');
+    Route::get('/friends/type/{type}', 'FriendsController@index');
     Route::get('/friends/{id}', 'FriendsController@friend');
 
     Route::post('/friends', 'FriendsController@storeOrDelete');

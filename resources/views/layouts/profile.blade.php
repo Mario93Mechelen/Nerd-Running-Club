@@ -11,15 +11,16 @@
 
     </div>
 
+
     @include('partials/schedule')
 
     <div class="tiles">
 
         <div class="tile friends" @mouseover="friends = true" @mouseleave="friends = false">
             <transition name="fade">
-            <a href="/friends" class="info friendsbox" v-show="friends">Add some friends to run with.</a>
+            <a href="/friends/type/friends" class="info friendsbox" v-show="friends">Add some friends to run with.</a>
             </transition>
-            <a href="/friends">
+            <a href="/friends/type/friends">
 
             <h1>Friends</h1>
             </a>
@@ -65,6 +66,46 @@
         </div>
 
     </div>
+
+    @if($reachedBadges !== null)
+
+    <div class="rankingBadges">
+
+        <h1>Last three gained badges by some of the nerds</h1>
+
+        <div class="rankingB">
+            @foreach($reachedBadges as $r)
+
+                <div class="rankingBB">
+
+                    <div class="rankingBProf">
+                        @foreach($reachedUser->where('id', ($r->user_id)) as $u)
+
+                            <h3>{{$u->firstname}} just received the </h3>
+
+                        @endforeach
+                    </div>
+
+                    <div class="rankingBBadge">
+                        @foreach($badges->where('id', ($r->badge_id)) as $b)
+
+                            <img src="{{$b->badgeurl}}">
+
+                        @endforeach
+                    </div>
+
+                </div>
+
+            @endforeach
+        </div>
+
+    </div>
+
+    @endif
+
+
+
+
 
 
 
