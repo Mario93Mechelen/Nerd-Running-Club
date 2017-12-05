@@ -18,8 +18,10 @@ $(document).ready(function(){
         $('.bubblecontainer').hide();
     });
 
+    $('.badgeText').hide();
+
     $('.rankingBBadge').on('mouseenter',function(){
-        $('.badgeText').show();
+        $(this).find('.badgetext').show();
 
     });
 

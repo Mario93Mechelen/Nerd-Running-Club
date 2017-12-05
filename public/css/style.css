@@ -239,28 +239,7 @@ body {
 
 .badgeText {
 
-    background-color: #E8800D;
-    color: white;
-    width: 200px;
-    height: 100px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    margin-left: 80px;
-
-}
-
-.badgeText h3 {
-
-    font-size: 0.6em;
-}
-
-.badgeText p {
-
-    font-size: 1.2em;
-    margin-top: 10px;
+    display: none;
 }
 
 
@@ -1238,6 +1217,33 @@ a.info.clockbox
 
 
     }
+
+    .badgeText {
+
+        background-color: #E8800D;
+        color: white;
+        width: 200px;
+        height: 100px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin-left: 80px;
+
+    }
+
+    .badgeText h3 {
+
+        font-size: 0.6em;
+    }
+
+    .badgeText p {
+
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+
 
 
 }
