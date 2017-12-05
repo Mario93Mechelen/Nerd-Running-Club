@@ -18,6 +18,7 @@ class CreateSchedulesTable extends Migration
             $table->integer('week');
             $table->text('goal');
             $table->date('end_date');
+            $table->integer('distance');
             $table->timestamps();
         });
     }

@@ -50,6 +50,7 @@ class UsersController extends Controller
 
 
         return view('layouts.profile', compact('user', 'goalnow','schedule', 'winners','successusers','reachedUser', 'badges', 'reachedBadges'));
+
     }
 
     public function runs()
