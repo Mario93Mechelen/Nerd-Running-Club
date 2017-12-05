@@ -7,7 +7,7 @@ $(document).ready(function(){
       console.log($class);
        $str = $class.substring($class.indexOf("k")+2);
        console.log($str);
-       $str = $str.substring($str.indexOf("k")+1);
+       $str = $str .substring($str.indexOf("k")+1);
        console.log($str);
        $str = $str.charAt(0);
        console.log($str);
@@ -17,4 +17,14 @@ $(document).ready(function(){
     $('.week').on('mouseleave',function(){
         $('.bubblecontainer').hide();
     });
+
+    $('.rankingBBadge').on('mouseenter',function(){
+        $('.badgeText').show();
+
+    });
+
+    $('.rankingBBadge').on('mouseleave',function(){
+        $('.badgeText').hide();
+    });
+
 });
