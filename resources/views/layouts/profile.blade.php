@@ -91,8 +91,16 @@
 
                             <img src="{{$b->badgeurl}}">
 
+                            <div class="badgeText">
+                                <h3>What to do to get this badge:</h3>
+                                <p>{{$b->badgetext}} ! </p>
+                            </div>
+
+
                         @endforeach
                     </div>
+
+
 
                 </div>
 
