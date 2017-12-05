@@ -14,6 +14,7 @@ $(document).ready(function(){
            $('#bubble' + $str).has('img').show();
 
     });
+
     $('.week').on('mouseleave',function(){
         $('.bubblecontainer').hide();
     });
@@ -21,7 +22,7 @@ $(document).ready(function(){
     $('.badgeText').hide();
 
     $('.rankingBBadge').on('mouseenter',function(){
-        $(this).find('.badgetext').show();
+        $(this).find('.badgeText').show();
 
     });
 
