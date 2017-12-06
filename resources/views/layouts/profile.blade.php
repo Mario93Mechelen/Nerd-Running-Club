@@ -4,6 +4,11 @@
 
 @section('content')
 
+    <div>
+        <p>Get ready for the 10 miles of Antwerp by completing challenges each week! <br />
+        Add friends to compete against them. Try to get higher in the rankings by runner more and runner faster! Good luck!</p>
+    </div>
+
 
 
     <div class="goals">
