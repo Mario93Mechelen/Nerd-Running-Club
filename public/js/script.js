@@ -2,22 +2,46 @@
  * Created by Mario on 1/12/2017.
  */
 $(document).ready(function(){
-   $('.week').on('mouseenter',function(){
-      $class = $(this).attr('class');
-      console.log($class);
-       $str = $class.substring($class.indexOf("k")+2);
-       console.log($str);
-       $str = $str .substring($str.indexOf("k")+1);
-       console.log($str);
-       $str = $str.charAt(0);
-       console.log($str);
-           $('#bubble' + $str).has('img').show();
 
-    });
+        var classname="";
+        var show = false;
+   $('.week').on('mouseenter',function(){
+       $('.bubblecontainer').css("display","none");
+      classname = $(this).attr('class');
+      $position = $(this).position();
+      console.log($position);
+       $str = classname.substring(classname.indexOf("k")+2);
+       $str = $str .substring($str.indexOf("k")+1);
+       $str = $str.charAt(0);
+       classname=$str;
+
+       setTimeout(function () {
+           $('.bubblecontainer#bubble' + classname).has('img').fadeIn();
+       }, 250);
+
+       $('.bubblecontainer#bubble'+$str).has('img').css('left',$position.left-110);
+       $('.bubblecontainer#bubble'+$str).has('img').css('top',$position.top+55);
+   });
 
     $('.week').on('mouseleave',function(){
-        $('.bubblecontainer').hide();
+        setTimeout(function () {
+            if(!show) {
+                $('.bubblecontainer#bubble' + classname).has('img').fadeOut();
+            }
+        }, 250);
+        console.log(classname);
     });
+
+    $('.bubblecontainer').on('mouseenter', function(){
+       show=true;
+       console.log(show, classname);
+    });
+
+    $('.bubblecontainer').on('mouseleave', function(){
+        show=false;
+        $('.bubblecontainer#bubble' + classname).has('img').fadeOut();
+        console.log(show, classname);
+    })
 
     $('.badgeText').hide();
 

@@ -23,6 +23,9 @@
         <div class="loginStrava">
 
            <h2>Welcome to the Nerd-Running-Club.</h2>
+            <p>Get ready for the 10 miles of Antwerp by completing challenges each week! <br />
+                Add friends to compete against them. Try to get higher in the rankings by runner more and runner faster! Good luck!</p>
+
 
             <a href="/login/strava">
                 <p>Login with Strava</p>
