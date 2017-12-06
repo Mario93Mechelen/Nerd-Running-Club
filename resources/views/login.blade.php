@@ -22,7 +22,7 @@
 
         <div class="loginStrava">
 
-           <h2>Welcome in the Nerd-Running-Club.</h2>
+           <h2>Welcome to the Nerd-Running-Club.</h2>
 
             <a href="/login/strava">
                 <p>Login with Strava</p>
