@@ -20,6 +20,8 @@
         </transition>
         @endif
     </div>
+
+    <transition name="slide-fade">
 <nav class="innerNav" v-show="showMobileMenu">
     <a href="/profile">
         Home
@@ -37,6 +39,10 @@
         Logout
     </a>
 </nav>
+    </transition>
+
+    </a>
+
     <div class="hamburger" v-on:click="showMobileMenu = !showMobileMenu">
         <div class="line"></div>
         <div class="line"></div>
