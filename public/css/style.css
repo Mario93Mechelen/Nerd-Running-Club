@@ -120,17 +120,16 @@ body {
 
 .profile img {
     display: block;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    margin: 20px auto;
-    border: 10px solid #E8800D ;
+    border: 5px solid #E8800D ;
+    margin-top: 80px;
+    margin-left: 40px;
 }
 
 .profile h3{
-    letter-spacing: 2px;
-    color: #228092;
-    margin-bottom: 20px;
+    display: none;
 
 }
 
@@ -210,11 +209,21 @@ body {
     flex-direction: row;
     justify-content: center;
 }
+
 .rankingBProf {
 
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.rankingBProf img {
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 .rankingBProf h3 {
@@ -846,6 +855,7 @@ a.info.clockbox
 
     width: 20px;
     height: 20px;
+    margin-left: 100px;
 }
 .notification
 {
@@ -939,22 +949,33 @@ a.info.clockbox
 
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: left;
         margin-top: 5px;
     }
 
     .profile img {
-        width: 150px;
-        height: 150px;
-        border: 15px solid #E8800D ;
+        width: 50px;
+        height: 50px;
+        border: 5px solid #E8800D ;
+        margin-top: 5px;
+        margin-left: 50px;
     }
 
     .profile h3{
 
+
+        display: block;
         font-weight: 400;
-        font-size: 1.8em;
-        align-self: center;
+        font-size: 1em;
         margin-left: 20px;
+        margin-top: 25px;
+        color: white;
+    }
+
+    .profile h3:hover {
+
+        color:#E8800D;
+        cursor: pointer ;
 
     }
 
@@ -981,7 +1002,9 @@ a.info.clockbox
 
         width: 30px;
         height: 30px;
-        align-self: center;
+        align-self: left;
+        margin-left: -5px;
+        margin-top: 5px;
     }
 
     .footer {

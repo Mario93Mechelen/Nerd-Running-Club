@@ -22,9 +22,10 @@ class GlobalComposer
     public function compose(View $view)
     {
         $myID = Auth::id();
+        $myUser = User::find($myID);
         $friendIDS = Friends::where(['user_id' => $myID, 'follow' => true])->pluck('friend_id');
         $followerIDS = Friends::where(['friend_id' => $myID, 'follow' => true])->pluck('user_id');
         $followers = User::all()->whereIn('id',$followerIDS)->whereNotIn('id',$friendIDS)->sortBy('firstname');
-        $view->with('notifications', $followers);
+        $view->with(['notifications'=>$followers, 'currentuser'=>$myUser]);
     }
 }

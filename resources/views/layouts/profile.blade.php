@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('partials.profilepic')
+
 
     <div class="goals">
 
@@ -80,7 +80,7 @@
 
                     <div class="rankingBProf">
                         @foreach($reachedUser->where('id', ($r->user_id)) as $u)
-
+                            <img src="{{$u->avatar}}" alt="avatar">
                             <h3>{{$u->firstname}} just received the </h3>
 
                         @endforeach
