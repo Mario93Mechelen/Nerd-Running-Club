@@ -49,7 +49,7 @@ class FriendsController extends Controller
 
             return view('layouts.friendsprofile', compact('friend', 'activity', 'badge'));
         }else{
-            return redirect('/friends');
+            return redirect('/friends/type/friends');
         }
     }
 
@@ -74,11 +74,12 @@ class FriendsController extends Controller
                 $friendship = Friends::where(['user_id' => $myID, 'friend_id' => $friendID]);
                 $friendship->update(['follow'=>true]);
             }
+
         }else{
             $friendship = Friends::where(['user_id' => $myID, 'friend_id' => $friendID]);
             $friendship->update(['follow'=>false]);
         }
-        return redirect('/friends');
+        return redirect()->back();
     }
 
     public function store(Request $request){

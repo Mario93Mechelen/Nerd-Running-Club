@@ -14,12 +14,15 @@ $(document).ready(function(){
            $('#bubble' + $str).has('img').show();
 
     });
+
     $('.week').on('mouseleave',function(){
         $('.bubblecontainer').hide();
     });
 
+    $('.badgeText').hide();
+
     $('.rankingBBadge').on('mouseenter',function(){
-        $('.badgeText').show();
+        $(this).find('.badgeText').show();
 
     });
 
