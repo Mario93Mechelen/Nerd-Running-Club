@@ -40,14 +40,14 @@ class FriendsController extends Controller
         $userid = Auth::id();
         $frienship = Friends::where(['user_id' => $userid, 'friend_id' => $id, 'follow'=>true]);
 
-        if($frienship->count()>0) {
+        if($frienship->count()>0||$id==$userid) {
             $friend = User::find($id);
 
             $activity = Activity::All()->where('user_id', $id);
 
             $badge =  User::find($id)->badge;
 
-            return view('layouts.friendsprofile', compact('friend', 'activity', 'badge'));
+            return view('layouts.friendsprofile', compact('friend', 'activity', 'badge','userid','id'));
         }else{
             return redirect('/friends/type/friends');
         }

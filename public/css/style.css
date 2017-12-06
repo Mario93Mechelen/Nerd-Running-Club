@@ -441,8 +441,76 @@ div.friendsNav {
     margin-bottom: 30px;
 }
 
+.friendsprofile
+{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
-.friends h2, .friendsprofile h2, .latestruns h2 {
+
+.levelbox{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width:90%;
+    margin:auto;
+    justify-content:space-around;
+    border:1px solid #C2C1A5;
+    margin-bottom:20px;
+    padding:20px 0;
+    border-radius:3px;
+}
+
+.leveluser, .level{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:50%;
+    font-size:0.8em;
+    margin-top:10px
+}
+
+.levelbox img
+{
+    display: block;
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    margin:auto;
+    margin-bottom:10px;
+    border: 4px solid #E8800D;
+}
+
+.levelbox h2
+{
+    width:100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #228092;
+    margin-bottom:10px;
+}
+
+.progressbar
+{
+    width:90%;
+    border-radius:10px;
+    border:1px solid #C2C1A5;
+    height:20px;
+    margin:auto;
+}
+
+.badgesbox
+{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width:100%;
+}
+
+.friends h2, .latestruns h2 {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -494,14 +562,6 @@ div.friendsNav {
     color: #8CBD9C;
 }
 
-.friendsprofile img{
-    display: block;
-    width:100px;
-    height:100px;
-    border-radius: 50%;
-    margin: 15px auto;
-    border: 10px solid #E8800D;
-}
 
 .btn
 {
@@ -653,12 +713,16 @@ a.info.clockbox
 
 .badges_friend {
 
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     background-color: transparent;
+    align-items: center;
+    border:1px solid #C2C1A5;
+    border-radius:3px;
+    margin-bottom:20px;
 }
 
 .badges_friend img {
@@ -666,15 +730,21 @@ a.info.clockbox
     width: 80px;
     height: 80px;
     border: none;
+    margin-bottom:20px;
 
 }
 
 .badges_friend h3 {
 
-    width: 15%;
+    width: 100%;
     color: #228092;
-    margin-left: 50px;
     align-self: center;
+    margin-bottom:20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #228092;
+    margin-top:20px;
 }
 
 
@@ -802,9 +872,10 @@ a.info.clockbox
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 100px;
+    width: 90%;
+    margin:auto;
+    border:1px solid #C2C1A5;
+    border-radius:3px;
 }
 
 
@@ -813,11 +884,23 @@ a.info.clockbox
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 20px;
-    margin-bottom: 20px;
     background-color: #E8800D;
+    border-bottom:2px solid white;
     padding: 20px;
     color: white;
+}
+
+.latestruns h2{
+
+    width: 100%;
+    color: #228092;
+    align-self: center;
+    margin-bottom:20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding:20px 0;
+    color: #228092;
 }
 
 .run #date h1 {
@@ -1029,6 +1112,7 @@ a.info.clockbox
     padding: 0 10px;
     opacity: 0;
 }
+
 
 @media screen and (min-width: 750px) {
 
@@ -1404,13 +1488,45 @@ a.info.clockbox
 
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 750px) {
 
     .loginStrava a {
         width: 10%;
         padding: 2%;
     }
 
+    .friendsprofile{
+        flex-direction:row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .badges_friend{
+        width:45%;
+        margin:0;
+        margin-left:5%;
+        margin-bottom:50px;
+    }
+
+    .levelbox{
+        width:25%;
+        margin:0;
+        margin-right:5%;
+    }
+
+    .levelbox{
+        order:2;
+    }
+
+    .badges_friend{
+        order:1;
+    }
+
+    .latestruns{
+        order:3;
+        width:90%;
+        margin-bottom:100px;
+    }
 
     .friends ul li {
         width: 30%;
