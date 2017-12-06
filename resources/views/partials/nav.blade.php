@@ -5,6 +5,13 @@
         <img src="/img/logorunapp.png" alt="Logo Nerd Running App">
     </a>
 
+    <div class="profile">
+
+        <a href="/profile"> <img  src="{{$currentuser->avatar}}" alt="Profile Pic"></a>
+        <h3>{{$currentuser->firstname." ".$currentuser->lastname}} </h3>
+
+    </div>
+
     <div class="notifications"  v-on:click="showMobileMenu = !showMobileMenu">
         <img src="/img/notifications.png" alt="notifications" id="notif">
         @if($notifications->count()>0)
