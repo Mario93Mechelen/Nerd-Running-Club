@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', $friend->firstname." ".$friend->lastname)
+
 @section('content')
 
     <div class="friendsprofile">

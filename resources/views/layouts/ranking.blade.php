@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Ranking')
+
 @section ('content')
 
     <div class="ranking">

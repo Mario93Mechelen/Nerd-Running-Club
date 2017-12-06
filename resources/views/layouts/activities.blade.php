@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Activities')
+
 @section('content')
 
     <div class="latestruns">

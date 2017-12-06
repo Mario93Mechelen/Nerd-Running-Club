@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Friends')
+
 @section('content')
 
     <div class="friends">

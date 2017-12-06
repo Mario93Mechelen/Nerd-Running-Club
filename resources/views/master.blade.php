@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <title>Nerd-Running-Club</title>
+    <title>@yield('title') | Nerd Running Club</title>
 
 </head>
 <body>
