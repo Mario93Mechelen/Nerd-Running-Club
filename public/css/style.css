@@ -310,10 +310,19 @@ div.friendsNav {
     text-decoration: underline;
     color: gray;
     text-transform: uppercase;
+    padding: 10px;
 }
 
 .friendsNav a:hover {
-    text-decoration: none;}
+    text-decoration: none;
+}
+
+.friendsNav a.active {
+    text-decoration: none;
+    border-radius: 50px;
+    background-color: #E8800D;
+    color: white;
+}
 
 #rankingLink {
 

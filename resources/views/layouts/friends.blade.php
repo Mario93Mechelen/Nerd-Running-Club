@@ -9,10 +9,10 @@
         <a href="/ranking" id="rankingLink">Go to the ranking</a>
 
         <div class="friendsNav">
-            <a href="/friends/type/friends">Friends</a>
-            <a href="/friends/type/followers">Followers</a>
-            <a href="/friends/type/following">Following</a>
-            <a href="/friends/type/all">All Users</a>
+            <a @if($type == 'friends') class="active" @endif href="/friends/type/friends">Friends</a>
+            <a @if($type == 'followers') class="active" @endif href="/friends/type/followers">Followers</a>
+            <a @if($type == 'following') class="active" @endif href="/friends/type/following">Following</a>
+            <a @if($type == 'all') class="active" @endif href="/friends/type/all">All Users</a>
         </div>
 
         <ul>
