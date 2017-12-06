@@ -48,7 +48,6 @@ class UsersController extends Controller
         $badges = Badges::all();
         $reachedUser = User::all();
 
-
         return view('layouts.profile', compact('user', 'goalnow','schedule', 'winners','successusers','reachedUser', 'badges', 'reachedBadges'));
 
     }
