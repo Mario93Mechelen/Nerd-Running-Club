@@ -10,10 +10,8 @@
         Add friends to compete against them. Try to get higher in the rankings by runner more and runner faster! Good luck!</p>
     </div>
 
-=======
     <div class="motivation">
     <h1 id="counter">Only <?php
->>>>>>> navfix
 
         date_default_timezone_set('Europe/Brussels');
         $from = strtotime('22-04-2018');
