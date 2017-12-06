@@ -2,40 +2,20 @@
 
 @section('content')
 
+    <div class="motivation">
+    <h1 id="counter">Only <?php
 
+        date_default_timezone_set('Europe/Brussels');
+        $from = strtotime('22-04-2018');
+        $today = time();
+        $difference = $from - $today;
+        echo floor($difference / 86400 );
+        ?> days to go!
 
-    <div class="goals">
-
-        <h3>Challenge nr. {{$goalnow->week}} :</h3>
-        <p>{{$goalnow->goal}}</p>
-
-    </div>
+    </h1>
 
 
     @include('partials/schedule')
-
-    <div class="tiles">
-
-
-        <div class="tile miles" @mouseover="miles = true" @mouseleave="miles = false">
-            <transition name="fade">
-            <a href="" class="info clockbox" v-show="miles">You better hurry, the clock is ticking.</a>
-            </transition>
-            <a href="">
-
-            <h1>Only <?php
-
-                date_default_timezone_set('Europe/Brussels');
-                $from = strtotime('22-04-2018');
-                $today = time();
-                $difference = $from - $today;
-                echo floor($difference / 86400 );
-                ?> days to go!</h1>
-
-            </a>
-
-        </div>
-
     </div>
 
     @if($reachedBadges !== null)
@@ -80,10 +60,18 @@
 
     </div>
 
+
+
+
     @endif
 
 
+    <div class="goals">
 
+        <h3>Challenge nr. {{$goalnow->week}} :</h3>
+        <p>{{$goalnow->goal}}</p>
+
+    </div>
 
 
 
