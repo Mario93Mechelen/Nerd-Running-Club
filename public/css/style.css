@@ -70,27 +70,49 @@ body {
     display: none;
 }
 
-.nav a.logout {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 25px;
-    top: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 0.8em;
+.hamburger
+{
+    width:70px;
+    height:50px;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.nav a.profilelink {
+.line
+{
+    width:100%;
+    height:10px;
+    background-color: white;
+}
+
+.innerNav{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    position:fixed;
+    top:50px;
+    padding-top:10px;
+    width:100%;
+    background-color: white;
+    border-bottom:1px solid #EEEEEE;
+
+}
+
+.innerNav a {
     display: block;
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 80px;
     text-decoration: none;
-    color: white;
-    font-size: 0.8em;
+    color:#E8800D;
+    text-align:center;
+    font-size: 1.2em;
+    padding:15px 0;
+}
 
+.innerNav a:hover{
+    background-color:#E8800D;
+    color:white;
 }
 
 .footer {
@@ -982,20 +1004,6 @@ a.info.clockbox
     .nav {
         height: 80px;
 
-    }
-
-    .nav a.logout {
-        align-self: center;
-        right: 100px;
-        font-size: 1.2em;
-        margin-top: 10px;
-    }
-
-    .nav a.profilelink {
-        align-self: center;
-        right: 180px;
-        font-size: 1.2em;
-        margin-top: 10px;
     }
 
     #notif {

@@ -13,15 +13,28 @@
         </transition>
         @endif
     </div>
-
-    <a class="profilelink" href="/profile">
-        <p>home</p>
+<nav class="innerNav" v-show="showMobileMenu">
+    <a href="/profile">
+        Home
     </a>
-    
-    <a class="logout" href="/logout">
-        <p>logout</p>
+    <a href="/friends/type/all">
+        Friends
     </a>
-
+    <a href="/activities">
+        Heatmap
+    </a>
+    <a href="/achievements">
+        Badges
+    </a>
+    <a href="/logout">
+        Logout
+    </a>
+</nav>
+    <div class="hamburger" v-on:click="showMobileMenu = !showMobileMenu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
     <transition name="expand">
     @include('partials.notificationsbox')
     </transition>
