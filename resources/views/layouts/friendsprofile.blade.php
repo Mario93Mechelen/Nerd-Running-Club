@@ -25,21 +25,29 @@
         <div class="badges_friend">
             <h3>My Badges</h3>
             <div class="badgesbox">
+            @if($badge->count()>0)
             @foreach ($badge as $b)
 
                 <img src="../{{ $b->badgeurl }}">
 
             @endforeach
+                @else
+                    <h3>WOOPS! Seems like you have no badges.</h3>
+                @endif
         </div>
         </div>
 
         <div class="latestruns">
             <h2>My Activities</h2>
+            @if($activity->count()>0))
             @foreach ($activity as $a)
 
                 @include('partials.activitiesView')
 
             @endforeach
+            @else
+                <h2>WOOPS! Seems like you better ge to work.</h2>
+            @endif
         </div>
     </div>
     @else
@@ -61,23 +69,31 @@
 
 
             <div class="badges_friend">
-                <h3>My Badges</h3>
+                <h3>{{$friend->firstname}}'s Badges</h3>
                 <div class="badgesbox">
+                    @if($badge->count()>0)
                     @foreach ($badge as $b)
 
                         <img src="../{{ $b->badgeurl }}">
 
                     @endforeach
+                    @else
+                    <h3>WOOPS! Seems like you have no badges.</h3>
+                    @endif
                 </div>
             </div>
 
             <div class="latestruns">
-                <h2>My Activities</h2>
+                <h2>{{$friend->firstname}}'s Activities</h2>
+                @if($activity->count()>0)
                 @foreach ($activity as $a)
 
                     @include('partials.activitiesView')
 
                 @endforeach
+                @else
+                    <h2>WOOPS! Seems like you better get to work.</h2>
+                @endif
             </div>
         </div>
     @endif
