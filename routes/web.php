@@ -21,16 +21,16 @@ Route::get('/hall-of-fame', 'ActivitiesController@showHall');
 
 Route::group(['middleware' => 'auth'], function()
 {
-    Route::get('/profile', 'UsersController@index');
+    Route::get('/dashboard', 'UsersController@index');
     Route::get('/achievements', 'BadgesController@achievedBadges');
 
     Route::get('/logout', 'Auth\LoginController@logout');
     Route::get('/activities','ActivitiesController@index');
     Route::get('/ranking', 'ActivitiesController@ranking');
-    Route::get('/friends/type/{type}', 'FriendsController@index');
-    Route::get('/friends/{id}', 'FriendsController@friend');
+    Route::get('/users/type/{type}', 'FriendsController@index');
+    Route::get('/users/{id}', 'FriendsController@friend');
 
-    Route::post('/friends', 'FriendsController@storeOrDelete');
+    Route::post('/users', 'FriendsController@storeOrDelete');
     Route::post('/profile', 'FriendsController@store');
 
 });

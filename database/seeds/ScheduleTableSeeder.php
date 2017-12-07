@@ -18,17 +18,17 @@ class ScheduleTableSeeder extends Seeder
         $dates = $this->createDateArray();
         $end_date = strtotime('+1 year',$dates[0]);
         DB::table('schedules')->insert(array(
-            array('week'=>1,'goal'=>'Run at least 0.5 miles.', 'end_date' => Carbon::parse(date('Y-m-d', $dates[0])), 'distance' => $distances[0]),
-            array('week'=>2,'goal'=>'Run at least 1 mile.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[1])), 'distance' => $distances[1]),
-            array('week'=>3,'goal'=>'Run at least 1.5 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[2])), 'distance' => $distances[2]),
-            array('week'=>4,'goal'=>'Run at least 2 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[3])), 'distance' => $distances[3]),
-            array('week'=>5,'goal'=>'Run at least 2.5 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[4])), 'distance' => $distances[4]),
-            array('week'=>6,'goal'=>'Run at least 3 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[5])), 'distance' => $distances[5]),
-            array('week'=>7,'goal'=>'Run at least 4 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[6])), 'distance' => $distances[6]),
-            array('week'=>8,'goal'=>'Run at least 5 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[7])), 'distance' => $distances[7]),
-            array('week'=>9,'goal'=>'Run at least 7 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[8])), 'distance' => $distances[8]),
-            array('week'=>10,'goal'=>'Run at least 10 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[9])), 'distance' => $distances[9]),
-            array('week'=>11,'goal'=>'Go for the 10 miles!', 'end_date' => Carbon::parse(date('Y-m-d',$end_date)), 'distance' => $distances[9]),
+            array('week'=>1,'goal'=>'Run at least 0.5 miles.', 'end_date' => Carbon::parse(date('Y-m-d', $dates[0])), 'distance' => $distances[0], 'xpPoints'=>10),
+            array('week'=>2,'goal'=>'Run at least 1 mile.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[1])), 'distance' => $distances[1], 'xpPoints'=>20),
+            array('week'=>3,'goal'=>'Run at least 1.5 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[2])), 'distance' => $distances[2], 'xpPoints'=>30),
+            array('week'=>4,'goal'=>'Run at least 2 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[3])), 'distance' => $distances[3], 'xpPoints'=>40),
+            array('week'=>5,'goal'=>'Run at least 2.5 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[4])), 'distance' => $distances[4], 'xpPoints'=>50),
+            array('week'=>6,'goal'=>'Run at least 3 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[5])), 'distance' => $distances[5], 'xpPoints'=>60),
+            array('week'=>7,'goal'=>'Run at least 4 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[6])), 'distance' => $distances[6], 'xpPoints'=>70),
+            array('week'=>8,'goal'=>'Run at least 5 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[7])), 'distance' => $distances[7], 'xpPoints'=>80),
+            array('week'=>9,'goal'=>'Run at least 7 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[8])), 'distance' => $distances[8], 'xpPoints'=>90),
+            array('week'=>10,'goal'=>'Run at least 10 miles.', 'end_date' => Carbon::parse(date('Y-m-d',$dates[9])), 'distance' => $distances[9], 'xpPoints'=>100),
+            array('week'=>11,'goal'=>'Go for the 10 miles!', 'end_date' => Carbon::parse(date('Y-m-d',$end_date)), 'distance' => $distances[9], 'xpPoints'=>120),
 
         ));
     }

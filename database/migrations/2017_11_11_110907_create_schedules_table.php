@@ -19,6 +19,7 @@ class CreateSchedulesTable extends Migration
             $table->text('goal');
             $table->date('end_date');
             $table->integer('distance');
+            $table->integer('xpPoints');
             $table->timestamps();
         });
     }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Badges_User;
+use App\Schedule;
+use App\Schedule_User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -30,7 +32,7 @@ class FriendsController extends Controller
         $followers = User::all()->whereIn('id',$followerIDS)->whereNotIn('id',$friendIDS)->sortBy('firstname');
 
         $res = User::all()->whereNotIn('id', $friendIDS)->whereNotIn('id',$followerIDS)->where('id','!=',$myID)->sortBy('firstname');
-        
+
         return view('layouts.friends', compact('res', 'following', 'followers', 'friends', 'type'));
     }
 
@@ -47,9 +49,36 @@ class FriendsController extends Controller
 
             $badge =  User::find($id)->badge;
 
-            return view('layouts.friendsprofile', compact('friend', 'activity', 'badge','userid','id'));
+            $numpoints = 0;
+            $badgePoints = User::find($id)->badge;
+            if($badgePoints!=null) {
+                foreach ($badgePoints as $xp) {
+                    $numpoints += $xp->xpPoints;
+                }
+            }
+            $achievements = Schedule_User::all()->where('confirmed','yes')->where("user_id",$id)->pluck('schedule_id');
+            if($achievements!=null){
+            $achievementPoints = Schedule::all()->wherein('id', $achievements);
+                foreach($achievementPoints as $xp){
+                    $numpoints+=$xp->xpPoints;
+                }
+            }
+
+            if($numpoints==0){
+                $xpPoints = 0;
+                $level = 0;
+            } else{
+                $level = ltrim(floor($numpoints/100),'.0');
+                if($level==0){
+                    $xpPoints = $numpoints;
+                }else {
+                    $xpPoints = $numpoints - $level * 100;
+                }
+            }
+
+            return view('layouts.friendsprofile', compact('friend', 'activity', 'badge','userid','id','level','xpPoints'));
         }else{
-            return redirect('/friends/type/friends');
+            return redirect('/users/type/friends');
         }
     }
 

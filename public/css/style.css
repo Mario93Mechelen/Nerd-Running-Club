@@ -551,6 +551,13 @@ div.friendsNav {
     margin-bottom:20px;
 }
 
+.progress{
+    height:100%;
+    background-color: #E8800D;
+    border-radius:10px;
+    display:block;
+}
+
 .badgesbox
 {
     display:flex;

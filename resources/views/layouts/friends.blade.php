@@ -11,10 +11,10 @@
         <a href="/ranking" id="rankingLink">Go to the ranking</a>
 
         <div class="friendsNav">
-            <a @if($type == 'friends') class="active" @endif href="/friends/type/friends">Friends</a>
-            <a @if($type == 'followers') class="active" @endif href="/friends/type/followers">Followers</a>
-            <a @if($type == 'following') class="active" @endif href="/friends/type/following">Following</a>
-            <a @if($type == 'all') class="active" @endif href="/friends/type/all">All Users</a>
+            <a @if($type == 'friends') class="active" @endif href="/users/type/friends">Friends</a>
+            <a @if($type == 'followers') class="active" @endif href="/users/type/followers">Followers</a>
+            <a @if($type == 'following') class="active" @endif href="/users/type/following">Following</a>
+            <a @if($type == 'all') class="active" @endif href="/users/type/all">All Users</a>
         </div>
 
         <ul>
@@ -22,11 +22,11 @@
             <div class="justfriends">
             @foreach ($friends as $user)
                 <li>
-                    <a href="/friends/{{ $user->id  }}">
+                    <a href="/users/{{ $user->id  }}">
                         <div class="name"><p>{{$user->firstname}} {{$user->lastname}}</p></div>
                         <img src="{{ $user->avatar  }}" alt="{{ $user->firstname  }} {{ $user->lastname  }}">
                     </a>
-                    <form action="/friends" method="post">
+                    <form action="/users" method="post">
                         {{ csrf_field() }}
                         <input type="hidden" name="userid" value="{{$user->id}}">
                         <input type="hidden" name="action" value="delete">
@@ -44,11 +44,11 @@
                 @if($type == 'following')
                 @foreach ($following as $user)
                     <li>
-                        <a href="/friends/{{ $user->id  }}">
+                        <a href="/users/{{ $user->id  }}">
                             <div class="name"><p>{{$user->firstname}} {{$user->lastname}}</p></div>
                             <img src="{{ $user->avatar  }}" alt="{{ $user->firstname  }} {{ $user->lastname  }}">
                         </a>
-                        <form action="/friends" method="post">
+                        <form action="/users" method="post">
                             {{ csrf_field() }}
                             <input type="hidden" name="userid" value="{{$user->id}}">
                             <input type="hidden" name="action" value="delete">
@@ -62,11 +62,11 @@
                 @if($type == 'followers')
                 @foreach ($followers as $user)
                     <li>
-                        <a href="/friends/{{ $user->id  }}">
+                        <a href="/users/{{ $user->id  }}">
                             <div class="name"><p>{{$user->firstname}} {{$user->lastname}}</p></div>
                             <img src="{{ $user->avatar  }}" alt="{{ $user->firstname  }} {{ $user->lastname  }}">
                         </a>
-                        <form action="/friends" method="post">
+                        <form action="/users" method="post">
                             {{ csrf_field() }}
                             <input type="hidden" name="userid" value="{{$user->id}}">
                             <input type="hidden" name="action" value="store">
@@ -83,11 +83,11 @@
             <div class="follower">
             @foreach ($res as $user)
                         <li>
-                            <a href="/friends/{{ $user->id  }}">
+                            <a href="/users/{{ $user->id  }}">
                                 <div class="name"><p>{{$user->firstname}} {{$user->lastname}}</p></div>
                                 <img src="{{ $user->avatar  }}" alt="{{ $user->firstname  }} {{ $user->lastname  }}">
                             </a>
-                            <form action="/friends" method="post">
+                            <form action="/users" method="post">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="userid" value="{{$user->id}}">
                                 <input type="hidden" name="action" value="store">

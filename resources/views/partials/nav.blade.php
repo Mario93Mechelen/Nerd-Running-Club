@@ -7,7 +7,7 @@
 
     <div class="profile">
 
-        <a href="/profile"> <img  src="{{$currentuser->avatar}}" alt="Profile Pic"></a>
+        <a href="/friends/{{$currentuser->id}}"> <img  src="{{$currentuser->avatar}}" alt="Profile Pic"></a>
         <h3>{{$currentuser->firstname." ".$currentuser->lastname}} </h3>
 
     </div>
@@ -23,14 +23,14 @@
 
     <transition name="slide-fade">
 <nav class="innerNav" v-show="showMobileMenu">
-    <a href="/profile">
+    <a href="/dashboard">
         Home
     </a>
-    <a href="/friends/type/all">
+    <a href="/users/type/all">
         Friends
     </a>
-    <a href="/activities">
-        Heatmap
+    <a href="/users/{{$currentuser->id}}">
+        Profile
     </a>
     <a href="/achievements">
         Badges

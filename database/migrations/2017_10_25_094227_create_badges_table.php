@@ -18,6 +18,7 @@ class CreateBadgesTable extends Migration
             $table->string('badgename');
             $table->string('badgeurl');
             $table->string('badgetext');
+            $table->integer('xpPoints');
             $table->timestamps();
         });
     }
