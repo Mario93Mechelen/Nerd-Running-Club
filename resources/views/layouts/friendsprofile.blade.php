@@ -6,21 +6,20 @@
 
     @if($userid == $id)
     <div class="friendsprofile">
+        <div class="leveluser">
 
-        <div class="levelbox">
+            <img src="{{  $friend->avatar  }}" alt="friends profile">
 
-            <div class="leveluser">
+            <h2>{{  $friend->firstname  }} {{  $friend->lastname  }}</h2>
+        </div>
 
-                <img src="{{  $friend->avatar  }}" alt="friends profile">
-
-                <h2>{{  $friend->firstname  }} {{  $friend->lastname  }}</h2>
-            </div>
             <div class="level">
-                <h2>You're now at NerdLevel</h2>
+                <div class="levelinfo">
+                <img src="/img/profile-icon.png" alt="icon">
+                <h2>NerdLevel</h2>
+                </div>
                 <div class="progressbar"><span class="progress"></span></div>
             </div>
-
-        </div>
 
 
         <div class="badges_friend">

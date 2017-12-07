@@ -37,7 +37,7 @@
             @if ( $a->address == "no address")
                 <p class="mapsnotavailable">Maps is not available.</p>
             @else
-                <iframe width="200" height="200" src="//www.google.com/maps/embed/v1/place?q={{$a->address}}&zoom=10&key=AIzaSyAuVtcvIZX0MMqEZrJ2_ghI2MsWQ5MmvPM">
+                <iframe width="140" height="140" src="//www.google.com/maps/embed/v1/place?q={{$a->address}}&zoom=10&key=AIzaSyAuVtcvIZX0MMqEZrJ2_ghI2MsWQ5MmvPM">
                 </iframe>
             @endif
         </div>

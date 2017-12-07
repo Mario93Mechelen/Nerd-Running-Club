@@ -63,7 +63,7 @@ body {
     position: fixed;
     top:0;
     width: 100%;
-    z-index: 10;
+    z-index: 700;
 }
 
 #counter {
@@ -466,30 +466,79 @@ div.friendsNav {
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width:50%;
+    width:90%;
+    margin:auto;
     font-size:0.8em;
-    margin-top:10px
+    margin-top:10px;
+    border:1px solid #C2C1A5;
+    margin-bottom:20px;
 }
 
-.levelbox img
+.leveluser{
+    padding-bottom:30px;
+}
+
+.leveluser img
 {
     display: block;
-    width:30px;
-    height:30px;
+    width:50px;
+    height:50px;
     border-radius: 50%;
     margin:auto;
-    margin-bottom:10px;
-    border: 4px solid #E8800D;
+    margin-top:20px;
+    border: 5px solid #E8800D;
+    z-index:500
 }
 
-.levelbox h2
+.level img
+{
+    display: block;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    margin-top:20px;
+    margin-left:5%;
+    border: 5px solid #E8800D;
+    z-index:500;
+    margin-bottom:20px;
+}
+
+.leveluser h2,.level h2
 {
     width:100%;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #228092;
-    margin-bottom:10px;
+    padding:10px 0;
+}
+
+.leveluser h2
+{
+    background-color:#228092;
+    color:white;
+    width:50%;
+    margin:auto;
+    border-radius:20px;
+    margin-top:-5px;
+}
+
+.levelinfo
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.levelinfo h2{
+    background-color:#228092;
+    color:white;
+    width:50%;
+    border-radius:20px;
+    margin-top:35px;
+    margin-left:-40px;
 }
 
 .progressbar
@@ -499,6 +548,7 @@ div.friendsNav {
     border:1px solid #C2C1A5;
     height:20px;
     margin:auto;
+    margin-bottom:20px;
 }
 
 .badgesbox
@@ -925,8 +975,8 @@ a.info.clockbox
 }
 
 .mapsactivity {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 25px auto;
     border: 5px solid #FCF0BB;
     box-sizing: border-box;
@@ -1416,8 +1466,13 @@ a.info.clockbox
         display: flex;
         width: 100%;
         flex-direction: row-reverse;
-        justify-content: center;
+        justify-content: space-around;
         flex-wrap: wrap;
+    }
+
+    .run{
+        padding:0;
+        padding-bottom:10px;
     }
 
     .run #date h1 {
@@ -1425,18 +1480,20 @@ a.info.clockbox
         font-size: 1em;
         color: white;
         text-align: left;
-        width: 30%;
-        margin-left: 45%;
-        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
         line-height: 20px;
+        margin-bottom:10px;
     }
 
 
     .run #info {
-        width: 30%;
+        width: 50%;
         margin-left: 5%;
         height: 5em;
-        margin-top: 35px;
+        margin-top:20px;
+        margin-bottom:50px;
     }
 
     .mapsactivity {
@@ -1508,24 +1565,47 @@ a.info.clockbox
         margin-bottom:50px;
     }
 
-    .levelbox{
-        width:25%;
-        margin:0;
-        margin-right:5%;
+    .leveluser, .level{
+        width:30%;
+        margin-bottom:150px;
     }
 
-    .levelbox{
+    .leveluser
+    {
+        margin-left:5%;
+        order:1;
+    }
+
+    .level{
+        margin-right:5%;
         order:2;
     }
 
+    .leveluser h2{
+        width:70%;
+    }
+
+    .levelinfo h2{
+        margin-left:-20px;
+        width:65%;
+    }
+
+    .levelinfo img{
+        margin-bottom:15px;
+    }
+
     .badges_friend{
-        order:1;
+        order:4;
+        width:30%;
+        margin-right:5%;
     }
 
     .latestruns{
         order:3;
-        width:90%;
+        width:54%;
         margin-bottom:100px;
+        order:3;
+        margin-left:5%;
     }
 
     .friends ul li {
