@@ -8,8 +8,6 @@
 
         <h2>Find some buddies to go the extra mile with!</h2>
 
-        <a href="/ranking" id="rankingLink">Go to the ranking</a>
-
         <div class="friendsNav">
             <a @if($type == 'friends') class="active" @endif href="/users/type/friends">Friends</a>
             <a @if($type == 'followers') class="active" @endif href="/users/type/followers">Followers</a>

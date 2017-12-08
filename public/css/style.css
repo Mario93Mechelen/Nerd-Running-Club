@@ -203,7 +203,9 @@ body {
     letter-spacing: 3px;
     color: #228092;
     text-align: center;
-    padding-top: 10px;
+    margin-top: 50px;
+    font-size: 2em;
+    font-weight: 800;
 }
 
 .goals p {
@@ -211,7 +213,7 @@ body {
     color: #228092;
     text-align: center;
     padding-top: 20px;
-    font-size: 1em;
+    font-size: 1.2em;
 
 }
 
@@ -275,8 +277,9 @@ body {
     display: flex;
     flex-direction: column;
     text-align:  center;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 50px;
+    background-color: rgba(34, 128, 146, 0.18);
 
 }
 
@@ -284,9 +287,11 @@ body {
 
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #228092;
+    color: #E8800D;
     text-align: center;
-    padding-top: 10px;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .rankingB {
@@ -295,6 +300,9 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 20px;
 }
 
 .rankingBB {
@@ -315,14 +323,14 @@ body {
 
     width: 50px;
     height: 50px;
-    border-radius: 50px;
+    border-radius: 100px;
     margin-top: 10px;
     margin-right: 10px;
 }
 
 .rankingBProf h3 {
 
-    font-size: 1em;
+    font-size: 0.8em;
     color: #228092;
     padding-top: 25px;
 }
@@ -811,11 +819,14 @@ a.info.clockbox
 
 .ranking {
 
+    width: 90%;
+    margin-left: 5%;
     display: flex;
     flex-direction: column;
-    width: 80%;
-    margin-left: 10%;
-
+    text-align:  center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgba(34, 128, 146, 0.18) ;
 }
 
 .ranking h1 {
@@ -823,20 +834,23 @@ a.info.clockbox
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #228092;
-    margin-bottom: 20px;
     text-align: center;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
+
 }
-
-
 
 .ranking .number {
 
     display: flex;
     flex-direction:row;
     justify-content: space-between;
+    width: 60%;
+    margin-left: 20%;
     margin-top: 50px;
-    padding: 5%;
     border-radius: 20px ;
+    margin-bottom: 50px;
 }
 
 .ranking .number h4 {
@@ -844,8 +858,7 @@ a.info.clockbox
     color: #228092;
     text-align: left;
     align-self: center;
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 400;
 
 }
 
@@ -854,6 +867,7 @@ a.info.clockbox
     align-self: center;
     font-size: 1.2em;
     color: #E8800D;
+    font-weight: 700;
 }
 
 .ranking .number img {
@@ -861,8 +875,10 @@ a.info.clockbox
     width: 50px;
     height: 50px;
     border-radius: 150px;
-    border: 10px solid #228092;
 }
+
+
+
 
 /* ------------- BADGES ----------------- */
 .badges {
@@ -1260,24 +1276,17 @@ a.info.clockbox
         height: 80px;
     }
 
-    .goals {
-
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: -30px;
-        /*background-color: RGB(34,128,146);*/
-    }
     .goals h3 {
 
-        font-size: 1.8em ;
-        margin-top: 5px;
+        font-size: 2.3em ;
+        margin-top: 25px;
     }
 
     .goals p {
 
         margin-left: 50px;
         font-size: 1.2em;
+
     }
 
     .motivation {
@@ -1463,12 +1472,6 @@ a.info.clockbox
         padding: 18% 37% 18% 37%;
     }
 
-    .goals {
-
-        width: 50%;
-        margin-left: 25%;
-        margin-bottom: 50px;
-    }
     .activity-flex {
         display: flex;
         width: 100%;
@@ -1510,16 +1513,34 @@ a.info.clockbox
     .ranking {
 
         width: 50%;
-        margin-left: 25%;
+        height: 480px;
+        margin-left: 50%;
+        margin-top: -480px;
+    }
+
+    .ranking h1 {
+
+        color: #E8800D;
+        margin-top: 50px;
 
     }
 
-    #rankingLink {
+    .ranking .number {
 
-        width: 220px;
-        padding: 1%;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 70px;
+        border-radius: 20px ;
+        margin-bottom: 50px;
+    }
 
+    .ranking .number p {
 
+        font-size: 1.2em;
+        font-weight: 800;
     }
 
     .badgeText {
@@ -1548,11 +1569,6 @@ a.info.clockbox
         margin-top: 10px;
     }
 
-
-
-}
-
-@media screen and (min-width: 750px) {
 
     .loginStrava a {
         width: 10%;
@@ -1638,17 +1654,88 @@ a.info.clockbox
 
     .goals {
 
-        width: 40%;
-        margin-left: 30%;
+        width: 100%;
+        padding: 2% 0% 3% 0%;
+        text-align: center;
+        margin-left: 0%;
+        background-color: rgba(128, 128, 128, 0.11);
     }
 
-    .ranking {
+    .rankingBadges {
 
-        width: 30%;
-        margin-left: 35%;
+        width: 50%;
+        height: 480px;
+        margin-left: 0%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-color: rgba(232, 128, 13, 0.18);
 
     }
 
+    .rankingBadges h1 {
+
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #E8800D;
+        text-align: center;
+        margin-top: 50px;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .rankingB {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .rankingBB {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .rankingBProf {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .rankingBProf img {
+
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .rankingBProf h3 {
+
+        font-size: 0.8em;
+        color: #228092;
+        padding-top: 25px;
+    }
+
+    .rankingBBadge{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .rankingBBadge img {
+
+        width: 80px;
+        height: 80px;
+    }
 
 }
 

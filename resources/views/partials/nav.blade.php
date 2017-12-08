@@ -7,8 +7,8 @@
 
     <div class="profile">
 
-        <a href="/friends/{{$currentuser->id}}"> <img  src="{{$currentuser->avatar}}" alt="Profile Pic"></a>
-        <h3>{{$currentuser->firstname." ".$currentuser->lastname}} </h3>
+        <a href="/dashboard"> <img  src="{{$currentuser->avatar}}" alt="Profile Pic"></a>
+        <a href="/dashboard" style="text-decoration: none;"><h3>{{$currentuser->firstname." ".$currentuser->lastname}} </h3></a>
 
     </div>
 

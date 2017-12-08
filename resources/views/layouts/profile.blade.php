@@ -16,8 +16,14 @@
 
     </h1>
 
-
     @include('partials/schedule')
+    </div>
+
+    <div class="goals">
+
+        <h3>Challenge nr. {{$goalnow->week}}</h3>
+        <p>{{$goalnow->goal}}</p>
+
     </div>
 
     @if($reachedBadges !== null)
@@ -62,18 +68,29 @@
 
     </div>
 
+    <div class="ranking">
+
+        <h1>Top 5 Longest Runs</h1>
+
+        @foreach($winningActivities as $w)
+            @foreach($user->where('id', ($w->user_id)) as $u)
+
+                <div class="number">
+                    <p>{{$w->distance/1000}} km</p>
+                    <h4> by {{$u->firstname}} {{$u->lastname}}</h4><img src="{{$u->avatar}}">
+                </div>
+
+            @endforeach
+
+        @endforeach
+    </div>
 
 
 
     @endif
 
 
-    <div class="goals">
 
-        <h3>Challenge nr. {{$goalnow->week}} :</h3>
-        <p>{{$goalnow->goal}}</p>
-
-    </div>
 
 
 
