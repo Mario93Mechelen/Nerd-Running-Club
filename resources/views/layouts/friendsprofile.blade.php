@@ -39,7 +39,7 @@
 
         <div class="latestruns">
             <h2>My Activities</h2>
-            @if($activity->count()>0))
+            @if($activity->count()>0)
             @foreach ($activity as $a)
 
                 @include('partials.activitiesView')

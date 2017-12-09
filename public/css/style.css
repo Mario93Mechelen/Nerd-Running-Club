@@ -464,13 +464,12 @@ div.friendsNav {
     width:90%;
     margin:auto;
     justify-content:space-around;
-    border:1px solid #C2C1A5;
     margin-bottom:20px;
     padding:20px 0;
     border-radius:3px;
 }
 
-.leveluser, .level{
+.level{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -478,7 +477,7 @@ div.friendsNav {
     margin:auto;
     font-size:0.8em;
     margin-top:10px;
-    border:1px solid #C2C1A5;
+    background-color: rgba(34, 128, 146, 0.18);
     margin-bottom:20px;
 }
 
@@ -493,7 +492,7 @@ div.friendsNav {
     height:50px;
     border-radius: 50%;
     margin:auto;
-    margin-top:20px;
+    margin-bottom: 20px;
     border: 5px solid #E8800D;
     z-index:500
 }
@@ -553,7 +552,7 @@ div.friendsNav {
 {
     width:90%;
     border-radius:10px;
-    border:1px solid #C2C1A5;
+    border:1px solid white;
     height:20px;
     margin:auto;
     margin-bottom:20px;
@@ -565,6 +564,7 @@ div.friendsNav {
     border-radius:10px;
     display:block;
 }
+
 
 .badgesbox
 {
@@ -783,9 +783,8 @@ a.info.clockbox
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: transparent;
     align-items: center;
-    border:1px solid #C2C1A5;
+    background-color: rgba(232, 128, 13, 0.18);;
     border-radius:3px;
     margin-bottom:20px;
 }
@@ -947,7 +946,7 @@ a.info.clockbox
     justify-content: center;
     width: 90%;
     margin:auto;
-    border:1px solid #C2C1A5;
+    background-color: rgba(128, 128, 128, 0.18);
     border-radius:3px;
 }
 
@@ -1582,53 +1581,46 @@ a.info.clockbox
     }
 
     .badges_friend{
-        width:45%;
+        width:100%;
         margin:0;
-        margin-left:5%;
-        margin-bottom:50px;
+        order: 3;
     }
 
     .leveluser, .level{
-        width:30%;
-        margin-bottom:150px;
+        width:100%;
+        margin: 0;
     }
 
     .leveluser
     {
-        margin-left:5%;
         order:1;
     }
 
     .level{
-        margin-right:5%;
         order:2;
     }
 
     .leveluser h2{
-        width:70%;
+        width:30%;
     }
 
     .levelinfo h2{
-        margin-left:-20px;
-        width:65%;
+        width:30%;
+        margin-left: 26%;
+    }
+    .progressbar {
+        width: 50%;
+        margin-bottom: 50px;
     }
 
     .levelinfo img{
         margin-bottom:15px;
     }
 
-    .badges_friend{
-        order:4;
-        width:30%;
-        margin-right:5%;
-    }
-
     .latestruns{
         order:3;
-        width:54%;
-        margin-bottom:100px;
+        width:100%;
         order:3;
-        margin-left:5%;
     }
 
     .friends ul li {
