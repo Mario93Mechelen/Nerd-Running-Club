@@ -75,8 +75,22 @@ class FriendsController extends Controller
                     $xpPoints = $numpoints - $level * 100;
                 }
             }
+            $imageurl="";
+            if($level<3){
+                $imageurl = "/img/nerdlevel/eerste.png";
+            }elseif($level<5&&$level>3){
+                $imageurl = "/img/nerdlevel/derde.png";
+            }elseif($level<7&&$level>5){
+                $imageurl = "/img/nerdlevel/vijfde.png";
+            }elseif($level<9&&$level>7){
+                $imageurl = "/img/nerdlevel/zevende.png";
+            }elseif($level==9){
+                $imageurl = "/img/nerdlevel/negende.png";
+            }elseif($level==10){
+                $imageurl = "/img/nerdlevel/elfde.png";
+            }
 
-            return view('layouts.friendsprofile', compact('friend', 'activity', 'badge','userid','id','level','xpPoints'));
+            return view('layouts.friendsprofile', compact('friend', 'activity', 'badge','userid','id','level','xpPoints','imageurl'));
         }else{
             return redirect('/users/type/friends');
         }
