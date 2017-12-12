@@ -7,16 +7,15 @@
     @if($userid == $id)
     <div class="friendsprofile">
         <div class="leveluser">
-
             <img src="{{  $friend->avatar  }}" alt="friends profile">
-
-            <h2>{{  $friend->firstname  }} {{  $friend->lastname  }}</h2>
         </div>
 
+        <div class="progressProfile">
+
             <div class="level">
+                <h3>{{  $friend->firstname  }}'s Nerd Progress</h3>
                 <div class="levelinfo">
                 <img src="{{$imageurl}}" alt="icon">
-                <h2>NerdLevel {{$level}}</h2>
                 </div>
                 <div class="progressbar"><span class="progress" style="width:{{$xpPoints}}%"></span></div>
             </div>
@@ -34,7 +33,9 @@
                 @else
                     <h3>WOOPS! Seems like you have no badges.</h3>
                 @endif
+            </div>
         </div>
+
         </div>
 
         <div class="latestruns">

@@ -480,69 +480,46 @@ div.friendsNav {
     margin-bottom:20px;
     padding:20px 0;
     border-radius:3px;
+
 }
 
 .level{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    width:90%;
+    justify-content: center;
+    width:100%;
     margin:auto;
     font-size:0.8em;
     margin-top:10px;
-    background-color: rgba(34, 128, 146, 0.18);
     margin-bottom:20px;
+    background-color: white;
 }
 
 .leveluser{
-    padding-bottom:30px;
+    margin-top: -80px;
 }
 
 .leveluser img
 {
     display: block;
-    width:50px;
-    height:50px;
-    border-radius: 50%;
+    width:100%;
+    height: auto;
     margin:auto;
     margin-bottom: 20px;
-    border: 5px solid #E8800D;
     z-index:500
 }
 
 .level img
 {
     display: block;
-    width:50px;
-    height:50px;
-    border-radius: 50%;
+    width:100px;
+    height:auto;
     margin-top:20px;
-    margin-left:5%;
-    border: 5px solid #E8800D;
     z-index:500;
+    justify-self: center;
     margin-bottom:20px;
 }
-
-.leveluser h2,.level h2
-{
-    width:100%;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #228092;
-    padding:10px 0;
-}
-
-.leveluser h2
-{
-    background-color:#228092;
-    color:white;
-    width:50%;
-    margin:auto;
-    border-radius:20px;
-    margin-top:-5px;
-}
-
 .levelinfo
 {
     display:flex;
@@ -561,11 +538,30 @@ div.friendsNav {
     margin-left:-40px;
 }
 
+.progressProfile {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.progressProfile h3 {
+
+    width: 100%;
+    color: #228092;
+    align-self: center;
+    margin-bottom:20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top:20px;
+}
+
 .progressbar
 {
     width:90%;
     border-radius:10px;
-    border:1px solid white;
+    border:1px solid #E8800D;
     height:20px;
     margin:auto;
     margin-bottom:20px;
@@ -959,7 +955,6 @@ a.info.clockbox
     justify-content: center;
     width: 90%;
     margin:auto;
-    background-color: rgba(128, 128, 128, 0.18);
     border-radius:3px;
 }
 
@@ -978,14 +973,13 @@ a.info.clockbox
 .latestruns h2{
 
     width: 100%;
-    color: #228092;
+    color: #E8800D;
     align-self: center;
     margin-bottom:20px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     padding:20px 0;
-    color: #228092;
 }
 
 .run #date h1 {
@@ -1611,27 +1605,35 @@ a.info.clockbox
         order:2;
     }
 
-    .leveluser h2{
-        width:30%;
-    }
-
-    .levelinfo h2{
-        width:30%;
-        margin-left: 26%;
-    }
     .progressbar {
-        width: 50%;
+        width: 100%;
         margin-bottom: 50px;
     }
 
-    .levelinfo img{
-        margin-bottom:15px;
+    .leveluser img{
+
+        width: 40%;
+        height: auto;
+        margin-left: 0;
+        margin-top: -50px;
+    }
+
+    .progressProfile {
+
+        order: 3;
+        width: 40%;
+        margin-left: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-top: -37.5%;
     }
 
     .latestruns{
-        order:3;
         width:100%;
-        order:3;
+        order: 4;
+        margin-top: 50px;
     }
 
     .friends ul li {
@@ -1742,7 +1744,35 @@ a.info.clockbox
 
 }
 
+@media screen and (min-width: 1500px)  {
 
+    .leveluser img{
+
+        width: 30%;
+        height: auto;
+        margin-left: 0;
+        margin-top: -50px;
+    }
+
+    .progressProfile {
+
+        order: 3;
+        width: 50%;
+        margin-left: 40%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-top: -27.5%;
+    }
+
+    .latestruns{
+        width:100%;
+        order: 4;
+        margin-top: 50px;
+    }
+
+}
 
 
 
