@@ -25,18 +25,31 @@ body {
 }
 
 .loginStrava h2 {
-
     color: white;
     width: 80%;
     margin-left: 10%;
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-align: center;
     margin-top: 250px;
+    text-transform: uppercase;
+}
+
+.loginStrava div.text-frame {
+    display: block;
+    width: 75%;
+    margin: 25px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.loginStrava div.text-frame p {
+    color: gainsboro;
+    font-size: 1.2em;
 }
 
 .loginStrava a {
     background-color: #E8800D ;
-    width: 50%;
+    width: 200px;
     align-self: center;
     padding: 5%;
     display: flex;
@@ -50,7 +63,7 @@ body {
 .loginStrava a p {
     text-decoration: none;
     color: white;
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 300;
 }
 
@@ -1195,13 +1208,17 @@ a.info.clockbox
     }
 
     .loginStrava a {
-        width: 20%;
-        padding: 2%;
+        width: 300px;
+        padding: 15px;
     }
 
     .loginStrava a p {
 
         font-size: 1.3em;
+    }
+
+    .loginStrava div.text-frame {
+        text-align: center;
     }
 
     .profile {
@@ -1566,12 +1583,6 @@ a.info.clockbox
 
         font-size: 1.2em;
         margin-top: 10px;
-    }
-
-
-    .loginStrava a {
-        width: 10%;
-        padding: 2%;
     }
 
     .friendsprofile{
