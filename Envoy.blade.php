@@ -7,11 +7,11 @@ git reset --hard HEAD~1
 
 git pull origin master
 
+php artisan migrate
+
 composer install
 
 composer dump-autoload
-
-php artisan migrate
 
 @endtask
 
@@ -23,11 +23,11 @@ git reset --hard HEAD~1
 
 git pull origin master
 
+php artisan migrate:refresh --seed
+
 composer install
 
 composer dump-autoload
-
-php artisan migrate:refresh --seed
 
 @endtask
 
@@ -39,11 +39,11 @@ git reset --hard HEAD~1
 
 git pull
 
+php artisan migrate:refresh --seed
+
 composer install
 
 composer dump-autoload
-
-php artisan migrate:refresh --seed
 
 @endtask
 
@@ -55,10 +55,10 @@ git reset --hard HEAD~1
 
 git pull
 
+php artisan migrate
+
 composer install
 
 composer dump-autoload
-
-php artisan migrate
 
 @endtask
