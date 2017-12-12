@@ -1630,11 +1630,6 @@ a.info.clockbox
         margin-top: -37.5%;
     }
 
-    .latestruns{
-        width:100%;
-        order: 4;
-        margin-top: 50px;
-    }
 
     .friends ul li {
         width: 30%;
@@ -1742,6 +1737,28 @@ a.info.clockbox
         height: 80px;
     }
 
+    .latestruns{
+        width:100%;
+        order: 4;
+        background-color: #E8800D;
+        margin-top: 50px;
+    }
+
+    .latestruns h2 {
+
+        color: white;
+        margin-top: 40px;
+        font-size: 2em;
+    }
+
+    .run {
+
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 50px;
+        padding: 20px 0px 50px 0px;
+    }
+
 }
 
 @media screen and (min-width: 1500px)  {
@@ -1770,6 +1787,13 @@ a.info.clockbox
         width:100%;
         order: 4;
         margin-top: 50px;
+    }
+
+
+
+    .run {
+
+        width: 50%;
     }
 
 }
