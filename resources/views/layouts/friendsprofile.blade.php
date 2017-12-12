@@ -15,7 +15,7 @@
 
             <div class="level">
                 <div class="levelinfo">
-                <img src="/img/profile-icon.png" alt="icon">
+                <img src="{{$imageurl}}" alt="icon">
                 <h2>NerdLevel {{$level}}</h2>
                 </div>
                 <div class="progressbar"><span class="progress" style="width:{{$xpPoints}}%"></span></div>
@@ -61,7 +61,7 @@
 
             <div class="level">
                 <div class="levelinfo">
-                    <img src="/img/profile-icon.png" alt="icon">
+                    <img src="{{$imageurl}}"" alt="icon">
                     <h2>NerdLevel {{$level}}</h2>
                 </div>
                 <div class="progressbar"><span class="progress" style="width:{{$xpPoints}}%"></span></div>
