@@ -1,7 +1,7 @@
 @foreach($schedule as $s)
         <div class="bubblecontainer" id="bubble{{$s->schedule_id}}">
             <div class="bubble">
-                <p>People who gained this challenge:</p>
+                <p>People who completed this challenge:</p>
                 <div class="userimages">
                     @foreach($successusers as $user)
                         @if($user->schedule_id == $s->schedule_id)
