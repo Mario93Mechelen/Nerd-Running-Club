@@ -29,6 +29,7 @@ class UsersController extends Controller
         $user = Auth::user();
         $myID = Auth::id();
         Artisan::call('update:schedule');
+        Artisan::call('update:badges');
 
         // Schedule
 
