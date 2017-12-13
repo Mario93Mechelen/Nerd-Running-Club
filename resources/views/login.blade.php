@@ -15,7 +15,7 @@
 
         <!-- CSS Styling -->
         <link rel="stylesheet" href="/css/reset.css" type="text/css"/>
-        <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/min-style.css" type="text/css"/>
         
     </head>
     <body>
@@ -26,7 +26,7 @@
 
            <div class="text-frame">
             <p>Get ready for the 10 miles of Antwerp by completing challenges each week! <br />
-                Add friends to compete against them. Try to get higher in the rankings by runner more and runner faster! Good luck!</p>
+                Add friends to compete against them. Try to get higher in the rankings by running more and running faster! Good luck!</p>
            </div>     
 
 
