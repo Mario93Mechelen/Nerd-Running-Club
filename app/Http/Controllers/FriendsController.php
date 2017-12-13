@@ -90,6 +90,8 @@ class FriendsController extends Controller
                 $imageurl = "/img/nerdlevel/elfde.png";
             }
 
+
+
             return view('layouts.friendsprofile', compact('friend', 'activity', 'badge','userid','id','level','xpPoints','imageurl'));
         }else{
             return redirect('/users/type/friends');

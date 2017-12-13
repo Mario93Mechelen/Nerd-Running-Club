@@ -13,7 +13,7 @@
         <div class="progressProfile">
 
             <div class="level">
-                <h3>{{  $friend->firstname  }}'s Nerd Progress</h3>
+                <h3>{{  $friend->firstname  }}'s Nerd Progress: NerdLevel {{$level}}</h3>
                 <div class="levelinfo">
                 <img src="{{$imageurl}}" alt="icon">
                 </div>
@@ -62,7 +62,7 @@
 
             <div class="level">
                 <div class="levelinfo">
-                    <img src="{{$imageurl}}"" alt="icon">
+                    <img src="{{$imageurl}}" alt="icon">
                     <h2>NerdLevel {{$level}}</h2>
                 </div>
                 <div class="progressbar"><span class="progress" style="width:{{$xpPoints}}%"></span></div>
