@@ -31,6 +31,7 @@
     </div>
 
     @include('partials.footer')
+    <script src="/js/vue.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="/js/script.js"></script>
     <script src="/js/vuescript.js"></script>
