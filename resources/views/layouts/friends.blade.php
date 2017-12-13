@@ -18,6 +18,12 @@
         <ul>
             @if($type == 'friends')
             <div class="justfriends">
+                @if($friends->count() == 0)
+                    <div class="empty">
+                        <p>It's getting lonely here</p>
+                        <p>Follow someone you like, and maybe he'll follow you back</p>
+                    </div>
+                @endif    
             @foreach ($friends as $user)
                 <li>
                     <a href="/users/{{ $user->id  }}">
@@ -40,6 +46,12 @@
                 
                 <div class="following">
                 @if($type == 'following')
+                    @if($following->count() == 0)
+                        <div class="empty">
+                            <p>It's getting lonely here</p>
+                            <p>Follow someone you like</p>
+                        </div>
+                    @endif  
                 @foreach ($following as $user)
                     <li>
                         <a href="/users/{{ $user->id  }}">
@@ -58,6 +70,12 @@
                 @endif
 
                 @if($type == 'followers')
+                    @if($followers->count() == 0)
+                        <div class="empty">
+                            <p>It's getting lonely here</p>
+                            <p>You have no followers yet</p>
+                        </div>
+                    @endif  
                 @foreach ($followers as $user)
                     <li>
                         <a href="/users/{{ $user->id  }}">

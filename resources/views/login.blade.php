@@ -15,7 +15,7 @@
 
         <!-- CSS Styling -->
         <link rel="stylesheet" href="/css/reset.css" type="text/css"/>
-        <link rel="stylesheet" href="/css/min-style.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/app.css" type="text/css"/>
         
     </head>
     <body>
